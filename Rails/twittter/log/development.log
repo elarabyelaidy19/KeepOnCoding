@@ -170,3 +170,56 @@ Processing by TweeetsController#index as HTML
 Completed 200 OK in 219ms (Views: 215.8ms | ActiveRecord: 1.1ms | Allocations: 4484)
 
 
+Started GET "/tweeets/1" for ::1 at 2021-10-04 17:49:17 +0200
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TweeetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTweeet Load (1.4ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" WHERE "tweeets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tweeets_controller.rb:62:in `set_tweeet'
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/show.html.erb within layouts/application
+  Rendered tweeets/show.html.erb within layouts/application (Duration: 14.3ms | Allocations: 549)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 1654.1ms | Allocations: 29173)
+Completed 200 OK in 1808ms (Views: 1692.0ms | ActiveRecord: 14.4ms | Allocations: 37581)
+
+
+Started GET "/tweeets" for ::1 at 2021-10-04 17:49:22 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mTweeet Load (2.5ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets"[0m
+  ↳ app/views/tweeets/index.html.erb:14
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 18.9ms | Allocations: 1484)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 240.2ms | Allocations: 5114)
+Completed 200 OK in 260ms (Views: 239.4ms | ActiveRecord: 2.5ms | Allocations: 5720)
+
+
+Started GET "/tweeets/1/edit" for ::1 at 2021-10-04 17:49:27 +0200
+Processing by TweeetsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTweeet Load (2.3ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" WHERE "tweeets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tweeets_controller.rb:62:in `set_tweeet'
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/edit.html.erb within layouts/application
+  Rendered tweeets/_form.html.erb (Duration: 86.3ms | Allocations: 2395)
+  Rendered tweeets/edit.html.erb within layouts/application (Duration: 115.2ms | Allocations: 2887)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 294.2ms | Allocations: 6495)
+Completed 200 OK in 333ms (Views: 296.8ms | ActiveRecord: 2.3ms | Allocations: 7827)
+
+
+Started GET "/tweeets/1" for ::1 at 2021-10-04 17:51:24 +0200
+Processing by TweeetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTweeet Load (9.8ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" WHERE "tweeets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tweeets_controller.rb:62:in `set_tweeet'
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/show.html.erb within layouts/application
+  Rendered tweeets/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 108)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 240.3ms | Allocations: 3826)
+Completed 200 OK in 263ms (Views: 244.0ms | ActiveRecord: 9.8ms | Allocations: 4997)
+
+
