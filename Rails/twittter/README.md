@@ -4,6 +4,8 @@
  * ruby 3.0 
  * rails 6.1.4 
  * postgresql 12.7 
+
+## TOOLS 
  * bulma-rails  
   * import bulma in app/asset/stylesheet/application.scss
  * simple-forms 
