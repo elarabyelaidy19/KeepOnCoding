@@ -4,7 +4,8 @@
  * ruby 3.0 
  * rails 6.1.4 
  * postgresql 12.7 
- * bulma-rails 
+ * bulma-rails  
+  * import bulma in app/asset/stylesheet/application.scss
  * simple-forms 
   * rails g simple_form:install 
  * Gravatar Gem 

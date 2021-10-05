@@ -249,3 +249,404 @@ Processing by TweeetsController#index as HTML
 Completed 200 OK in 226ms (Views: 209.5ms | ActiveRecord: 2.5ms | Allocations: 5624)
 
 
+Started GET "/" for ::1 at 2021-10-05 20:31:21 +0200
+  [1m[35m (25.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mTweeet Load (48.4ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets"[0m
+  ↳ app/views/tweeets/index.html.erb:14
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 219.4ms | Allocations: 4777)
+  Rendered layout layouts/application.html.erb (Duration: 276.7ms | Allocations: 8251)
+Completed 500 Internal Server Error in 420ms (ActiveRecord: 72.7ms | Allocations: 11829)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>Twittter</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body> 
+    <% if flash[:notice] %> 
+      <div class="notification is-primary global-notification">
+  			<p class="notice"><%= notice %></p>
+  		</div>
+    <%end%>
+    <% if flash[:alert] %> 
+        <div class="notification is-danger global-notification"> 
+          <p class="alert"><%= alert %>
+        </div>
+    <% end %> 
+    <nav class="navbar is-info"> 
+      <div class="navbar-brand">  
+        <%= link_to root_path, class: "navbar-item"%> 
+          <h1 class="title is-5">Twittter</h1>
+        <% end %> 
+        <div class="navbar-burger burger" data-target="navbarExample"> 
+          <span></span> 
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="navbar-menu" id="navbarExample"> 
+        <div class="navbar-end"> 
+          <div class="fiels is-grouped"> 
+            <p class="control"> 
+              <%= link_to 'New Tweet', new_tweeet_path, class: "button is-info is-inverted" %> 
+            </p>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <%= yield %>
+  </body>
+</html>:
+
+Started POST "/__better_errors/7116a4efe7af2957/variables" for ::1 at 2021-10-05 20:31:23 +0200
+Started GET "/" for ::1 at 2021-10-05 20:34:51 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mTweeet Load (1.6ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets"[0m
+  ↳ app/views/tweeets/index.html.erb:14
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 10.4ms | Allocations: 1092)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 2073.8ms | Allocations: 15910)
+Completed 200 OK in 2078ms (Views: 2074.5ms | ActiveRecord: 1.6ms | Allocations: 16353)
+
+
+Started GET "/" for ::1 at 2021-10-05 20:35:09 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mTweeet Load (2.5ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets"[0m
+  ↳ app/views/tweeets/index.html.erb:14
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 19.2ms | Allocations: 1098)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 291.9ms | Allocations: 4768)
+Completed 200 OK in 296ms (Views: 292.0ms | ActiveRecord: 2.5ms | Allocations: 5266)
+
+
+Started GET "/" for ::1 at 2021-10-05 20:35:11 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mTweeet Load (2.1ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets"[0m
+  ↳ app/views/tweeets/index.html.erb:14
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 13.7ms | Allocations: 1098)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 323.5ms | Allocations: 4748)
+Completed 200 OK in 327ms (Views: 323.7ms | ActiveRecord: 2.1ms | Allocations: 5218)
+
+
+Started GET "/" for ::1 at 2021-10-05 20:35:42 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mTweeet Load (2.4ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets"[0m
+  ↳ app/views/tweeets/index.html.erb:14
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 143.5ms | Allocations: 1092)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 452.7ms | Allocations: 4739)
+Completed 200 OK in 456ms (Views: 452.1ms | ActiveRecord: 2.4ms | Allocations: 5199)
+
+
+Started GET "/" for ::1 at 2021-10-05 20:35:49 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mTweeet Load (8.6ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets"[0m
+  ↳ app/views/tweeets/index.html.erb:14
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 30.8ms | Allocations: 1098)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 360.4ms | Allocations: 4748)
+Completed 200 OK in 366ms (Views: 355.5ms | ActiveRecord: 8.6ms | Allocations: 5218)
+
+
+Started GET "/" for ::1 at 2021-10-05 20:36:18 +0200
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mTweeet Load (2.4ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets"[0m
+  ↳ app/views/tweeets/index.html.erb:14
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 36.3ms | Allocations: 5302)
+  Rendered layout layouts/application.html.erb (Duration: 53.1ms | Allocations: 8785)
+Completed 500 Internal Server Error in 147ms (ActiveRecord: 12.2ms | Allocations: 13530)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>Twittter</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body> 
+    <% if flash[:notice] %> 
+      <div class="notification is-primary global-notification">
+  			<p class="notice"><%= notice %></p>
+  		</div>
+    <%end%>
+    <% if flash[:alert] %> 
+        <div class="notification is-danger global-notification"> 
+          <p class="alert"><%= alert %>
+        </div>
+    <% end %> 
+    <nav class="navbar is-info"> 
+      <div class="navbar-brand">  
+        <%= link_to root_path, class: "navbar-item"%> 
+          <h1 class="title is-5">Twittter</h1>
+        <% end %> 
+        <div class="navbar-burger burger" data-target="navbarExample"> 
+          <span></span> 
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="navbar-menu" id="navbarExample"> 
+        <div class="navbar-end"> 
+          <div class="fiels is-grouped"> 
+            <p class="control"> 
+              <%= link_to 'New Tweet', new_tweeet_path, class: "button is-info is-inverted" %> 
+            </p>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <%= yield %>
+  </body>
+</html>:
+
+Started POST "/__better_errors/474300d47da6168e/variables" for ::1 at 2021-10-05 20:36:19 +0200
+Started GET "/" for ::1 at 2021-10-05 20:37:41 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mTweeet Load (2.4ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets"[0m
+  ↳ app/views/tweeets/index.html.erb:14
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 1092)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 697.0ms | Allocations: 7454)
+Completed 200 OK in 704ms (Views: 699.5ms | ActiveRecord: 2.4ms | Allocations: 7950)
+
+
+Started GET "/" for ::1 at 2021-10-05 20:37:54 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mTweeet Load (4.6ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets"[0m
+  ↳ app/views/tweeets/index.html.erb:14
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 16.4ms | Allocations: 1098)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 238.2ms | Allocations: 4749)
+Completed 200 OK in 243ms (Views: 236.0ms | ActiveRecord: 4.6ms | Allocations: 5223)
+
+
+Started GET "/tweeets/new" for ::1 at 2021-10-05 20:37:56 +0200
+Processing by TweeetsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/new.html.erb within layouts/application
+  Rendered tweeets/_form.html.erb (Duration: 308.2ms | Allocations: 4113)
+  Rendered tweeets/new.html.erb within layouts/application (Duration: 334.8ms | Allocations: 4559)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 513.4ms | Allocations: 8213)
+Completed 200 OK in 542ms (Views: 517.9ms | ActiveRecord: 0.0ms | Allocations: 8869)
+
+
+Started POST "/tweeets" for ::1 at 2021-10-05 20:38:00 +0200
+Processing by TweeetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tweeet"=>{"tweeet"=>"ssss"}, "commit"=>"Create Tweeet"}
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweeets_controller.rb:27:in `block in create'
+  [1m[36mTweeet Create (39.7ms)[0m  [1m[32mINSERT INTO "tweeets" ("tweeet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["tweeet", "ssss"], ["created_at", "2021-10-05 18:38:00.576573"], ["updated_at", "2021-10-05 18:38:00.576573"]]
+  ↳ app/controllers/tweeets_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (34.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweeets_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/tweeets/3
+Completed 302 Found in 94ms (ActiveRecord: 76.5ms | Allocations: 3434)
+
+
+Started GET "/tweeets/3" for ::1 at 2021-10-05 20:38:00 +0200
+Processing by TweeetsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTweeet Load (1.8ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" WHERE "tweeets"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/tweeets_controller.rb:62:in `set_tweeet'
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/show.html.erb within layouts/application
+  Rendered tweeets/show.html.erb within layouts/application (Duration: 6.4ms | Allocations: 213)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 164.5ms | Allocations: 3866)
+Completed 200 OK in 200ms (Views: 166.9ms | ActiveRecord: 3.7ms | Allocations: 5893)
+
+
+Started GET "/tweeets/3" for ::1 at 2021-10-05 20:40:11 +0200
+Processing by TweeetsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTweeet Load (2.6ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" WHERE "tweeets"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/tweeets_controller.rb:62:in `set_tweeet'
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/show.html.erb within layouts/application
+  Rendered tweeets/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 73)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 397.6ms | Allocations: 3722)
+Completed 200 OK in 421ms (Views: 401.3ms | ActiveRecord: 2.6ms | Allocations: 4887)
+
+
+Started GET "/tweeets/3" for ::1 at 2021-10-05 20:43:14 +0200
+Processing by TweeetsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTweeet Load (2.3ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" WHERE "tweeets"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/tweeets_controller.rb:62:in `set_tweeet'
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/show.html.erb within layouts/application
+  Rendered tweeets/show.html.erb within layouts/application (Duration: 3.1ms | Allocations: 73)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 327.5ms | Allocations: 3736)
+Completed 200 OK in 368ms (Views: 329.9ms | ActiveRecord: 2.3ms | Allocations: 4903)
+
+
+Started GET "/tweeets/new" for ::1 at 2021-10-05 20:43:18 +0200
+Processing by TweeetsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/new.html.erb within layouts/application
+  Rendered tweeets/_form.html.erb (Duration: 2.6ms | Allocations: 465)
+  Rendered tweeets/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 579)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 244.3ms | Allocations: 4240)
+Completed 200 OK in 247ms (Views: 246.0ms | ActiveRecord: 0.0ms | Allocations: 4712)
+
+
+Started GET "/" for ::1 at 2021-10-05 20:43:55 +0200
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mTweeet Load (2.1ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets"[0m
+  ↳ app/views/tweeets/index.html.erb:14
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 34.3ms | Allocations: 5579)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 401.2ms | Allocations: 14337)
+Completed 200 OK in 505ms (Views: 416.2ms | ActiveRecord: 13.5ms | Allocations: 19116)
+
+
+Started GET "/" for ::1 at 2021-10-05 20:43:56 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mTweeet Load (10.4ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets"[0m
+  ↳ app/views/tweeets/index.html.erb:14
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 18.4ms | Allocations: 1201)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 218.9ms | Allocations: 4864)
+Completed 200 OK in 223ms (Views: 210.8ms | ActiveRecord: 10.4ms | Allocations: 5337)
+
+
+Started GET "/" for ::1 at 2021-10-05 20:43:59 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mTweeet Load (1.3ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets"[0m
+  ↳ app/views/tweeets/index.html.erb:14
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1193)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 163.8ms | Allocations: 4840)
+Completed 200 OK in 167ms (Views: 164.5ms | ActiveRecord: 1.3ms | Allocations: 5305)
+
+
+Started GET "/" for ::1 at 2021-10-05 20:45:07 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mTweeet Load (1.5ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets"[0m
+  ↳ app/views/tweeets/index.html.erb:14
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 12.4ms | Allocations: 1200)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19514.9ms | Allocations: 116982)
+Completed 200 OK in 19521ms (Views: 19517.4ms | ActiveRecord: 1.5ms | Allocations: 118624)
+
+
+Started GET "/" for ::1 at 2021-10-05 20:46:02 +0200
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mTweeet Load (2.1ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets"[0m
+  ↳ app/views/tweeets/index.html.erb:14
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 37.1ms | Allocations: 5556)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 1219.1ms | Allocations: 19005)
+Completed 200 OK in 1314ms (Views: 1234.3ms | ActiveRecord: 12.4ms | Allocations: 23980)
+
+
+Started GET "/" for ::1 at 2021-10-05 20:51:32 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mTweeet Load (3.1ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets"[0m
+  ↳ app/views/tweeets/index.html.erb:14
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 15.4ms | Allocations: 1201)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15453.8ms | Allocations: 111812)
+Completed 200 OK in 15460ms (Views: 15454.0ms | ActiveRecord: 3.1ms | Allocations: 112286)
+
+
+Started GET "/" for ::1 at 2021-10-05 20:52:04 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mTweeet Load (1.7ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets"[0m
+  ↳ app/views/tweeets/index.html.erb:14
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 11.4ms | Allocations: 1193)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14685.1ms | Allocations: 114559)
+Completed 200 OK in 14689ms (Views: 14685.6ms | ActiveRecord: 1.7ms | Allocations: 115020)
+
+
+Started GET "/" for ::1 at 2021-10-05 20:52:38 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mTweeet Load (2.5ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets"[0m
+  ↳ app/views/tweeets/index.html.erb:14
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 13.3ms | Allocations: 1200)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15066.1ms | Allocations: 114561)
+Completed 200 OK in 15070ms (Views: 15066.1ms | ActiveRecord: 2.5ms | Allocations: 115032)
+
+
+Started GET "/" for ::1 at 2021-10-05 20:52:56 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mTweeet Load (2.6ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets"[0m
+  ↳ app/views/tweeets/index.html.erb:14
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 11.1ms | Allocations: 1200)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 238.8ms | Allocations: 5229)
+Completed 200 OK in 245ms (Views: 240.4ms | ActiveRecord: 2.6ms | Allocations: 5702)
+
+
+Started GET "/tweeets/1" for ::1 at 2021-10-05 20:52:58 +0200
+Processing by TweeetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTweeet Load (2.3ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" WHERE "tweeets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tweeets_controller.rb:62:in `set_tweeet'
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/show.html.erb within layouts/application
+  Rendered tweeets/show.html.erb within layouts/application (Duration: 7.6ms | Allocations: 217)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 275.9ms | Allocations: 4193)
+Completed 200 OK in 458ms (Views: 278.3ms | ActiveRecord: 4.3ms | Allocations: 8924)
+
+
