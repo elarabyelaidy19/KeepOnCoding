@@ -22,7 +22,11 @@
   * sign_up, update_params strong 
   * migrate 
   * devise views registration, session, password   
-  * create association and 
+  * create association  
+  * devise current_user
+  * update views 
+  
+
   
 
 # 

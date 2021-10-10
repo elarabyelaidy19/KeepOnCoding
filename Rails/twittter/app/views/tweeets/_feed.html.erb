@@ -24,11 +24,11 @@
 
         <div class="media-content">
           <div class="content">
-            <strong> Elaraby </strong><br />
-            <small> Elaidy </small><br/>
+            <strong> <%= tweeet.user.name %> </strong><br />
+            <small> <%= tweeet.user.name %> </small><br/>
             <p><%= tweeet.tweeet %></p>
           </div>
-
+          <% if user_signed_in? %>
           <nav class="level"> 
             <div class="level-left is-mobile"> 
               <%= link_to tweeet, class: "level-item" do %> 
@@ -42,6 +42,7 @@
               <% end %>
             </div>
           </nav>
+          <% end %>
         </div> 
 
 
