@@ -15,3 +15,7 @@
   * rails g devise:install 
   * add flash[alert], [notice] to view/layout/application 
   * rails g devise:views 
+  * rails generate devise MODL_NAME 
+  * rial db:migrate 
+  
+# 
