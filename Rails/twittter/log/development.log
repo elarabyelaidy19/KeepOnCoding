@@ -2667,3 +2667,159 @@ Migrating to DeviseCreateUsers (20211010210652)
   [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(150862528989107565)[0m
   [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2021-10-10 23:10:15 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 0.1ms | Allocations: 7)
+  Rendered tweeets/_form.html.erb (Duration: 7.6ms | Allocations: 4072)
+  [1m[36mTweeet Load (2.6ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:15
+  Rendered tweeets/_feed.html.erb (Duration: 21.6ms | Allocations: 7249)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 26.1ms | Allocations: 7536)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 229.9ms | Allocations: 12150)
+Completed 200 OK in 285ms (Views: 229.7ms | ActiveRecord: 21.4ms | Allocations: 17920)
+
+
+Started GET "/users/signup" for ::1 at 2021-10-10 23:10:35 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users/signup"):
+  
+Started GET "/users/sign_up" for ::1 at 2021-10-10 23:11:05 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 68.6ms | Allocations: 5593)
+  Rendered layout layouts/application.html.erb (Duration: 70.4ms | Allocations: 5698)
+Completed 500 Internal Server Error in 118ms (ActiveRecord: 11.7ms | Allocations: 11878)
+
+
+
+NoMethodError - undefined method `registration_path' for #<ActionView::Base:0x0000000000af28>:
+  app/views/devise/registrations/new.html.erb:3
+
+Started POST "/__better_errors/1ad62c7dfe9e43e4/variables" for ::1 at 2021-10-10 23:11:06 +0200
+Started GET "/users/sign_up" for 127.0.0.1 at 2021-10-10 23:12:26 +0200
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 282.3ms | Allocations: 2781)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 723.8ms | Allocations: 21966)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 2574.0ms | Allocations: 35134)
+Completed 200 OK in 2764ms (Views: 2642.8ms | ActiveRecord: 14.2ms | Allocations: 45047)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(150862528989107565)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(150862528989107565)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(150862528989107565)[0m
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddFieldsToUsers (20211010213138)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.5ms)[0m  [1m[35mALTER TABLE "users" ADD "name" character varying[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "username" character varying[0m
+  [1m[35m (89.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (32.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20211010213138"]]
+  [1m[36mTRANSACTION (33.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(150862528989107565)[0m
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/sign_up" for ::1 at 2021-10-10 23:47:12 +0200
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 8.2ms | Allocations: 538)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 416.3ms | Allocations: 24086)
+Started GET "/" for ::1 at 2021-10-10 23:47:27 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 7.8ms | Allocations: 100)
+  Rendered tweeets/_form.html.erb (Duration: 58.3ms | Allocations: 4538)
+  [1m[36mTweeet Load (11.8ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:15
+  Rendered tweeets/_feed.html.erb (Duration: 141.7ms | Allocations: 8301)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 10.0ms | Allocations: 143)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 258.2ms | Allocations: 9773)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25999.0ms | Allocations: 217861)
+Completed 200 OK in 26191ms (Views: 26108.6ms | ActiveRecord: 10.3ms | Allocations: 228668)
+
+
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15018.2ms | Allocations: 141775)
+Completed 200 OK in 15250ms (Views: 15024.7ms | ActiveRecord: 62.2ms | Allocations: 148924)
+
+
+Started GET "/" for ::1 at 2021-10-10 23:47:47 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered tweeets/_form.html.erb (Duration: 22.0ms | Allocations: 3970)
+  [1m[36mTweeet Load (3.9ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:15
+  Rendered tweeets/_feed.html.erb (Duration: 68.4ms | Allocations: 7040)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 75.3ms | Allocations: 7330)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 471.1ms | Allocations: 12068)
+Completed 200 OK in 481ms (Views: 473.1ms | ActiveRecord: 3.9ms | Allocations: 12703)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-10-10 23:48:06 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 72)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 53.8ms | Allocations: 11956)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 250.5ms | Allocations: 16583)
+Completed 200 OK in 255ms (Views: 252.9ms | ActiveRecord: 0.0ms | Allocations: 17189)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-10-10 23:56:45 +0200
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 5.6ms | Allocations: 598)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 737.9ms | Allocations: 24437)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 1439.2ms | Allocations: 32719)
+Completed 200 OK in 1632ms (Views: 1513.6ms | ActiveRecord: 8.1ms | Allocations: 44204)
+
+
+Started GET "/users/password/new" for ::1 at 2021-10-10 23:56:51 +0200
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 167)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 60.6ms | Allocations: 4624)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 283.1ms | Allocations: 9343)
+Completed 200 OK in 325ms (Views: 293.3ms | ActiveRecord: 0.0ms | Allocations: 10765)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(150862528989107565)[0m
+  [1m[35m (5.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserIdToTweeet (20211010220533)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "tweeets" ADD "user_id" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20211010220533"]]
+  [1m[36mTRANSACTION (48.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(150862528989107565)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTweeet Load (1.2ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets"[0m
+  [1m[36mTweeet Load (0.9ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
