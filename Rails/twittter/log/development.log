@@ -1894,3 +1894,776 @@ Processing by TweeetsController#index as HTML
 Completed 200 OK in 394ms (Views: 386.9ms | ActiveRecord: 2.8ms | Allocations: 10707)
 
 
+Started GET "/" for ::1 at 2021-10-10 21:48:27 +0200
+Started GET "/" for ::1 at 2021-10-10 21:48:27 +0200
+
+ActiveRecord::ConnectionNotEstablished - could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?:
+
+
+ActiveRecord::ConnectionNotEstablished - could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?:
+
+Started POST "/__better_errors/60b43bb064c6f8ea/variables" for ::1 at 2021-10-10 21:48:28 +0200
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE "twittter_development" ENCODING = 'unicode'[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE DATABASE "twittter_test" ENCODING = 'unicode'[0m
+  [1m[35m (17.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (40.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35mSQL (30.8ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (215.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "tweeets" CASCADE[0m
+  [1m[35m (405.3ms)[0m  [1m[35mCREATE TABLE "tweeets" ("id" bigserial primary key, "tweeet" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "eacfa0ae4756efefe94ef07f84f88d4887be4a2e"], ["created_at", "2021-10-10 19:53:25.808119"], ["updated_at", "2021-10-10 19:53:25.808119"]]
+  [1m[36mTRANSACTION (22.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (13.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "tweeets" CASCADE[0m
+  [1m[35m (642.0ms)[0m  [1m[35mCREATE TABLE "tweeets" ("id" bigserial primary key, "tweeet" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (161.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (21.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20211004153305)[0m
+  [1m[35m (182.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-10-10 19:53:27.219145"], ["updated_at", "2021-10-10 19:53:27.219145"]]
+  [1m[36mTRANSACTION (19.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2021-10-10 19:53:27.249486"], ["key", "environment"]]
+  [1m[36mTRANSACTION (23.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "eacfa0ae4756efefe94ef07f84f88d4887be4a2e"], ["created_at", "2021-10-10 19:53:27.287347"], ["updated_at", "2021-10-10 19:53:27.287347"]]
+  [1m[36mTRANSACTION (26.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2021-10-10 21:54:15 +0200
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 15.0ms | Allocations: 439)
+  Rendered tweeets/_form.html.erb (Duration: 1324.7ms | Allocations: 12496)
+  [1m[36mTweeet Load (2.5ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:15
+  Rendered tweeets/_feed.html.erb (Duration: 1384.6ms | Allocations: 13899)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 13.7ms | Allocations: 131)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 1499.7ms | Allocations: 16184)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 2795.5ms | Allocations: 24078)
+Completed 200 OK in 3369ms (Views: 2914.4ms | ActiveRecord: 43.9ms | Allocations: 34220)
+
+
+Started POST "/tweeets" for ::1 at 2021-10-10 21:54:28 +0200
+Processing by TweeetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tweeet"=>{"tweeet"=>""}, "commit"=>"Create Tweeet"}
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTweeet Create (1.8ms)[0m  [1m[32mINSERT INTO "tweeets" ("tweeet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["tweeet", ""], ["created_at", "2021-10-10 19:54:28.664385"], ["updated_at", "2021-10-10 19:54:28.664385"]]
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (20.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+Redirected to http://localhost:3000/tweeets/1
+Completed 302 Found in 43ms (ActiveRecord: 23.5ms | Allocations: 3479)
+
+
+Started GET "/tweeets/1" for ::1 at 2021-10-10 21:54:28 +0200
+Processing by TweeetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTweeet Load (2.2ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" WHERE "tweeets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tweeets_controller.rb:63:in `set_tweeet'
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/show.html.erb within layouts/application
+  Rendered tweeets/show.html.erb within layouts/application (Duration: 18.1ms | Allocations: 229)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 229.3ms | Allocations: 4862)
+Completed 200 OK in 272ms (Views: 231.5ms | ActiveRecord: 4.4ms | Allocations: 6909)
+
+
+Started GET "/" for ::1 at 2021-10-10 21:54:32 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered tweeets/_form.html.erb (Duration: 16.8ms | Allocations: 3937)
+  [1m[36mTweeet Load (2.8ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:15
+  Rendered tweeets/_feed.html.erb (Duration: 35.1ms | Allocations: 4903)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 49.0ms | Allocations: 5189)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 281.9ms | Allocations: 9798)
+Completed 200 OK in 289ms (Views: 281.7ms | ActiveRecord: 2.8ms | Allocations: 10424)
+
+
+Started POST "/tweeets" for ::1 at 2021-10-10 21:54:48 +0200
+Processing by TweeetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tweeet"=>{"tweeet"=>"wwelcome "}, "commit"=>"Create Tweeet"}
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTweeet Create (2.0ms)[0m  [1m[32mINSERT INTO "tweeets" ("tweeet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["tweeet", "wwelcome "], ["created_at", "2021-10-10 19:54:48.928969"], ["updated_at", "2021-10-10 19:54:48.928969"]]
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (55.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+Redirected to http://localhost:3000/tweeets/2
+Completed 302 Found in 79ms (ActiveRecord: 60.2ms | Allocations: 2717)
+
+
+Started GET "/tweeets/2" for ::1 at 2021-10-10 21:54:49 +0200
+Processing by TweeetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTweeet Load (1.3ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" WHERE "tweeets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tweeets_controller.rb:63:in `set_tweeet'
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/show.html.erb within layouts/application
+  Rendered tweeets/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 75)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 179.5ms | Allocations: 4704)
+Completed 200 OK in 191ms (Views: 182.4ms | ActiveRecord: 1.3ms | Allocations: 5881)
+
+
+Started GET "/" for ::1 at 2021-10-10 21:54:51 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered tweeets/_form.html.erb (Duration: 27.1ms | Allocations: 3936)
+  [1m[36mTweeet Load (4.0ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:15
+  Rendered tweeets/_feed.html.erb (Duration: 49.0ms | Allocations: 5002)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 57.4ms | Allocations: 5287)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 353.0ms | Allocations: 9907)
+Completed 200 OK in 360ms (Views: 351.3ms | ActiveRecord: 4.0ms | Allocations: 10530)
+
+
+Started GET "/" for ::1 at 2021-10-10 21:55:54 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered tweeets/_form.html.erb (Duration: 41.0ms | Allocations: 3938)
+  [1m[36mTweeet Load (2.3ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:15
+  Rendered tweeets/_feed.html.erb (Duration: 53.2ms | Allocations: 4994)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 65.2ms | Allocations: 5276)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 320.6ms | Allocations: 9831)
+Completed 200 OK in 328ms (Views: 320.8ms | ActiveRecord: 2.3ms | Allocations: 10449)
+
+
+Started POST "/tweeets" for ::1 at 2021-10-10 21:55:59 +0200
+Processing by TweeetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tweeet"=>{"tweeet"=>"qqqqqqqqqqqqqq"}, "commit"=>"Create Tweeet"}
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTweeet Create (1.7ms)[0m  [1m[32mINSERT INTO "tweeets" ("tweeet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["tweeet", "qqqqqqqqqqqqqq"], ["created_at", "2021-10-10 19:55:59.435660"], ["updated_at", "2021-10-10 19:55:59.435660"]]
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (29.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+Redirected to http://localhost:3000/tweeets/3
+Completed 302 Found in 47ms (ActiveRecord: 32.2ms | Allocations: 2696)
+
+
+Started GET "/tweeets/3" for ::1 at 2021-10-10 21:55:59 +0200
+Processing by TweeetsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTweeet Load (1.3ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" WHERE "tweeets"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/tweeets_controller.rb:63:in `set_tweeet'
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/show.html.erb within layouts/application
+  Rendered tweeets/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 75)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 184.9ms | Allocations: 4704)
+Completed 200 OK in 194ms (Views: 187.0ms | ActiveRecord: 1.3ms | Allocations: 5881)
+
+
+Started GET "/" for ::1 at 2021-10-10 21:56:03 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered tweeets/_form.html.erb (Duration: 21.5ms | Allocations: 3937)
+  [1m[36mTweeet Load (5.1ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:15
+  Rendered tweeets/_feed.html.erb (Duration: 41.0ms | Allocations: 5131)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 49.2ms | Allocations: 5424)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 274.3ms | Allocations: 10059)
+Completed 200 OK in 289ms (Views: 280.0ms | ActiveRecord: 5.1ms | Allocations: 10683)
+
+
+Started GET "/" for ::1 at 2021-10-10 21:56:17 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered tweeets/_form.html.erb (Duration: 26.1ms | Allocations: 3936)
+  [1m[36mTweeet Load (2.7ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:15
+  Rendered tweeets/_feed.html.erb (Duration: 47.1ms | Allocations: 5124)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 60.7ms | Allocations: 5406)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 372.3ms | Allocations: 9925)
+Completed 200 OK in 379ms (Views: 372.2ms | ActiveRecord: 2.7ms | Allocations: 10552)
+
+
+Started POST "/tweeets" for ::1 at 2021-10-10 21:56:21 +0200
+Processing by TweeetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tweeet"=>{"tweeet"=>"sssssssssssssss"}, "commit"=>"Create Tweeet"}
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTweeet Create (2.1ms)[0m  [1m[32mINSERT INTO "tweeets" ("tweeet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["tweeet", "sssssssssssssss"], ["created_at", "2021-10-10 19:56:21.915775"], ["updated_at", "2021-10-10 19:56:21.915775"]]
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (44.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+Redirected to http://localhost:3000/tweeets/4
+Completed 302 Found in 70ms (ActiveRecord: 48.5ms | Allocations: 2672)
+
+
+Started GET "/tweeets/4" for ::1 at 2021-10-10 21:56:22 +0200
+Processing by TweeetsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTweeet Load (1.8ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" WHERE "tweeets"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/tweeets_controller.rb:63:in `set_tweeet'
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/show.html.erb within layouts/application
+  Rendered tweeets/show.html.erb within layouts/application (Duration: 2.4ms | Allocations: 75)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 210.7ms | Allocations: 4702)
+Completed 200 OK in 226ms (Views: 215.8ms | ActiveRecord: 1.8ms | Allocations: 5876)
+
+
+Started GET "/" for ::1 at 2021-10-10 21:56:33 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered tweeets/_form.html.erb (Duration: 12.2ms | Allocations: 3936)
+  [1m[36mTweeet Load (3.2ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:15
+  Rendered tweeets/_feed.html.erb (Duration: 43.4ms | Allocations: 5253)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 56.0ms | Allocations: 5538)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 370.4ms | Allocations: 10159)
+Completed 200 OK in 379ms (Views: 372.3ms | ActiveRecord: 3.2ms | Allocations: 10782)
+
+
+Started POST "/tweeets" for ::1 at 2021-10-10 21:57:01 +0200
+Processing by TweeetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tweeet"=>{"tweeet"=>"sssssssss"}, "commit"=>"Create Tweeet"}
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTweeet Create (1.6ms)[0m  [1m[32mINSERT INTO "tweeets" ("tweeet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["tweeet", "sssssssss"], ["created_at", "2021-10-10 19:57:01.539238"], ["updated_at", "2021-10-10 19:57:01.539238"]]
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (75.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+Redirected to http://localhost:3000/tweeets/5
+Completed 302 Found in 96ms (ActiveRecord: 78.7ms | Allocations: 2694)
+
+
+Started GET "/tweeets/5" for ::1 at 2021-10-10 21:57:01 +0200
+Processing by TweeetsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTweeet Load (1.7ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" WHERE "tweeets"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tweeets_controller.rb:63:in `set_tweeet'
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/show.html.erb within layouts/application
+  Rendered tweeets/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 75)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 185.1ms | Allocations: 4702)
+Completed 200 OK in 196ms (Views: 187.0ms | ActiveRecord: 1.7ms | Allocations: 5876)
+
+
+Started GET "/" for ::1 at 2021-10-10 21:57:32 +0200
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 4.4ms | Allocations: 276)
+  Rendered tweeets/_form.html.erb (Duration: 305.7ms | Allocations: 13490)
+  [1m[36mTweeet Load (3.1ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:15
+  Rendered tweeets/_feed.html.erb (Duration: 329.5ms | Allocations: 16105)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 4.0ms | Allocations: 284)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 380.7ms | Allocations: 18770)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 963.8ms | Allocations: 26794)
+Completed 200 OK in 1079ms (Views: 989.6ms | ActiveRecord: 10.8ms | Allocations: 34752)
+
+
+Started POST "/tweeets" for ::1 at 2021-10-10 21:57:37 +0200
+Processing by TweeetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tweeet"=>{"tweeet"=>"sssssssssssssss"}, "commit"=>"Create Tweeet"}
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTweeet Create (4.9ms)[0m  [1m[32mINSERT INTO "tweeets" ("tweeet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["tweeet", "sssssssssssssss"], ["created_at", "2021-10-10 19:57:37.461263"], ["updated_at", "2021-10-10 19:57:37.461263"]]
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (40.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+Redirected to 
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 46.5ms | Allocations: 5918)
+
+
+
+NoMethodError - undefined method `index_url' for #<TweeetsController:0x00000000009100>
+Did you mean?  index:
+  app/controllers/tweeets_controller.rb:30:in `block in create'
+  app/controllers/tweeets_controller.rb:27:in `create'
+
+Started POST "/__better_errors/4125aab89fe75833/variables" for ::1 at 2021-10-10 21:57:37 +0200
+Started POST "/tweeets" for ::1 at 2021-10-10 21:58:18 +0200
+Processing by TweeetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tweeet"=>{"tweeet"=>"sssssssssssssss"}, "commit"=>"Create Tweeet"}
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTweeet Create (2.3ms)[0m  [1m[32mINSERT INTO "tweeets" ("tweeet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["tweeet", "sssssssssssssss"], ["created_at", "2021-10-10 19:58:18.785261"], ["updated_at", "2021-10-10 19:58:18.785261"]]
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (34.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+Redirected to 
+Completed 500 Internal Server Error in 221ms (ActiveRecord: 38.9ms | Allocations: 5295)
+
+
+
+NoMethodError - undefined method `index_url' for #<TweeetsController:0x000000000091f0>
+Did you mean?  index:
+  app/controllers/tweeets_controller.rb:30:in `block in create'
+  app/controllers/tweeets_controller.rb:27:in `create'
+
+Started POST "/__better_errors/7c7a87eae322a3a9/variables" for ::1 at 2021-10-10 21:58:19 +0200
+Started POST "/tweeets" for ::1 at 2021-10-10 21:59:01 +0200
+Processing by TweeetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tweeet"=>{"tweeet"=>"sssssssssssssss"}, "commit"=>"Create Tweeet"}
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTweeet Create (3.1ms)[0m  [1m[32mINSERT INTO "tweeets" ("tweeet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["tweeet", "sssssssssssssss"], ["created_at", "2021-10-10 19:59:01.599302"], ["updated_at", "2021-10-10 19:59:01.599302"]]
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (32.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+Redirected to 
+Completed 500 Internal Server Error in 116ms (ActiveRecord: 37.8ms | Allocations: 5245)
+
+
+
+NoMethodError - undefined method `index_url' for #<TweeetsController:0x00000000009290>
+Did you mean?  index:
+  app/controllers/tweeets_controller.rb:30:in `block in create'
+  app/controllers/tweeets_controller.rb:27:in `create'
+
+Started POST "/__better_errors/1bfff3285b7c974d/variables" for ::1 at 2021-10-10 21:59:02 +0200
+Started POST "/tweeets" for ::1 at 2021-10-10 21:59:49 +0200
+Processing by TweeetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tweeet"=>{"tweeet"=>"sssssssssssssss"}, "commit"=>"Create Tweeet"}
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTweeet Create (3.0ms)[0m  [1m[32mINSERT INTO "tweeets" ("tweeet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["tweeet", "sssssssssssssss"], ["created_at", "2021-10-10 19:59:49.557402"], ["updated_at", "2021-10-10 19:59:49.557402"]]
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (24.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+Redirected to 
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 29.4ms | Allocations: 5205)
+
+
+
+NoMethodError - undefined method `index_url' for #<TweeetsController:0x00000000009330>
+Did you mean?  index:
+  app/controllers/tweeets_controller.rb:30:in `block in create'
+  app/controllers/tweeets_controller.rb:27:in `create'
+
+Started POST "/__better_errors/c16b9ce57f4ac80a/variables" for ::1 at 2021-10-10 21:59:50 +0200
+Started POST "/tweeets" for ::1 at 2021-10-10 22:02:24 +0200
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TweeetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tweeet"=>{"tweeet"=>"sssssssssssssss"}, "commit"=>"Create Tweeet"}
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTweeet Create (3.5ms)[0m  [1m[32mINSERT INTO "tweeets" ("tweeet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["tweeet", "sssssssssssssss"], ["created_at", "2021-10-10 20:02:25.476678"], ["updated_at", "2021-10-10 20:02:25.476678"]]
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (37.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+Redirected to http://localhost:3000/tweeets/10
+Completed 302 Found in 137ms (ActiveRecord: 51.7ms | Allocations: 7993)
+
+
+Started GET "/tweeets/10" for ::1 at 2021-10-10 22:02:25 +0200
+Processing by TweeetsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mTweeet Load (8.3ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" WHERE "tweeets"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/tweeets_controller.rb:64:in `set_tweeet'
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/show.html.erb within layouts/application
+  Rendered tweeets/show.html.erb within layouts/application (Duration: 15.8ms | Allocations: 446)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 590.3ms | Allocations: 13521)
+Completed 200 OK in 702ms (Views: 628.4ms | ActiveRecord: 10.1ms | Allocations: 17463)
+
+
+Started GET "/" for ::1 at 2021-10-10 22:02:29 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 7.4ms | Allocations: 98)
+  Rendered tweeets/_form.html.erb (Duration: 361.7ms | Allocations: 12171)
+  [1m[36mTweeet Load (3.2ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:15
+  Rendered tweeets/_feed.html.erb (Duration: 393.1ms | Allocations: 14746)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 3.8ms | Allocations: 131)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 459.9ms | Allocations: 15878)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 646.0ms | Allocations: 20397)
+Completed 200 OK in 677ms (Views: 645.3ms | ActiveRecord: 3.2ms | Allocations: 21204)
+
+
+Started POST "/tweeets" for ::1 at 2021-10-10 22:02:33 +0200
+Processing by TweeetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tweeet"=>{"tweeet"=>"sssssssssssssssssssssssssssss"}, "commit"=>"Create Tweeet"}
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTweeet Create (4.2ms)[0m  [1m[32mINSERT INTO "tweeets" ("tweeet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["tweeet", "sssssssssssssssssssssssssssss"], ["created_at", "2021-10-10 20:02:33.264763"], ["updated_at", "2021-10-10 20:02:33.264763"]]
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (49.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+Redirected to http://localhost:3000/tweeets/11
+Completed 302 Found in 80ms (ActiveRecord: 56.1ms | Allocations: 2739)
+
+
+Started GET "/tweeets/11" for ::1 at 2021-10-10 22:02:33 +0200
+Processing by TweeetsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mTweeet Load (1.2ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" WHERE "tweeets"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/tweeets_controller.rb:64:in `set_tweeet'
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/show.html.erb within layouts/application
+  Rendered tweeets/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 76)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 213.6ms | Allocations: 4707)
+Completed 200 OK in 223ms (Views: 216.7ms | ActiveRecord: 1.2ms | Allocations: 5885)
+
+
+Started GET "/" for ::1 at 2021-10-10 22:35:17 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered tweeets/_form.html.erb (Duration: 35.1ms | Allocations: 3949)
+  [1m[36mTweeet Load (3.5ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:15
+  Rendered tweeets/_feed.html.erb (Duration: 67.9ms | Allocations: 6200)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 72.0ms | Allocations: 6482)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 256.2ms | Allocations: 11011)
+Completed 200 OK in 332ms (Views: 265.2ms | ActiveRecord: 44.5ms | Allocations: 14642)
+
+
+Started GET "/" for ::1 at 2021-10-10 22:36:00 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered tweeets/_form.html.erb (Duration: 14.1ms | Allocations: 3948)
+  [1m[36mTweeet Load (2.7ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:15
+  Rendered tweeets/_feed.html.erb (Duration: 44.0ms | Allocations: 6132)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 48.5ms | Allocations: 6414)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 246.6ms | Allocations: 10931)
+Completed 200 OK in 259ms (Views: 251.6ms | ActiveRecord: 2.7ms | Allocations: 11551)
+
+
+Started POST "/tweeets" for ::1 at 2021-10-10 22:36:11 +0200
+Processing by TweeetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tweeet"=>{"tweeet"=>"ghthhh"}, "commit"=>"Create Tweeet"}
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTweeet Create (3.3ms)[0m  [1m[32mINSERT INTO "tweeets" ("tweeet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["tweeet", "ghthhh"], ["created_at", "2021-10-10 20:36:11.504317"], ["updated_at", "2021-10-10 20:36:11.504317"]]
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (34.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+Redirected to http://localhost:3000/tweeets/12
+Completed 302 Found in 58ms (ActiveRecord: 38.9ms | Allocations: 2708)
+
+
+Started GET "/tweeets/12" for ::1 at 2021-10-10 22:36:11 +0200
+Processing by TweeetsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTweeet Load (0.9ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" WHERE "tweeets"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/tweeets_controller.rb:64:in `set_tweeet'
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/show.html.erb within layouts/application
+  Rendered tweeets/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 75)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 169.8ms | Allocations: 4704)
+Completed 200 OK in 180ms (Views: 171.4ms | ActiveRecord: 2.1ms | Allocations: 6056)
+
+
+Started GET "/" for ::1 at 2021-10-10 22:36:13 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered tweeets/_form.html.erb (Duration: 24.4ms | Allocations: 3948)
+  [1m[36mTweeet Load (10.8ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:15
+  Rendered tweeets/_feed.html.erb (Duration: 56.2ms | Allocations: 6270)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 64.3ms | Allocations: 6563)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 275.1ms | Allocations: 11161)
+Completed 200 OK in 282ms (Views: 266.9ms | ActiveRecord: 10.8ms | Allocations: 11784)
+
+
+Started GET "/" for ::1 at 2021-10-10 22:36:41 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered tweeets/_form.html.erb (Duration: 31.4ms | Allocations: 3951)
+  [1m[36mTweeet Load (2.8ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:15
+  Rendered tweeets/_feed.html.erb (Duration: 64.8ms | Allocations: 6267)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 82.6ms | Allocations: 6549)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 306.3ms | Allocations: 11106)
+Completed 200 OK in 315ms (Views: 307.2ms | ActiveRecord: 2.8ms | Allocations: 11738)
+
+
+Started GET "/" for ::1 at 2021-10-10 22:55:57 +0200
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 4.0ms | Allocations: 122)
+  Rendered tweeets/_form.html.erb (Duration: 317.4ms | Allocations: 13521)
+  [1m[36mTweeet Load (3.1ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:15
+  Rendered tweeets/_feed.html.erb (Duration: 344.6ms | Allocations: 17013)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 4.5ms | Allocations: 141)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 394.0ms | Allocations: 19650)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 901.7ms | Allocations: 27514)
+Completed 200 OK in 1072ms (Views: 958.4ms | ActiveRecord: 12.5ms | Allocations: 35671)
+
+
+Started POST "/tweeets" for ::1 at 2021-10-10 22:56:12 +0200
+Processing by TweeetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tweeet"=>{"tweeet"=>"43"}, "commit"=>"Create Tweeet"}
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTweeet Create (2.3ms)[0m  [1m[32mINSERT INTO "tweeets" ("tweeet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["tweeet", "43"], ["created_at", "2021-10-10 20:56:12.305923"], ["updated_at", "2021-10-10 20:56:12.305923"]]
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (21.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 50ms (ActiveRecord: 26.2ms | Allocations: 3366)
+
+
+Started GET "/" for ::1 at 2021-10-10 22:56:12 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered tweeets/_form.html.erb (Duration: 8.4ms | Allocations: 3949)
+  [1m[36mTweeet Load (2.0ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:15
+  Rendered tweeets/_feed.html.erb (Duration: 20.8ms | Allocations: 6384)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 24.0ms | Allocations: 6666)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 203.2ms | Allocations: 11199)
+Completed 200 OK in 211ms (Views: 204.2ms | ActiveRecord: 2.0ms | Allocations: 11827)
+
+
+Started GET "/" for ::1 at 2021-10-10 22:57:18 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 0.3ms | Allocations: 6)
+  Rendered tweeets/_form.html.erb (Duration: 9.8ms | Allocations: 3948)
+  [1m[36mTweeet Load (3.8ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:15
+  Rendered tweeets/_feed.html.erb (Duration: 32.8ms | Allocations: 6389)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 57.6ms | Allocations: 6671)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 335.1ms | Allocations: 11190)
+Completed 200 OK in 342ms (Views: 333.6ms | ActiveRecord: 3.8ms | Allocations: 11817)
+
+
+Started POST "/tweeets" for ::1 at 2021-10-10 22:57:23 +0200
+Processing by TweeetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tweeet"=>{"tweeet"=>"sssssssssssss"}, "commit"=>"Create Tweeet"}
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTweeet Create (2.7ms)[0m  [1m[32mINSERT INTO "tweeets" ("tweeet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["tweeet", "sssssssssssss"], ["created_at", "2021-10-10 20:57:23.260664"], ["updated_at", "2021-10-10 20:57:23.260664"]]
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (18.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 40ms (ActiveRecord: 23.1ms | Allocations: 2659)
+
+
+Started GET "/" for ::1 at 2021-10-10 22:57:23 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered tweeets/_form.html.erb (Duration: 10.1ms | Allocations: 3948)
+  [1m[36mTweeet Load (2.0ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:15
+  Rendered tweeets/_feed.html.erb (Duration: 23.9ms | Allocations: 6507)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 30.6ms | Allocations: 6789)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 230.7ms | Allocations: 11312)
+Completed 200 OK in 235ms (Views: 230.6ms | ActiveRecord: 2.0ms | Allocations: 11937)
+
+
+Started GET "/" for ::1 at 2021-10-10 22:57:50 +0200
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 3.9ms | Allocations: 276)
+  Rendered tweeets/_form.html.erb (Duration: 327.4ms | Allocations: 13349)
+  [1m[36mTweeet Load (2.8ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:15
+  Rendered tweeets/_feed.html.erb (Duration: 353.8ms | Allocations: 17090)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 3.7ms | Allocations: 284)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 417.0ms | Allocations: 19737)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 916.5ms | Allocations: 28110)
+Completed 200 OK in 1026ms (Views: 941.4ms | ActiveRecord: 9.9ms | Allocations: 36092)
+
+
+Started POST "/tweeets" for ::1 at 2021-10-10 22:57:57 +0200
+Processing by TweeetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tweeet"=>{"tweeet"=>"wwwwwwwwwwwwwwwww"}, "commit"=>"Create Tweeet"}
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTweeet Create (1.8ms)[0m  [1m[32mINSERT INTO "tweeets" ("tweeet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["tweeet", "wwwwwwwwwwwwwwwww"], ["created_at", "2021-10-10 20:57:57.098595"], ["updated_at", "2021-10-10 20:57:57.098595"]]
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (90.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+Redirected to 
+Completed 500 Internal Server Error in 113ms (ActiveRecord: 93.6ms | Allocations: 4283)
+
+
+
+ActionController::ActionControllerError - Cannot redirect to nil!:
+  app/controllers/tweeets_controller.rb:29:in `block (2 levels) in create'
+  app/controllers/tweeets_controller.rb:27:in `create'
+
+Started POST "/__better_errors/3fd729989bdf876c/variables" for ::1 at 2021-10-10 22:57:57 +0200
+Started POST "/tweeets" for ::1 at 2021-10-10 22:58:51 +0200
+Processing by TweeetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tweeet"=>{"tweeet"=>"wwwwwwwwwwwwwwwww"}, "commit"=>"Create Tweeet"}
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTweeet Create (2.1ms)[0m  [1m[32mINSERT INTO "tweeets" ("tweeet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["tweeet", "wwwwwwwwwwwwwwwww"], ["created_at", "2021-10-10 20:58:51.745729"], ["updated_at", "2021-10-10 20:58:51.745729"]]
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (24.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+Redirected to 
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 28.9ms | Allocations: 3557)
+
+
+
+ActionController::ActionControllerError - Cannot redirect to nil!:
+  app/controllers/tweeets_controller.rb:29:in `block (2 levels) in create'
+  app/controllers/tweeets_controller.rb:27:in `create'
+
+Started POST "/__better_errors/13a9bcba97466c94/variables" for ::1 at 2021-10-10 22:58:52 +0200
+Started POST "/tweeets" for ::1 at 2021-10-10 22:59:13 +0200
+Processing by TweeetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tweeet"=>{"tweeet"=>"wwwwwwwwwwwwwwwww"}, "commit"=>"Create Tweeet"}
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTweeet Create (2.5ms)[0m  [1m[32mINSERT INTO "tweeets" ("tweeet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["tweeet", "wwwwwwwwwwwwwwwww"], ["created_at", "2021-10-10 20:59:13.291573"], ["updated_at", "2021-10-10 20:59:13.291573"]]
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (28.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+Redirected to 
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 32.8ms | Allocations: 3578)
+
+
+
+ActionController::ActionControllerError - Cannot redirect to nil!:
+  app/controllers/tweeets_controller.rb:29:in `block (2 levels) in create'
+  app/controllers/tweeets_controller.rb:27:in `create'
+
+Started POST "/__better_errors/7325959211f910ea/variables" for ::1 at 2021-10-10 22:59:13 +0200
+Started POST "/tweeets" for ::1 at 2021-10-10 22:59:46 +0200
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TweeetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tweeet"=>{"tweeet"=>"wwwwwwwwwwwwwwwww"}, "commit"=>"Create Tweeet"}
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTweeet Create (1.8ms)[0m  [1m[32mINSERT INTO "tweeets" ("tweeet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["tweeet", "wwwwwwwwwwwwwwwww"], ["created_at", "2021-10-10 20:59:47.759993"], ["updated_at", "2021-10-10 20:59:47.759993"]]
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (34.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweeets_controller.rb:28:in `block in create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 117ms (ActiveRecord: 44.5ms | Allocations: 7887)
+
+
+Started GET "/" for ::1 at 2021-10-10 22:59:47 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 7.5ms | Allocations: 117)
+  Rendered tweeets/_form.html.erb (Duration: 315.2ms | Allocations: 13282)
+  [1m[36mTweeet Load (2.6ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:15
+  Rendered tweeets/_feed.html.erb (Duration: 340.9ms | Allocations: 17667)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 3.3ms | Allocations: 459)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 412.9ms | Allocations: 19783)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 949.5ms | Allocations: 30232)
+Completed 200 OK in 1038ms (Views: 987.7ms | ActiveRecord: 2.6ms | Allocations: 32764)
+
+
+Started GET "/" for ::1 at 2021-10-10 23:02:48 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered tweeets/_form.html.erb (Duration: 20.3ms | Allocations: 3949)
+  [1m[36mTweeet Load (3.5ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:15
+  Rendered tweeets/_feed.html.erb (Duration: 81.4ms | Allocations: 7015)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 98.3ms | Allocations: 7297)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16986.7ms | Allocations: 122711)
+Completed 200 OK in 17003ms (Views: 16992.6ms | ActiveRecord: 3.5ms | Allocations: 123340)
+
+
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(150862528989107565)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20211010210652)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (301.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (99.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (125.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20211010210652"]]
+  [1m[36mTRANSACTION (83.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(150862528989107565)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
