@@ -17,7 +17,7 @@
   * rails g devise:views 
   * rails generate devise authinticated MODL_NAME 
   * rails db:migrate 
-  * before before authinticate callback 
+  * before before authinticate filter
   * registration controller inhirt from Devise::RegistrationsController 
   * sign_up, update_params strong 
   * migrate 
