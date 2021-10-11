@@ -4513,3 +4513,997 @@ Processing by TweeetsController#index as HTML
 Completed 200 OK in 508ms (Views: 394.9ms | ActiveRecord: 80.5ms | Allocations: 15448)
 
 
+Started GET "/" for ::1 at 2021-10-11 01:54:42 +0200
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 3.0ms | Allocations: 276)
+  Rendered tweeets/_form.html.erb (Duration: 369.6ms | Allocations: 13360)
+  [1m[36mTweeet Load (2.7ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:15
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:27
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:31
+  Rendered tweeets/_feed.html.erb (Duration: 472.6ms | Allocations: 27164)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 4.8ms | Allocations: 131)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 522.6ms | Allocations: 29645)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 1258.2ms | Allocations: 38077)
+Completed 200 OK in 1415ms (Views: 1271.7ms | ActiveRecord: 26.0ms | Allocations: 46475)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-10-11 01:54:51 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 27ms (ActiveRecord: 1.3ms | Allocations: 3010)
+
+
+Started GET "/" for ::1 at 2021-10-11 01:54:51 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered tweeets/_form.html.erb (Duration: 11.7ms | Allocations: 3964)
+  [1m[36mTweeet Load (2.8ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:15
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:27
+  Rendered tweeets/_feed.html.erb (Duration: 47.5ms | Allocations: 5771)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 56.1ms | Allocations: 6053)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 329.4ms | Allocations: 10715)
+Completed 200 OK in 335ms (Views: 324.0ms | ActiveRecord: 7.1ms | Allocations: 11345)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-10-11 01:54:53 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 6.8ms | Allocations: 590)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 199.3ms | Allocations: 12981)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 406.1ms | Allocations: 17812)
+Completed 200 OK in 489ms (Views: 471.1ms | ActiveRecord: 0.0ms | Allocations: 19815)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-10-11 01:54:56 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"Elaraby Elaidy", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "elaraby elaidy"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 93ms (ActiveRecord: 3.4ms | Allocations: 1934)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"Elaraby Elaidy", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 119)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 31.3ms | Allocations: 10847)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 246.4ms | Allocations: 15531)
+Completed 200 OK in 647ms (Views: 248.7ms | ActiveRecord: 0.0ms | Allocations: 16727)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-10-11 01:55:09 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"eeee@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "eeee@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (2.9ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_created_at", "2021-10-10 23:55:10.020877"], ["updated_at", "2021-10-10 23:55:10.021498"], ["id", 2]]
+  [1m[36mTRANSACTION (38.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 525ms (ActiveRecord: 45.2ms | Allocations: 8435)
+
+
+Started GET "/" for ::1 at 2021-10-11 01:55:10 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered tweeets/_form.html.erb (Duration: 7.3ms | Allocations: 3968)
+  [1m[36mTweeet Load (1.7ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:15
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:27
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:31
+  Rendered tweeets/_feed.html.erb (Duration: 25.7ms | Allocations: 6714)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 29.2ms | Allocations: 6996)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 220.7ms | Allocations: 11629)
+Completed 200 OK in 227ms (Views: 218.7ms | ActiveRecord: 5.3ms | Allocations: 12262)
+
+
+Started GET "/" for ::1 at 2021-10-11 02:02:57 +0200
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/index.html.erb:4
+  [1m[35m (76.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "tweeets" WHERE "tweeets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tweeets/_profile.html.erb:26
+  Rendered tweeets/_profile.html.erb (Duration: 141.0ms | Allocations: 6465)
+  Rendered tweeets/_form.html.erb (Duration: 443.7ms | Allocations: 12220)
+  [1m[36mTweeet Load (3.0ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:18
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  Rendered tweeets/_feed.html.erb (Duration: 531.3ms | Allocations: 16859)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 4.4ms | Allocations: 131)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 800.3ms | Allocations: 33524)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 1465.0ms | Allocations: 41955)
+Completed 200 OK in 1650ms (Views: 1405.0ms | ActiveRecord: 107.2ms | Allocations: 50677)
+
+
+Started GET "/users/edit" for ::1 at 2021-10-11 02:03:08 +0200
+Processing by RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 43.1ms | Allocations: 13954)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 285.0ms | Allocations: 18717)
+Completed 200 OK in 326ms (Views: 317.6ms | ActiveRecord: 1.3ms | Allocations: 22331)
+
+
+Started GET "/" for ::1 at 2021-10-11 02:03:11 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/index.html.erb:4
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tweeets" WHERE "tweeets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tweeets/_profile.html.erb:26
+  Rendered tweeets/_profile.html.erb (Duration: 17.6ms | Allocations: 936)
+  Rendered tweeets/_form.html.erb (Duration: 29.9ms | Allocations: 3956)
+  [1m[36mTweeet Load (5.2ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:18
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  Rendered tweeets/_feed.html.erb (Duration: 65.4ms | Allocations: 5767)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 106.8ms | Allocations: 7915)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 332.6ms | Allocations: 12633)
+Completed 200 OK in 340ms (Views: 321.9ms | ActiveRecord: 14.3ms | Allocations: 13270)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-10-11 02:03:15 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (5.3ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_created_at", nil], ["updated_at", "2021-10-11 00:03:15.592323"], ["id", 2]]
+  [1m[36mTRANSACTION (31.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 99ms (ActiveRecord: 41.4ms | Allocations: 6321)
+
+
+Started GET "/" for ::1 at 2021-10-11 02:03:15 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 6.9ms | Allocations: 96)
+  [1m[36mTweeet Load (2.1ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:18
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  Rendered tweeets/_feed.html.erb (Duration: 10.9ms | Allocations: 1626)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 33.1ms | Allocations: 2263)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 236.0ms | Allocations: 7065)
+Completed 200 OK in 242ms (Views: 235.3ms | ActiveRecord: 3.6ms | Allocations: 7694)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-10-11 02:03:22 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 10.9ms | Allocations: 589)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 135.6ms | Allocations: 12245)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 384.6ms | Allocations: 17051)
+Completed 200 OK in 434ms (Views: 418.5ms | ActiveRecord: 0.0ms | Allocations: 18625)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-10-11 02:03:25 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"eeee@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "eeee@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 450ms (ActiveRecord: 2.0ms | Allocations: 5334)
+
+
+Started GET "/" for ::1 at 2021-10-11 02:03:26 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/index.html.erb:4
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "tweeets" WHERE "tweeets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tweeets/_profile.html.erb:26
+  Rendered tweeets/_profile.html.erb (Duration: 5.9ms | Allocations: 926)
+  Rendered tweeets/_form.html.erb (Duration: 5.6ms | Allocations: 3967)
+  [1m[36mTweeet Load (1.8ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:18
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  Rendered tweeets/_feed.html.erb (Duration: 17.9ms | Allocations: 5757)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 32.5ms | Allocations: 7872)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 236.4ms | Allocations: 12536)
+Completed 200 OK in 241ms (Views: 231.2ms | ActiveRecord: 6.9ms | Allocations: 13170)
+
+
+Started POST "/tweeets" for ::1 at 2021-10-11 02:03:39 +0200
+Processing by TweeetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tweeet"=>{"tweeet"=>"dddddddddddddddddddd"}, "commit"=>"Create Tweeet"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweeets_controller.rb:29:in `block in create'
+  [1m[36mTweeet Create (3.4ms)[0m  [1m[32mINSERT INTO "tweeets" ("tweeet", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweeet", "dddddddddddddddddddd"], ["created_at", "2021-10-11 00:03:39.390459"], ["updated_at", "2021-10-11 00:03:39.390459"], ["user_id", 2]]
+  ↳ app/controllers/tweeets_controller.rb:29:in `block in create'
+  [1m[36mTRANSACTION (29.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweeets_controller.rb:29:in `block in create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 68ms (ActiveRecord: 38.0ms | Allocations: 4377)
+
+
+Started GET "/" for ::1 at 2021-10-11 02:03:39 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/index.html.erb:4
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tweeets" WHERE "tweeets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tweeets/_profile.html.erb:26
+  Rendered tweeets/_profile.html.erb (Duration: 8.4ms | Allocations: 925)
+  Rendered tweeets/_form.html.erb (Duration: 17.8ms | Allocations: 3961)
+  [1m[36mTweeet Load (2.8ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:18
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  Rendered tweeets/_feed.html.erb (Duration: 40.1ms | Allocations: 6735)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.2ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 59.7ms | Allocations: 8850)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 364.2ms | Allocations: 13523)
+Completed 200 OK in 369ms (Views: 355.5ms | ActiveRecord: 10.7ms | Allocations: 14158)
+
+
+Started POST "/tweeets" for ::1 at 2021-10-11 02:04:14 +0200
+Processing by TweeetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tweeet"=>{"tweeet"=>"fdddddddddddd"}, "commit"=>"Create Tweeet"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (11.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweeets_controller.rb:29:in `block in create'
+  [1m[36mTweeet Create (2.8ms)[0m  [1m[32mINSERT INTO "tweeets" ("tweeet", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweeet", "fdddddddddddd"], ["created_at", "2021-10-11 00:04:14.087185"], ["updated_at", "2021-10-11 00:04:14.087185"], ["user_id", 2]]
+  ↳ app/controllers/tweeets_controller.rb:29:in `block in create'
+  [1m[36mTRANSACTION (27.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweeets_controller.rb:29:in `block in create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 105ms (ActiveRecord: 44.3ms | Allocations: 4023)
+
+
+Started GET "/" for ::1 at 2021-10-11 02:04:14 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/index.html.erb:4
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tweeets" WHERE "tweeets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tweeets/_profile.html.erb:26
+  Rendered tweeets/_profile.html.erb (Duration: 12.3ms | Allocations: 925)
+  Rendered tweeets/_form.html.erb (Duration: 18.3ms | Allocations: 3961)
+  [1m[36mTweeet Load (2.7ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:18
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  [1m[36mUser Load (7.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  Rendered tweeets/_feed.html.erb (Duration: 64.2ms | Allocations: 7447)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 97.3ms | Allocations: 9562)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 463.4ms | Allocations: 14195)
+Completed 200 OK in 471ms (Views: 448.1ms | ActiveRecord: 19.1ms | Allocations: 14829)
+
+
+Started POST "/tweeets" for ::1 at 2021-10-11 02:04:18 +0200
+Processing by TweeetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tweeet"=>{"tweeet"=>"dqewqeqwwwww"}, "commit"=>"Create Tweeet"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweeets_controller.rb:29:in `block in create'
+  [1m[36mTweeet Create (2.8ms)[0m  [1m[32mINSERT INTO "tweeets" ("tweeet", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tweeet", "dqewqeqwwwww"], ["created_at", "2021-10-11 00:04:18.564419"], ["updated_at", "2021-10-11 00:04:18.564419"], ["user_id", 2]]
+  ↳ app/controllers/tweeets_controller.rb:29:in `block in create'
+  [1m[36mTRANSACTION (40.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweeets_controller.rb:29:in `block in create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 107ms (ActiveRecord: 47.4ms | Allocations: 4070)
+
+
+Started GET "/" for ::1 at 2021-10-11 02:04:18 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/index.html.erb:4
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tweeets" WHERE "tweeets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tweeets/_profile.html.erb:26
+  Rendered tweeets/_profile.html.erb (Duration: 19.8ms | Allocations: 925)
+  Rendered tweeets/_form.html.erb (Duration: 20.6ms | Allocations: 3959)
+  [1m[36mTweeet Load (10.8ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:18
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  [1m[36mUser Load (10.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  Rendered tweeets/_feed.html.erb (Duration: 83.8ms | Allocations: 8142)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 118.3ms | Allocations: 10257)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 359.0ms | Allocations: 14892)
+Completed 200 OK in 366ms (Views: 332.7ms | ActiveRecord: 29.4ms | Allocations: 15527)
+
+
+Started GET "/" for ::1 at 2021-10-11 02:05:21 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/index.html.erb:4
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "tweeets" WHERE "tweeets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tweeets/_profile.html.erb:26
+  Rendered tweeets/_profile.html.erb (Duration: 11.1ms | Allocations: 925)
+  Rendered tweeets/_form.html.erb (Duration: 25.8ms | Allocations: 3959)
+  [1m[36mTweeet Load (3.9ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:18
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  Rendered tweeets/_feed.html.erb (Duration: 105.0ms | Allocations: 8141)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.3ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 152.4ms | Allocations: 10256)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 526.8ms | Allocations: 14895)
+Completed 200 OK in 542ms (Views: 517.7ms | ActiveRecord: 15.5ms | Allocations: 15522)
+
+
+Started GET "/" for ::1 at 2021-10-11 02:05:38 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/index.html.erb:4
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tweeets" WHERE "tweeets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tweeets/_profile.html.erb:26
+  Rendered tweeets/_profile.html.erb (Duration: 14.2ms | Allocations: 926)
+  Rendered tweeets/_form.html.erb (Duration: 31.3ms | Allocations: 3960)
+  [1m[36mTweeet Load (11.1ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:18
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  Rendered tweeets/_feed.html.erb (Duration: 117.6ms | Allocations: 8144)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 157.0ms | Allocations: 10260)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 565.1ms | Allocations: 14920)
+Completed 200 OK in 578ms (Views: 547.3ms | ActiveRecord: 26.0ms | Allocations: 15547)
+
+
+Started GET "/" for ::1 at 2021-10-11 02:06:05 +0200
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/index.html.erb:4
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tweeets" WHERE "tweeets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tweeets/_profile.html.erb:26
+  Rendered tweeets/_profile.html.erb (Duration: 73.9ms | Allocations: 6095)
+  Rendered tweeets/_form.html.erb (Duration: 402.8ms | Allocations: 13242)
+  [1m[36mTweeet Load (2.0ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:18
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  Rendered tweeets/_feed.html.erb (Duration: 466.4ms | Allocations: 20991)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 3.7ms | Allocations: 131)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 664.7ms | Allocations: 36425)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 1355.0ms | Allocations: 44856)
+Completed 200 OK in 1522ms (Views: 1371.7ms | ActiveRecord: 36.2ms | Allocations: 53112)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-10-11 02:06:29 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 39ms (ActiveRecord: 2.4ms | Allocations: 3009)
+
+
+Started GET "/" for ::1 at 2021-10-11 02:06:29 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 5.3ms | Allocations: 94)
+  [1m[36mTweeet Load (2.8ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:18
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  Rendered tweeets/_feed.html.erb (Duration: 42.0ms | Allocations: 3745)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 91.0ms | Allocations: 4380)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 468.7ms | Allocations: 9182)
+Completed 200 OK in 475ms (Views: 463.3ms | ActiveRecord: 8.1ms | Allocations: 9812)
+
+
+Started GET "/" for ::1 at 2021-10-11 02:06:36 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 0.1ms | Allocations: 6)
+  [1m[36mTweeet Load (1.8ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:18
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:30
+  Rendered tweeets/_feed.html.erb (Duration: 26.6ms | Allocations: 3742)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 30.8ms | Allocations: 4093)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 375.8ms | Allocations: 8907)
+Completed 200 OK in 380ms (Views: 371.7ms | ActiveRecord: 6.0ms | Allocations: 9531)
+
+
+Started GET "/" for ::1 at 2021-10-11 02:10:49 +0200
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 3.7ms | Allocations: 254)
+  [1m[36mTweeet Load (2.9ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:18
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  Rendered tweeets/_feed.html.erb (Duration: 180.2ms | Allocations: 16559)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 5.3ms | Allocations: 284)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 241.8ms | Allocations: 19453)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 1011.3ms | Allocations: 28037)
+Completed 200 OK in 1155ms (Views: 1027.6ms | ActiveRecord: 35.8ms | Allocations: 36463)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-10-11 02:10:55 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 5.1ms | Allocations: 587)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 429.0ms | Allocations: 20499)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 621.6ms | Allocations: 25289)
+Completed 200 OK in 678ms (Views: 666.1ms | ActiveRecord: 0.0ms | Allocations: 27449)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-10-11 02:10:57 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"eeee@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "eeee@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 478ms (ActiveRecord: 2.3ms | Allocations: 5630)
+
+
+Started GET "/" for ::1 at 2021-10-11 02:10:58 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/index.html.erb:4
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "tweeets" WHERE "tweeets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tweeets/_profile.html.erb:26
+  Rendered tweeets/_profile.html.erb (Duration: 27.2ms | Allocations: 3729)
+  Rendered tweeets/_form.html.erb (Duration: 23.1ms | Allocations: 4535)
+  [1m[36mTweeet Load (1.5ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:18
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mUser Load (11.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  Rendered tweeets/_feed.html.erb (Duration: 75.0ms | Allocations: 9079)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 123.7ms | Allocations: 14141)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 402.5ms | Allocations: 18826)
+Completed 200 OK in 407ms (Views: 386.7ms | ActiveRecord: 17.7ms | Allocations: 19460)
+
+
+Started GET "/tweeets/26/edit" for ::1 at 2021-10-11 02:13:47 +0200
+Processing by TweeetsController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mTweeet Load (9.4ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" WHERE "tweeets"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/tweeets_controller.rb:65:in `set_tweeet'
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/edit.html.erb within layouts/application
+  Rendered tweeets/_form.html.erb (Duration: 41.5ms | Allocations: 4021)
+  Rendered tweeets/edit.html.erb within layouts/application (Duration: 107.8ms | Allocations: 4473)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 424.7ms | Allocations: 9124)
+Completed 200 OK in 518ms (Views: 430.6ms | ActiveRecord: 13.3ms | Allocations: 11749)
+
+
+Started PATCH "/tweeets/26" for ::1 at 2021-10-11 02:13:55 +0200
+Processing by TweeetsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "tweeet"=>{"tweeet"=>"brbrbrbrbbrrbb"}, "commit"=>"Update Tweeet", "id"=>"26"}
+  [1m[36mTweeet Load (1.2ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" WHERE "tweeets"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/tweeets_controller.rb:65:in `set_tweeet'
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweeets_controller.rb:43:in `block in update'
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tweeets_controller.rb:43:in `block in update'
+  [1m[36mTweeet Update (2.7ms)[0m  [1m[33mUPDATE "tweeets" SET "tweeet" = $1, "updated_at" = $2 WHERE "tweeets"."id" = $3[0m  [["tweeet", "brbrbrbrbbrrbb"], ["updated_at", "2021-10-11 00:13:55.747162"], ["id", 26]]
+  ↳ app/controllers/tweeets_controller.rb:43:in `block in update'
+  [1m[36mTRANSACTION (23.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweeets_controller.rb:43:in `block in update'
+Redirected to http://localhost:3000/tweeets/26
+Completed 302 Found in 83ms (ActiveRecord: 35.0ms | Allocations: 6261)
+
+
+Started GET "/tweeets/26" for ::1 at 2021-10-11 02:13:55 +0200
+Processing by TweeetsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mTweeet Load (1.9ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" WHERE "tweeets"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/tweeets_controller.rb:65:in `set_tweeet'
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/show.html.erb within layouts/application
+  Rendered tweeets/show.html.erb within layouts/application (Duration: 9.1ms | Allocations: 213)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:44
+  Rendered layout layouts/application.html.erb (Duration: 243.5ms | Allocations: 5852)
+Completed 200 OK in 284ms (Views: 245.0ms | ActiveRecord: 3.2ms | Allocations: 7166)
+
+
+Started GET "/" for ::1 at 2021-10-11 02:13:59 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/index.html.erb:4
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "tweeets" WHERE "tweeets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tweeets/_profile.html.erb:26
+  Rendered tweeets/_profile.html.erb (Duration: 23.1ms | Allocations: 940)
+  Rendered tweeets/_form.html.erb (Duration: 26.2ms | Allocations: 3959)
+  [1m[36mTweeet Load (10.0ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:18
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mUser Load (8.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  Rendered tweeets/_feed.html.erb (Duration: 119.0ms | Allocations: 8428)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 168.1ms | Allocations: 10581)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 484.2ms | Allocations: 15263)
+Completed 200 OK in 492ms (Views: 461.5ms | ActiveRecord: 26.6ms | Allocations: 15908)
+
+
+Started GET "/" for ::1 at 2021-10-11 02:16:23 +0200
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/index.html.erb:4
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "tweeets" WHERE "tweeets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tweeets/_profile.html.erb:26
+  Rendered tweeets/_profile.html.erb (Duration: 56.5ms | Allocations: 5243)
+  Rendered tweeets/_form.html.erb (Duration: 470.1ms | Allocations: 13249)
+  [1m[36mTweeet Load (3.0ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:18
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  Rendered tweeets/_feed.html.erb (Duration: 567.1ms | Allocations: 21434)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 4.7ms | Allocations: 139)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 734.9ms | Allocations: 36176)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 1411.1ms | Allocations: 44604)
+Completed 200 OK in 1656ms (Views: 1420.7ms | ActiveRecord: 43.4ms | Allocations: 53329)
+
+
+Started GET "/tweeets/26/edit" for ::1 at 2021-10-11 02:16:30 +0200
+Processing by TweeetsController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mTweeet Load (8.7ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" WHERE "tweeets"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/tweeets_controller.rb:65:in `set_tweeet'
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/edit.html.erb within layouts/application
+  Rendered tweeets/_form.html.erb (Duration: 33.5ms | Allocations: 4016)
+  Rendered tweeets/edit.html.erb within layouts/application (Duration: 93.3ms | Allocations: 4362)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 329.3ms | Allocations: 9016)
+Completed 200 OK in 412ms (Views: 334.5ms | ActiveRecord: 14.7ms | Allocations: 12437)
+
+
+Started GET "/" for ::1 at 2021-10-11 02:16:40 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/index.html.erb:4
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tweeets" WHERE "tweeets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tweeets/_profile.html.erb:26
+  Rendered tweeets/_profile.html.erb (Duration: 16.7ms | Allocations: 928)
+  Rendered tweeets/_form.html.erb (Duration: 23.1ms | Allocations: 3956)
+  [1m[36mTweeet Load (9.1ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:18
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  Rendered tweeets/_feed.html.erb (Duration: 104.4ms | Allocations: 8345)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 225.0ms | Allocations: 10470)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 438.1ms | Allocations: 15140)
+Completed 200 OK in 447ms (Views: 420.7ms | ActiveRecord: 22.0ms | Allocations: 15779)
+
+
+Started GET "/" for ::1 at 2021-10-11 02:17:17 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/index.html.erb:4
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "tweeets" WHERE "tweeets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tweeets/_profile.html.erb:26
+  Rendered tweeets/_profile.html.erb (Duration: 30.2ms | Allocations: 927)
+  Rendered tweeets/_form.html.erb (Duration: 22.5ms | Allocations: 3953)
+  [1m[36mTweeet Load (2.8ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:18
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  Rendered tweeets/_feed.html.erb (Duration: 64.8ms | Allocations: 8343)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 115.0ms | Allocations: 10468)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 341.0ms | Allocations: 15098)
+Completed 200 OK in 348ms (Views: 330.1ms | ActiveRecord: 13.1ms | Allocations: 15737)
+
+
+Started GET "/tweeets/new" for ::1 at 2021-10-11 02:17:47 +0200
+Processing by TweeetsController#new as HTML
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/new.html.erb within layouts/application
+  Rendered tweeets/_form.html.erb (Duration: 14.1ms | Allocations: 3808)
+  Rendered tweeets/new.html.erb within layouts/application (Duration: 46.0ms | Allocations: 4057)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 297.4ms | Allocations: 8687)
+Completed 200 OK in 333ms (Views: 302.4ms | ActiveRecord: 5.1ms | Allocations: 10834)
+
+
+Started GET "/" for ::1 at 2021-10-11 02:18:00 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mUser Load (9.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/index.html.erb:4
+  [1m[35m (6.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tweeets" WHERE "tweeets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tweeets/_profile.html.erb:26
+  Rendered tweeets/_profile.html.erb (Duration: 15.4ms | Allocations: 930)
+  Rendered tweeets/_form.html.erb (Duration: 24.0ms | Allocations: 3953)
+  [1m[36mTweeet Load (4.9ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:18
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  Rendered tweeets/_feed.html.erb (Duration: 109.4ms | Allocations: 8422)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 154.2ms | Allocations: 10565)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 589.1ms | Allocations: 15206)
+Completed 200 OK in 597ms (Views: 565.5ms | ActiveRecord: 26.6ms | Allocations: 15841)
+
+
+Started GET "/users/edit" for ::1 at 2021-10-11 02:18:07 +0200
+Processing by RegistrationsController#edit as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 51.2ms | Allocations: 13950)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 281.3ms | Allocations: 18704)
+Completed 200 OK in 355ms (Views: 324.4ms | ActiveRecord: 2.3ms | Allocations: 22299)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-10-11 02:18:11 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 45ms (ActiveRecord: 1.3ms | Allocations: 2951)
+
+
+Started GET "/" for ::1 at 2021-10-11 02:18:11 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  Rendered tweeets/_trends.html.erb (Duration: 10.9ms | Allocations: 96)
+  [1m[36mTweeet Load (3.1ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:18
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mUser Load (10.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  Rendered tweeets/_feed.html.erb (Duration: 68.4ms | Allocations: 3910)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 113.5ms | Allocations: 4547)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 391.4ms | Allocations: 9388)
+Completed 200 OK in 397ms (Views: 376.3ms | ActiveRecord: 17.0ms | Allocations: 10020)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-10-11 02:18:16 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 10.5ms | Allocations: 589)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 186.7ms | Allocations: 12247)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 407.4ms | Allocations: 17063)
+Completed 200 OK in 472ms (Views: 455.5ms | ActiveRecord: 0.0ms | Allocations: 18618)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-10-11 02:18:18 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"eeee@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "eeee@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 481ms (ActiveRecord: 2.0ms | Allocations: 5336)
+
+
+Started GET "/" for ::1 at 2021-10-11 02:18:19 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/index.html.erb:4
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tweeets" WHERE "tweeets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tweeets/_profile.html.erb:26
+  Rendered tweeets/_profile.html.erb (Duration: 7.6ms | Allocations: 927)
+  Rendered tweeets/_form.html.erb (Duration: 10.8ms | Allocations: 3966)
+  [1m[36mTweeet Load (2.2ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:18
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  Rendered tweeets/_feed.html.erb (Duration: 46.1ms | Allocations: 8354)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 64.9ms | Allocations: 10472)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 270.1ms | Allocations: 15104)
+Completed 200 OK in 277ms (Views: 262.1ms | ActiveRecord: 10.6ms | Allocations: 15739)
+
+
+Started GET "/" for ::1 at 2021-10-11 02:18:25 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/index.html.erb:4
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "tweeets" WHERE "tweeets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tweeets/_profile.html.erb:26
+  Rendered tweeets/_profile.html.erb (Duration: 7.4ms | Allocations: 926)
+  Rendered tweeets/_form.html.erb (Duration: 14.6ms | Allocations: 3959)
+  [1m[36mTweeet Load (2.9ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:18
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  Rendered tweeets/_feed.html.erb (Duration: 58.8ms | Allocations: 8347)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 93.2ms | Allocations: 10463)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 341.7ms | Allocations: 15091)
+Completed 200 OK in 355ms (Views: 331.7ms | ActiveRecord: 15.5ms | Allocations: 15717)
+
+
+Started GET "/tweeets/26" for ::1 at 2021-10-11 02:18:30 +0200
+Processing by TweeetsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mTweeet Load (2.2ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" WHERE "tweeets"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/tweeets_controller.rb:65:in `set_tweeet'
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/show.html.erb within layouts/application
+  Rendered tweeets/show.html.erb within layouts/application (Duration: 12.8ms | Allocations: 214)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:44
+  Rendered layout layouts/application.html.erb (Duration: 320.0ms | Allocations: 5878)
+Completed 200 OK in 368ms (Views: 320.4ms | ActiveRecord: 5.0ms | Allocations: 7295)
+
+
+Started GET "/tweeets" for ::1 at 2021-10-11 02:18:38 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mUser Load (18.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/index.html.erb:4
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "tweeets" WHERE "tweeets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tweeets/_profile.html.erb:26
+  Rendered tweeets/_profile.html.erb (Duration: 17.4ms | Allocations: 929)
+  Rendered tweeets/_form.html.erb (Duration: 21.0ms | Allocations: 3962)
+  [1m[36mTweeet Load (2.2ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:18
+  [1m[36mUser Load (8.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mUser Load (10.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  Rendered tweeets/_feed.html.erb (Duration: 85.5ms | Allocations: 8439)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.2ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 138.2ms | Allocations: 10565)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 470.1ms | Allocations: 15245)
+Completed 200 OK in 477ms (Views: 430.4ms | ActiveRecord: 42.0ms | Allocations: 15878)
+
+
+Started GET "/" for ::1 at 2021-10-11 02:19:38 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mUser Load (8.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/index.html.erb:4
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tweeets" WHERE "tweeets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tweeets/_profile.html.erb:26
+  Rendered tweeets/_profile.html.erb (Duration: 18.7ms | Allocations: 945)
+  Rendered tweeets/_form.html.erb (Duration: 32.6ms | Allocations: 3960)
+  [1m[36mTweeet Load (2.7ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:18
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  Rendered tweeets/_feed.html.erb (Duration: 108.9ms | Allocations: 8367)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 165.6ms | Allocations: 10520)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 574.7ms | Allocations: 15239)
+Completed 200 OK in 585ms (Views: 561.1ms | ActiveRecord: 19.1ms | Allocations: 15869)
+
+
+Started GET "/" for ::1 at 2021-10-11 02:19:40 +0200
+Processing by TweeetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tweeets/index.html.erb within layouts/application
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/index.html.erb:4
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "tweeets" WHERE "tweeets"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/tweeets/_profile.html.erb:26
+  Rendered tweeets/_profile.html.erb (Duration: 11.8ms | Allocations: 926)
+  Rendered tweeets/_form.html.erb (Duration: 25.7ms | Allocations: 3959)
+  [1m[36mTweeet Load (2.6ms)[0m  [1m[34mSELECT "tweeets".* FROM "tweeets" ORDER BY created_at DESC[0m
+  ↳ app/views/tweeets/_feed.html.erb:18
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/tweeets/_feed.html.erb:24
+  Rendered tweeets/_feed.html.erb (Duration: 89.7ms | Allocations: 8348)
+  Rendered tweeets/_who-to-follow.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tweeets/index.html.erb within layouts/application (Duration: 144.9ms | Allocations: 10464)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 405.3ms | Allocations: 15105)
+Completed 200 OK in 413ms (Views: 396.1ms | ActiveRecord: 13.3ms | Allocations: 15734)
+
+
