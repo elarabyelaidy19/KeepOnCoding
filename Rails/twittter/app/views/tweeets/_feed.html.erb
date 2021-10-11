@@ -1,8 +1,10 @@
 <div class="column is-half">
-	<article class="media box">
+	
+  <% if user_signed_in? %>
+  <article class="media box">
 		<figure class="media-left">
 			<p class="image is-64x64">
-			 <img src="https://bulma.io/images/placeholders/64x64.png">
+			 <%= gravatar_image_tag(current_user.email, size: 64, alt: current_user.name) %>
 			</p>
 		</figure>
 
@@ -10,6 +12,7 @@
       <%= render "tweeets/form" %>
 		</div>
 	</article>
+  <% end %>
 
 
  <% @tweeets.each do |tweeet| %> 
@@ -18,7 +21,7 @@
 
         <div class="media-left">
           <figure class="image is-64x64">
-            <img src="https://bulma.io/images/placeholders/64x64.png">
+           <%= gravatar_image_tag(tweeet.user.email, size: 64, alt: tweeet.user.name) %>
           </figure>
         </div>
 
