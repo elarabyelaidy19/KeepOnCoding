@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_18_221456) do
+ActiveRecord::Schema.define(version: 2021_10_21_214011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,26 @@ ActiveRecord::Schema.define(version: 2021_10_18_221456) do
     t.bigint "post_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "comments_likes_id", null: false
+    t.index ["comments_likes_id"], name: "index_comments_on_comments_likes_id"
     t.index ["post_id"], name: "index_comments_on_post_id"
+  end
+
+  create_table "comments_comments_likes", id: false, force: :cascade do |t|
+    t.bigint "comment_id", null: false
+    t.bigint "comments_like_id", null: false
+  end
+
+  create_table "comments_likes", force: :cascade do |t|
+    t.integer "comment_count"
+    t.text "comment_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "pcomments", id: false, force: :cascade do |t|
+    t.bigint "comment_id", null: false
+    t.bigint "post_id", null: false
   end
 
   create_table "posts", force: :cascade do |t|
@@ -29,7 +48,10 @@ ActiveRecord::Schema.define(version: 2021_10_18_221456) do
     t.text "text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "comments_likes_id"
+    t.index ["comments_likes_id"], name: "index_posts_on_comments_likes_id"
   end
 
+  add_foreign_key "comments", "comments_likes", column: "comments_likes_id"
   add_foreign_key "comments", "posts"
 end
