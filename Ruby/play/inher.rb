@@ -129,3 +129,29 @@ puts fido.climb
 
 
 
+
+
+module Mamma
+  class Dogies
+    def speak(sound)
+      p "#{sound}"
+    end
+  end
+
+  class Kitties
+    def say_name(name)
+      p "#{name}"
+    end
+  end
+
+  def self.sum_out_of_places(n) 
+    n ** 2 
+  end 
+end
+
+
+buddy = Mamma::Dogies.new
+kitty = Mamma::Kitties.new
+buddy.speak('Arf!')           # => "Arf!"
+kitty.say_name('kitty')       # => "kitty"
+puts value = Mamma::sum_out_of_places(3)
