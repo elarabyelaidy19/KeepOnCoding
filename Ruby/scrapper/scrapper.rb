@@ -18,7 +18,7 @@ def scrapper
         pagination_url = "https://jobs.lever.co/theblockcrypto/listing/?page=#{page}"
         pagination_unparsed_url = HTTParty.get(pagination_url) 
         pagination_parsed_url = Nokogiri::HTML(pagination_unparsed_url) 
-        pagination_job-listing = pagination_parsed_url.css('div.posting')
+        pagination_job_listing = pagination_parsed_url.css('div.posting')
         job_postings.each do |job_posting| 
             job = { 
                 title: job_posting.css('h5').text, 
