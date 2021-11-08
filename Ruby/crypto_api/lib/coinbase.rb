@@ -4,7 +4,7 @@ module Api
         def request  
             super(:get, url) 
         end
-    
+        
         def parsed_response(response)
             response.dig('data', 'amount')
         end 
