@@ -7,13 +7,9 @@ require "./lib/cryptocompare"
 
 module Api 
     class Wrapper < Base
-        %w[ 
-            coinbase
-            coingecko 
-            coinpaprika 
-            coincap 
-            cryptocompare
-        ].each do |api| 
+        apis = %w[ coinbase coingecko coinpaprika coincap cryptocompare ]   
+        
+        apis.each do |api| 
             define_method(api.to_sym) do 
                 klass = klassify(api)
                 Object.const_get("Api::#{klass}").new(@options).request
