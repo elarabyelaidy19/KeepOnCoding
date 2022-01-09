@@ -1,0 +1,21 @@
+GEM
+  specs:
+    colorize (0.8.1)
+    i18n (0.8.6)
+    jake-scripts (2.0.4)
+      colorize
+      monetize (~> 1.7.0)
+      money (~> 6.9.0)
+    monetize (1.7.0)
+      money (~> 6.9)
+    money (6.9.0)
+      i18n (>= 0.6.4, < 0.9)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  jake-scripts
+
+BUNDLED WITH
+   2.2.32
