@@ -1,0 +1,449 @@
+Started GET "/" for 127.0.0.1 at 2022-01-30 21:24:38 +0200
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/elaraby/.rvm/gems/ruby-3.0.1/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/elaraby/.rvm/gems/ruby-3.0.1/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 14.2ms | Allocations: 591)
+Completed 200 OK in 63ms (Views: 30.4ms | ActiveRecord: 0.0ms | Allocations: 4694)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-30 21:34:21 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/elaraby/.rvm/gems/ruby-3.0.1/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/elaraby/.rvm/gems/ruby-3.0.1/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 11.5ms | Allocations: 261)
+Completed 200 OK in 20ms (Views: 18.0ms | Allocations: 1166)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-30 21:34:35 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/elaraby/.rvm/gems/ruby-3.0.1/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/elaraby/.rvm/gems/ruby-3.0.1/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | Allocations: 46)
+Completed 200 OK in 7ms (Views: 5.6ms | Allocations: 455)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-30 21:35:29 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/elaraby/.rvm/gems/ruby-3.0.1/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/elaraby/.rvm/gems/ruby-3.0.1/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.6ms | Allocations: 45)
+Completed 200 OK in 4ms (Views: 2.5ms | Allocations: 402)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-30 21:35:52 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/elaraby/.rvm/gems/ruby-3.0.1/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/elaraby/.rvm/gems/ruby-3.0.1/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.6ms | Allocations: 46)
+Completed 200 OK in 4ms (Views: 3.2ms | Allocations: 410)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-30 21:36:32 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/elaraby/.rvm/gems/ruby-3.0.1/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/elaraby/.rvm/gems/ruby-3.0.1/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | Allocations: 46)
+Completed 200 OK in 4ms (Views: 2.9ms | Allocations: 409)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-30 21:56:32 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/elaraby/.rvm/gems/ruby-3.0.1/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/elaraby/.rvm/gems/ruby-3.0.1/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.7ms | Allocations: 263)
+Completed 200 OK in 12ms (Views: 10.6ms | Allocations: 1167)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-30 21:56:36 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/elaraby/.rvm/gems/ruby-3.0.1/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/elaraby/.rvm/gems/ruby-3.0.1/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | Allocations: 45)
+Completed 200 OK in 7ms (Views: 5.3ms | Allocations: 446)
+
+
+Started GET "/about" for 127.0.0.1 at 2022-01-30 21:56:42 +0200
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 143)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+node:internal/crypto/hash:67
+  this[kHandle] = new _Hash(algorithm, xofLen);
+                  ^
+
+Error: error:0308010C:digital envelope routines::unsupported
+    at new Hash (node:internal/crypto/hash:67:19)
+    at Object.createHash (node:crypto:130:10)
+    at module.exports (/media/elaraby/01D402E5D07C9960/hub/KeepOnCoding/Rails/scheduled_tweets/node_modules/webpack/lib/util/createHash.js:135:53)
+    at NormalModule._initBuildHash (/media/elaraby/01D402E5D07C9960/hub/KeepOnCoding/Rails/scheduled_tweets/node_modules/webpack/lib/NormalModule.js:417:16)
+    at handleParseError (/media/elaraby/01D402E5D07C9960/hub/KeepOnCoding/Rails/scheduled_tweets/node_modules/webpack/lib/NormalModule.js:471:10)
+    at /media/elaraby/01D402E5D07C9960/hub/KeepOnCoding/Rails/scheduled_tweets/node_modules/webpack/lib/NormalModule.js:503:5
+    at /media/elaraby/01D402E5D07C9960/hub/KeepOnCoding/Rails/scheduled_tweets/node_modules/webpack/lib/NormalModule.js:358:12
+    at /media/elaraby/01D402E5D07C9960/hub/KeepOnCoding/Rails/scheduled_tweets/node_modules/loader-runner/lib/LoaderRunner.js:373:3
+    at iterateNormalLoaders (/media/elaraby/01D402E5D07C9960/hub/KeepOnCoding/Rails/scheduled_tweets/node_modules/loader-runner/lib/LoaderRunner.js:214:10)
+    at iterateNormalLoaders (/media/elaraby/01D402E5D07C9960/hub/KeepOnCoding/Rails/scheduled_tweets/node_modules/loader-runner/lib/LoaderRunner.js:221:10)
+    at /media/elaraby/01D402E5D07C9960/hub/KeepOnCoding/Rails/scheduled_tweets/node_modules/loader-runner/lib/LoaderRunner.js:236:3
+    at context.callback (/media/elaraby/01D402E5D07C9960/hub/KeepOnCoding/Rails/scheduled_tweets/node_modules/loader-runner/lib/LoaderRunner.js:111:13)
+    at /media/elaraby/01D402E5D07C9960/hub/KeepOnCoding/Rails/scheduled_tweets/node_modules/babel-loader/lib/index.js:59:71 {
+  opensslErrorStack: [ 'error:03000086:digital envelope routines::initialization error' ],
+  library: 'digital envelope routines',
+  reason: 'unsupported',
+  code: 'ERR_OSSL_EVP_UNSUPPORTED'
+}
+
+Node.js v17.3.1
+
+  Rendered layout layouts/application.html.erb (Duration: 5555.5ms | Allocations: 12695)
+Completed 500 Internal Server Error in 5564ms (Allocations: 14110)
+
+
+  
+ActionView::Template::Error (Webpacker can't find application.js in /media/elaraby/01D402E5D07C9960/hub/KeepOnCoding/Rails/scheduled_tweets/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+Started GET "/about" for 127.0.0.1 at 2022-01-30 21:59:00 +0200
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 141)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 1799)
+Completed 200 OK in 19ms (Views: 16.7ms | Allocations: 3195)
+
+
+Started GET "/about" for 127.0.0.1 at 2022-01-30 21:59:10 +0200
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 142)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+node:internal/crypto/hash:67
+  this[kHandle] = new _Hash(algorithm, xofLen);
+                  ^
+
+Error: error:0308010C:digital envelope routines::unsupported
+    at new Hash (node:internal/crypto/hash:67:19)
+    at Object.createHash (node:crypto:130:10)
+    at module.exports (/media/elaraby/01D402E5D07C9960/hub/KeepOnCoding/Rails/scheduled_tweets/node_modules/webpack/lib/util/createHash.js:135:53)
+    at NormalModule._initBuildHash (/media/elaraby/01D402E5D07C9960/hub/KeepOnCoding/Rails/scheduled_tweets/node_modules/webpack/lib/NormalModule.js:417:16)
+    at handleParseError (/media/elaraby/01D402E5D07C9960/hub/KeepOnCoding/Rails/scheduled_tweets/node_modules/webpack/lib/NormalModule.js:471:10)
+    at /media/elaraby/01D402E5D07C9960/hub/KeepOnCoding/Rails/scheduled_tweets/node_modules/webpack/lib/NormalModule.js:503:5
+    at /media/elaraby/01D402E5D07C9960/hub/KeepOnCoding/Rails/scheduled_tweets/node_modules/webpack/lib/NormalModule.js:358:12
+    at /media/elaraby/01D402E5D07C9960/hub/KeepOnCoding/Rails/scheduled_tweets/node_modules/loader-runner/lib/LoaderRunner.js:373:3
+    at iterateNormalLoaders (/media/elaraby/01D402E5D07C9960/hub/KeepOnCoding/Rails/scheduled_tweets/node_modules/loader-runner/lib/LoaderRunner.js:214:10)
+    at iterateNormalLoaders (/media/elaraby/01D402E5D07C9960/hub/KeepOnCoding/Rails/scheduled_tweets/node_modules/loader-runner/lib/LoaderRunner.js:221:10)
+    at /media/elaraby/01D402E5D07C9960/hub/KeepOnCoding/Rails/scheduled_tweets/node_modules/loader-runner/lib/LoaderRunner.js:236:3
+    at context.callback (/media/elaraby/01D402E5D07C9960/hub/KeepOnCoding/Rails/scheduled_tweets/node_modules/loader-runner/lib/LoaderRunner.js:111:13)
+    at /media/elaraby/01D402E5D07C9960/hub/KeepOnCoding/Rails/scheduled_tweets/node_modules/babel-loader/lib/index.js:59:71 {
+  opensslErrorStack: [ 'error:03000086:digital envelope routines::initialization error' ],
+  library: 'digital envelope routines',
+  reason: 'unsupported',
+  code: 'ERR_OSSL_EVP_UNSUPPORTED'
+}
+
+Node.js v17.3.1
+
+  Rendered layout layouts/application.html.erb (Duration: 4724.2ms | Allocations: 5170)
+Completed 500 Internal Server Error in 4733ms (Allocations: 6580)
+
+
+  
+ActionView::Template::Error (Webpacker can't find application.js in /media/elaraby/01D402E5D07C9960/hub/KeepOnCoding/Rails/scheduled_tweets/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+Started GET "/about" for 127.0.0.1 at 2022-01-30 22:00:53 +0200
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 141)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 1761)
+Completed 200 OK in 20ms (Views: 15.5ms | Allocations: 3134)
+
+
+Started GET "/about" for 127.0.0.1 at 2022-01-30 22:06:17 +0200
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 146)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 1766)
+Completed 200 OK in 24ms (Views: 20.1ms | Allocations: 3231)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-30 22:06:22 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/elaraby/.rvm/gems/ruby-3.0.1/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/elaraby/.rvm/gems/ruby-3.0.1/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.5ms | Allocations: 259)
+Completed 200 OK in 15ms (Views: 12.6ms | Allocations: 1148)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-30 22:07:04 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 1596)
+Completed 200 OK in 22ms (Views: 20.0ms | Allocations: 2798)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-30 22:09:30 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 146)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 1764)
+Completed 200 OK in 19ms (Views: 15.2ms | Allocations: 3154)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-30 22:11:55 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 149)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 1773)
+Completed 200 OK in 21ms (Views: 18.1ms | Allocations: 3147)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-30 22:12:16 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 146)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 1763)
+Completed 200 OK in 19ms (Views: 14.7ms | Allocations: 3131)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-30 22:33:20 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 150)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 134)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 2134)
+Completed 200 OK in 22ms (Views: 19.0ms | Allocations: 3507)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-30 22:33:21 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 40)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 1403)
+Completed 200 OK in 13ms (Views: 11.7ms | Allocations: 1893)
+
+
+Started GET "/about/index" for 127.0.0.1 at 2022-01-30 22:33:23 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/about/index"):
+  
+Started GET "/about/index" for 127.0.0.1 at 2022-01-30 22:34:22 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/about/index"):
+  
+Started GET "/" for 127.0.0.1 at 2022-01-30 22:34:24 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 145)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 28.9ms | Allocations: 2113)
+Completed 200 OK in 44ms (Views: 39.6ms | Allocations: 3445)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-30 22:34:27 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 40)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 1403)
+Completed 200 OK in 17ms (Views: 15.6ms | Allocations: 1893)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-30 22:34:29 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 40)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 1403)
+Completed 200 OK in 11ms (Views: 9.9ms | Allocations: 1842)
+
+
+Started GET "/about" for 127.0.0.1 at 2022-01-30 22:34:31 +0200
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 143)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 45)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 1705)
+Completed 200 OK in 18ms (Views: 15.0ms | Allocations: 2899)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-30 22:34:33 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 40)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 1403)
+Completed 200 OK in 14ms (Views: 12.8ms | Allocations: 1893)
+
+
+Started GET "/about" for 127.0.0.1 at 2022-01-30 22:34:33 +0200
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 40)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 1402)
+Completed 200 OK in 12ms (Views: 10.8ms | Allocations: 1841)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-30 22:34:37 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 40)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 1403)
+Completed 200 OK in 11ms (Views: 9.9ms | Allocations: 1842)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-30 22:34:39 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 40)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 1403)
+Completed 200 OK in 13ms (Views: 12.1ms | Allocations: 1843)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-30 22:34:56 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 40)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 1403)
+Completed 200 OK in 15ms (Views: 13.5ms | Allocations: 1842)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-30 22:34:57 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 40)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 1410)
+Completed 200 OK in 22ms (Views: 21.4ms | Allocations: 1849)
+
+
+Started GET "/about" for 127.0.0.1 at 2022-01-30 22:34:58 +0200
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 40)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 1402)
+Completed 200 OK in 13ms (Views: 12.1ms | Allocations: 1841)
+
+
+Started GET "/about" for 127.0.0.1 at 2022-01-30 22:43:39 +0200
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 146)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 341)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 2333)
+Completed 200 OK in 23ms (Views: 20.2ms | Allocations: 3676)
+
+
+Started GET "/about" for 127.0.0.1 at 2022-01-30 22:43:40 +0200
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 40)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 121)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 1481)
+Completed 200 OK in 16ms (Views: 15.1ms | Allocations: 1971)
+
+
+Started GET "/about" for 127.0.0.1 at 2022-01-30 22:43:42 +0200
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 40)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 121)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 1481)
+Completed 200 OK in 12ms (Views: 11.3ms | Allocations: 1920)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-30 22:43:43 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 147)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 158)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 1823)
+Completed 200 OK in 19ms (Views: 16.3ms | Allocations: 2888)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-30 22:43:44 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 40)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 121)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 1482)
+Completed 200 OK in 18ms (Views: 16.9ms | Allocations: 1972)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-30 22:43:49 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 40)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 121)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 1482)
+Completed 200 OK in 10ms (Views: 9.1ms | Allocations: 1921)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-30 22:43:49 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 40)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 121)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 1482)
+Completed 200 OK in 11ms (Views: 10.2ms | Allocations: 1921)
+
+
