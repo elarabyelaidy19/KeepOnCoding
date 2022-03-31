@@ -1631,3 +1631,1058 @@ puma (5.6.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
 puma (5.6.2) lib/puma/request.rb:76:in `handle_request'
 puma (5.6.2) lib/puma/server.rb:441:in `process_client'
 puma (5.6.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-03-31 05:30:05 +0200
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 439)
+  Rendered shared/_navbar.html.erb (Duration: 2.9ms | Allocations: 364)
+  Rendered shared/_flash.html.erb (Duration: 2.2ms | Allocations: 210)
+  Rendered layout layouts/application.html.erb (Duration: 154.7ms | Allocations: 5107)
+Completed 200 OK in 200ms (Views: 172.1ms | ActiveRecord: 0.0ms | Allocations: 9044)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-03-31 05:30:11 +0200
+Processing by RegesterationController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering regesteration/new.html.erb within layouts/application
+  Rendered regesteration/new.html.erb within layouts/application (Duration: 38.9ms | Allocations: 3309)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 77)
+  Rendered layout layouts/application.html.erb (Duration: 75.3ms | Allocations: 5064)
+Completed 200 OK in 115ms (Views: 78.6ms | ActiveRecord: 3.9ms | Allocations: 10361)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2022-03-31 05:30:43 +0200
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for RegesterationController
+Did you mean?  new):
+  
+actionpack (6.1.5) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.5) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.5) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.5) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.5) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.5) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.5) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.5) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.5) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.5) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.5) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.1.5) lib/rails/engine.rb:539:in `call'
+puma (5.6.2) lib/puma/configuration.rb:252:in `call'
+puma (5.6.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.2) lib/puma/server.rb:441:in `process_client'
+puma (5.6.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/sign_up" for 127.0.0.1 at 2022-03-31 05:34:41 +0200
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for RegesterationController
+Did you mean?  new):
+  
+actionpack (6.1.5) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.5) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.5) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.5) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.5) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.5) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.5) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.5) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.5) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.5) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.5) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.1.5) lib/rails/engine.rb:539:in `call'
+puma (5.6.2) lib/puma/configuration.rb:252:in `call'
+puma (5.6.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.2) lib/puma/server.rb:441:in `process_client'
+puma (5.6.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/sign_up" for 127.0.0.1 at 2022-03-31 05:34:45 +0200
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for RegesterationController
+Did you mean?  new):
+  
+actionpack (6.1.5) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.5) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.5) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.5) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.5) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.5) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.5) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.5) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.5) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.5) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.5) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.1.5) lib/rails/engine.rb:539:in `call'
+puma (5.6.2) lib/puma/configuration.rb:252:in `call'
+puma (5.6.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.2) lib/puma/server.rb:441:in `process_client'
+puma (5.6.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/sign_up" for 127.0.0.1 at 2022-03-31 05:34:56 +0200
+Started GET "/" for 127.0.0.1 at 2022-03-31 05:34:56 +0200
+  [1m[35m (6.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+Processing by RegesterationController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendering regesteration/new.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 454)
+  Rendered regesteration/new.html.erb within layouts/application (Duration: 55.4ms | Allocations: 4332)
+  Rendered shared/_navbar.html.erb (Duration: 5.4ms | Allocations: 369)
+  Rendered shared/_navbar.html.erb (Duration: 5.3ms | Allocations: 467)
+  Rendered shared/_flash.html.erb (Duration: 5.4ms | Allocations: 242)
+  Rendered shared/_flash.html.erb (Duration: 5.4ms | Allocations: 289)
+  Rendered layout layouts/application.html.erb (Duration: 224.6ms | Allocations: 11588)
+  Rendered layout layouts/application.html.erb (Duration: 224.4ms | Allocations: 11579)
+Completed 200 OK in 331ms (Views: 250.0ms | ActiveRecord: 0.0ms | Allocations: 21775)
+
+
+Completed 200 OK in 299ms (Views: 240.9ms | ActiveRecord: 5.6ms | Allocations: 19177)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-03-31 05:35:03 +0200
+Processing by RegesterationController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering regesteration/new.html.erb within layouts/application
+  Rendered regesteration/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 883)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 108)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 63)
+  Rendered layout layouts/application.html.erb (Duration: 40.3ms | Allocations: 2528)
+Completed 200 OK in 42ms (Views: 41.2ms | ActiveRecord: 0.0ms | Allocations: 3095)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2022-03-31 05:35:13 +0200
+Processing by RegesterationController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"beeb@blah.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"sign up"}
+  Rendering text template
+  Rendered text template (Duration: 0.2ms | Allocations: 44)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.0ms | Allocations: 748)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2022-03-31 05:35:27 +0200
+Processing by RegesterationController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"beeb@blah.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"sign up"}
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 26)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 505)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2022-03-31 05:48:09 +0200
+Processing by RegesterationController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"beeb@blah.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"sign up"}
+  Rendering text template
+  Rendered text template (Duration: 0.3ms | Allocations: 26)
+Completed 200 OK in 10ms (Views: 3.9ms | Allocations: 429)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 05:48:21 +0200
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 433)
+  Rendered shared/_navbar.html.erb (Duration: 2.6ms | Allocations: 364)
+  Rendered shared/_flash.html.erb (Duration: 3.7ms | Allocations: 210)
+  Rendered layout layouts/application.html.erb (Duration: 142.9ms | Allocations: 5044)
+Completed 200 OK in 185ms (Views: 158.8ms | ActiveRecord: 0.0ms | Allocations: 9100)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 05:48:26 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 44)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 134)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 56)
+  Rendered layout layouts/application.html.erb (Duration: 35.9ms | Allocations: 1737)
+Completed 200 OK in 38ms (Views: 36.9ms | ActiveRecord: 0.0ms | Allocations: 2326)
+
+
+Started GET "/about" for 127.0.0.1 at 2022-03-31 05:48:28 +0200
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 141)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 157)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 42.6ms | Allocations: 1948)
+Completed 200 OK in 51ms (Views: 46.8ms | ActiveRecord: 0.0ms | Allocations: 3169)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 05:48:29 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 39)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 120)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 36.1ms | Allocations: 1598)
+Completed 200 OK in 38ms (Views: 37.2ms | ActiveRecord: 0.0ms | Allocations: 2116)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-03-31 05:48:37 +0200
+  
+SyntaxError (/mnt/c/git/KeepOnCoding/Rails/scheduled_tweets/app/controllers/regesteration_controller.rb:9: syntax error, unexpected local variable or method, expecting `end'
+...tice: "signed up successfully"s
+...                              ^
+):
+  
+app/controllers/regesteration_controller.rb:9: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/regesteration_controller.rb:9: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/regesteration_controller.rb:9: syntax error, unexpected local variable or method, expecting `end'
+Started GET "/sign_up" for 127.0.0.1 at 2022-03-31 05:48:57 +0200
+Processing by RegesterationController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering regesteration/new.html.erb within layouts/application
+  Rendered regesteration/new.html.erb within layouts/application (Duration: 40.8ms | Allocations: 3405)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 124)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 75)
+  Rendered layout layouts/application.html.erb (Duration: 88.4ms | Allocations: 5165)
+Completed 200 OK in 116ms (Views: 91.6ms | ActiveRecord: 3.8ms | Allocations: 10383)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2022-03-31 05:49:06 +0200
+Processing by RegesterationController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"aaaa", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"sign up"}
+  Rendering layout layouts/application.html.erb
+  Rendering regesteration/new.html.erb within layouts/application
+  Rendered regesteration/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2575)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 106)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 42.1ms | Allocations: 4109)
+Completed 200 OK in 222ms (Views: 43.1ms | ActiveRecord: 0.0ms | Allocations: 5865)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2022-03-31 05:50:11 +0200
+Processing by RegesterationController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"aaaa", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"sign up"}
+  Rendering layout layouts/application.html.erb
+  Rendering regesteration/new.html.erb within layouts/application
+  Rendered regesteration/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2439)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 106)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 47.9ms | Allocations: 3973)
+Completed 200 OK in 227ms (Views: 48.9ms | ActiveRecord: 0.0ms | Allocations: 5193)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2022-03-31 05:50:18 +0200
+Processing by RegesterationController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"aaaa", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"sign up"}
+  Rendering layout layouts/application.html.erb
+  Rendering regesteration/new.html.erb within layouts/application
+  Rendered regesteration/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2439)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 106)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 39.3ms | Allocations: 3972)
+Completed 200 OK in 225ms (Views: 40.6ms | ActiveRecord: 0.0ms | Allocations: 5183)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 05:50:34 +0200
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 439)
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | Allocations: 364)
+  Rendered shared/_flash.html.erb (Duration: 2.0ms | Allocations: 210)
+  Rendered layout layouts/application.html.erb (Duration: 150.8ms | Allocations: 5129)
+Completed 200 OK in 198ms (Views: 167.8ms | ActiveRecord: 0.0ms | Allocations: 9185)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-03-31 05:50:40 +0200
+Processing by RegesterationController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering regesteration/new.html.erb within layouts/application
+  Rendered regesteration/new.html.erb within layouts/application (Duration: 35.9ms | Allocations: 3407)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 77)
+  Rendered layout layouts/application.html.erb (Duration: 73.7ms | Allocations: 5162)
+Completed 200 OK in 100ms (Views: 76.6ms | ActiveRecord: 3.2ms | Allocations: 10389)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2022-03-31 05:50:47 +0200
+Processing by RegesterationController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"wwww", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"sign up"}
+  Rendering layout layouts/application.html.erb
+  Rendering regesteration/new.html.erb within layouts/application
+  Rendered regesteration/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2576)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 106)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 45.0ms | Allocations: 4111)
+Completed 200 OK in 223ms (Views: 46.5ms | ActiveRecord: 0.0ms | Allocations: 5883)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2022-03-31 05:59:14 +0200
+Processing by RegesterationController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"wwww", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"sign up"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/regesteration_controller.rb:8:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering regesteration/new.html.erb within layouts/application
+  Rendered regesteration/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2440)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 106)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 47.9ms | Allocations: 3976)
+Completed 200 OK in 236ms (Views: 48.8ms | ActiveRecord: 1.4ms | Allocations: 5860)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 05:59:19 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 39)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 120)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 38.2ms | Allocations: 1597)
+Completed 200 OK in 40ms (Views: 39.3ms | ActiveRecord: 0.0ms | Allocations: 2057)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 05:59:21 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 39)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 120)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 40.0ms | Allocations: 1597)
+Completed 200 OK in 42ms (Views: 41.0ms | ActiveRecord: 0.0ms | Allocations: 2066)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 05:59:36 +0200
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 422)
+  Rendered shared/_navbar.html.erb (Duration: 2.2ms | Allocations: 364)
+  Rendered shared/_flash.html.erb (Duration: 2.6ms | Allocations: 240)
+  Rendered layout layouts/application.html.erb (Duration: 133.2ms | Allocations: 5050)
+Completed 200 OK in 172ms (Views: 148.3ms | ActiveRecord: 0.0ms | Allocations: 9028)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 05:59:53 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 44)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 134)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 64)
+  Rendered layout layouts/application.html.erb (Duration: 37.9ms | Allocations: 1745)
+Completed 200 OK in 39ms (Views: 38.6ms | ActiveRecord: 0.0ms | Allocations: 2291)
+
+
+Started GET "/about" for 127.0.0.1 at 2022-03-31 05:59:54 +0200
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 141)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 157)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 65)
+  Rendered layout layouts/application.html.erb (Duration: 35.6ms | Allocations: 1938)
+Completed 200 OK in 43ms (Views: 38.3ms | ActiveRecord: 0.0ms | Allocations: 3149)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 05:59:55 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 39)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 120)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 33.6ms | Allocations: 1600)
+Completed 200 OK in 35ms (Views: 34.4ms | ActiveRecord: 0.0ms | Allocations: 2103)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 05:59:56 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 39)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 120)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 34.5ms | Allocations: 1599)
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 0.0ms | Allocations: 2043)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 05:59:57 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 39)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 120)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 35.5ms | Allocations: 1599)
+Completed 200 OK in 37ms (Views: 36.2ms | ActiveRecord: 0.0ms | Allocations: 2043)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-03-31 06:00:01 +0200
+Processing by RegesterationController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering regesteration/new.html.erb within layouts/application
+  Rendered regesteration/new.html.erb within layouts/application (Duration: 33.7ms | Allocations: 3405)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 65)
+  Rendered layout layouts/application.html.erb (Duration: 71.1ms | Allocations: 5147)
+Completed 200 OK in 97ms (Views: 74.7ms | ActiveRecord: 3.4ms | Allocations: 10336)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-03-31 06:00:01 +0200
+Processing by RegesterationController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering regesteration/new.html.erb within layouts/application
+  Rendered regesteration/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 804)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 106)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 37.4ms | Allocations: 2338)
+Completed 200 OK in 39ms (Views: 38.2ms | ActiveRecord: 0.0ms | Allocations: 2868)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2022-03-31 06:00:12 +0200
+Processing by RegesterationController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"beeb@blah.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/regesteration_controller.rb:8:in `create'
+  [1m[36mUser Create (4.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "beeb@blah.com"], ["password_digest", "$2a$12$9x4u56MZWDbo0TIHoGKMW.pmzWFBLxqZbHG4tC.6vv4pyFzS8IU2a"], ["created_at", "2022-03-31 04:00:13.103116"], ["updated_at", "2022-03-31 04:00:13.103116"]]
+  ↳ app/controllers/regesteration_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/regesteration_controller.rb:8:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 196ms (ActiveRecord: 10.9ms | Allocations: 3580)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 06:00:13 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 62)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 136)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 68)
+  Rendered layout layouts/application.html.erb (Duration: 38.5ms | Allocations: 1771)
+Completed 200 OK in 47ms (Views: 39.5ms | ActiveRecord: 0.8ms | Allocations: 3669)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 06:06:59 +0200
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 442)
+  Rendered shared/_navbar.html.erb (Duration: 2.2ms | Allocations: 362)
+  Rendered shared/_flash.html.erb (Duration: 2.3ms | Allocations: 229)
+  Rendered layout layouts/application.html.erb (Duration: 153.6ms | Allocations: 5051)
+Completed 200 OK in 232ms (Views: 175.9ms | ActiveRecord: 6.2ms | Allocations: 14584)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 06:07:03 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 49)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 134)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 63)
+  Rendered layout layouts/application.html.erb (Duration: 37.9ms | Allocations: 1746)
+Completed 200 OK in 42ms (Views: 38.7ms | ActiveRecord: 1.1ms | Allocations: 2938)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 06:07:31 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 41)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 120)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 31.6ms | Allocations: 1602)
+Completed 200 OK in 35ms (Views: 32.5ms | ActiveRecord: 0.7ms | Allocations: 2599)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-03-31 06:07:35 +0200
+Processing by RegesterationController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering regesteration/new.html.erb within layouts/application
+  Rendered regesteration/new.html.erb within layouts/application (Duration: 31.1ms | Allocations: 3397)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 65)
+  Rendered layout layouts/application.html.erb (Duration: 70.2ms | Allocations: 5140)
+Completed 200 OK in 78ms (Views: 73.3ms | ActiveRecord: 0.0ms | Allocations: 6405)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-03-31 06:07:36 +0200
+Processing by RegesterationController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering regesteration/new.html.erb within layouts/application
+  Rendered regesteration/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 804)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 106)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 37.8ms | Allocations: 2338)
+Completed 200 OK in 39ms (Views: 38.7ms | ActiveRecord: 0.0ms | Allocations: 2869)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 06:07:44 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 44)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 120)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 35.8ms | Allocations: 1604)
+Completed 200 OK in 40ms (Views: 36.9ms | ActiveRecord: 0.9ms | Allocations: 2660)
+
+
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (3.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/sign_up" for 127.0.0.1 at 2022-03-31 06:08:56 +0200
+Processing by RegesterationController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering regesteration/new.html.erb within layouts/application
+  Rendered regesteration/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 798)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 106)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 42.3ms | Allocations: 2331)
+Completed 200 OK in 45ms (Views: 43.5ms | ActiveRecord: 0.0ms | Allocations: 2788)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 06:09:01 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:5:in `index'
+Completed 404 Not Found in 3ms (ActiveRecord: 1.1ms | Allocations: 1119)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  
+app/controllers/main_controller.rb:5:in `index'
+Started GET "/" for 127.0.0.1 at 2022-03-31 06:20:33 +0200
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:5:in `index'
+Completed 404 Not Found in 60ms (ActiveRecord: 7.1ms | Allocations: 4881)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  
+app/controllers/main_controller.rb:5:in `index'
+Started GET "/sign_up" for 127.0.0.1 at 2022-03-31 06:20:43 +0200
+Processing by RegesterationController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering regesteration/new.html.erb within layouts/application
+  Rendered regesteration/new.html.erb within layouts/application (Duration: 41.0ms | Allocations: 3485)
+  Rendered shared/_navbar.html.erb (Duration: 2.0ms | Allocations: 281)
+  Rendered shared/_flash.html.erb (Duration: 1.9ms | Allocations: 229)
+  Rendered layout layouts/application.html.erb (Duration: 167.1ms | Allocations: 7919)
+Completed 200 OK in 187ms (Views: 177.2ms | ActiveRecord: 0.0ms | Allocations: 12016)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-03-31 06:20:43 +0200
+Processing by RegesterationController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering regesteration/new.html.erb within layouts/application
+  Rendered regesteration/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 804)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 106)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 52.6ms | Allocations: 2338)
+Completed 200 OK in 55ms (Views: 53.5ms | ActiveRecord: 0.0ms | Allocations: 2869)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2022-03-31 06:20:58 +0200
+Processing by RegesterationController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"beeb@blah.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/regesteration_controller.rb:8:in `create'
+  [1m[36mUser Create (5.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "beeb@blah.com"], ["password_digest", "$2a$12$Pnf3He2aT53sl1ugQ7wcy.Yl4uy2VoN/Ecj.RuNeXvacE2CraBKWW"], ["created_at", "2022-03-31 04:20:58.479816"], ["updated_at", "2022-03-31 04:20:58.479816"]]
+  ↳ app/controllers/regesteration_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/regesteration_controller.rb:8:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 209ms (ActiveRecord: 13.3ms | Allocations: 5782)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 06:20:58 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 431)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 120)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 43.7ms | Allocations: 2159)
+Completed 200 OK in 56ms (Views: 46.9ms | ActiveRecord: 1.1ms | Allocations: 3878)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2022-03-31 06:21:00 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 473)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 06:21:00 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 42)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 125)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 64)
+  Rendered layout layouts/application.html.erb (Duration: 47.9ms | Allocations: 1726)
+Completed 200 OK in 49ms (Views: 48.8ms | ActiveRecord: 0.0ms | Allocations: 2219)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 06:35:25 +0200
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 512)
+  Rendered shared/_navbar.html.erb (Duration: 2.2ms | Allocations: 364)
+  Rendered shared/_flash.html.erb (Duration: 2.3ms | Allocations: 229)
+  Rendered layout layouts/application.html.erb (Duration: 183.3ms | Allocations: 5360)
+Completed 200 OK in 222ms (Views: 197.7ms | ActiveRecord: 0.0ms | Allocations: 9410)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 06:35:30 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 44)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 134)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 63)
+  Rendered layout layouts/application.html.erb (Duration: 41.5ms | Allocations: 1745)
+Completed 200 OK in 43ms (Views: 42.3ms | ActiveRecord: 0.0ms | Allocations: 2299)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-03-31 06:35:34 +0200
+Processing by RegesterationController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering regesteration/new.html.erb within layouts/application
+  Rendered regesteration/new.html.erb within layouts/application (Duration: 32.9ms | Allocations: 3410)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 65)
+  Rendered layout layouts/application.html.erb (Duration: 69.3ms | Allocations: 5153)
+Completed 200 OK in 94ms (Views: 72.1ms | ActiveRecord: 3.4ms | Allocations: 10367)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2022-03-31 06:35:44 +0200
+Processing by RegesterationController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"elarabyelaidy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/regesteration_controller.rb:8:in `create'
+  [1m[36mUser Create (4.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "elarabyelaidy@gmail.com"], ["password_digest", "$2a$12$.nHVobdSiH/jPzxeSfyope6iYmIyNWCeu4W6G12EGX4bWQUmZWLgq"], ["created_at", "2022-03-31 04:35:44.256544"], ["updated_at", "2022-03-31 04:35:44.256544"]]
+  ↳ app/controllers/regesteration_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/regesteration_controller.rb:8:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 201ms (ActiveRecord: 12.4ms | Allocations: 6054)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 06:35:44 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 252)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 108)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 37.6ms | Allocations: 1906)
+Completed 200 OK in 45ms (Views: 38.5ms | ActiveRecord: 1.0ms | Allocations: 3801)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2022-03-31 06:35:49 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 477)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 06:35:49 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 42)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 125)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 64)
+  Rendered layout layouts/application.html.erb (Duration: 40.0ms | Allocations: 1727)
+Completed 200 OK in 41ms (Views: 40.8ms | ActiveRecord: 0.0ms | Allocations: 2222)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-03-31 06:35:57 +0200
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2470)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 120)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 65)
+  Rendered layout layouts/application.html.erb (Duration: 39.0ms | Allocations: 4189)
+Completed 200 OK in 47ms (Views: 42.9ms | ActiveRecord: 0.0ms | Allocations: 5241)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-03-31 06:36:03 +0200
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 2055)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 106)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 36.7ms | Allocations: 3587)
+Completed 200 OK in 38ms (Views: 37.6ms | ActiveRecord: 0.0ms | Allocations: 4080)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-03-31 06:36:38 +0200
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 2055)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 106)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 36.8ms | Allocations: 3588)
+Completed 200 OK in 38ms (Views: 37.5ms | ActiveRecord: 0.0ms | Allocations: 4034)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 06:36:48 +0200
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 511)
+  Rendered shared/_navbar.html.erb (Duration: 2.2ms | Allocations: 364)
+  Rendered shared/_flash.html.erb (Duration: 2.1ms | Allocations: 229)
+  Rendered layout layouts/application.html.erb (Duration: 135.4ms | Allocations: 5277)
+Completed 200 OK in 180ms (Views: 149.9ms | ActiveRecord: 0.0ms | Allocations: 9297)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 06:36:49 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 42)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 128)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 63)
+  Rendered layout layouts/application.html.erb (Duration: 84.0ms | Allocations: 1736)
+Completed 200 OK in 87ms (Views: 85.9ms | ActiveRecord: 0.0ms | Allocations: 2289)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-03-31 06:36:54 +0200
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 45.0ms | Allocations: 4143)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 126)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 65)
+  Rendered layout layouts/application.html.erb (Duration: 82.2ms | Allocations: 5887)
+Completed 200 OK in 94ms (Views: 87.2ms | ActiveRecord: 0.0ms | Allocations: 7110)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-03-31 06:37:56 +0200
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 2108)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 106)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 44.1ms | Allocations: 3642)
+Completed 200 OK in 46ms (Views: 45.3ms | ActiveRecord: 0.0ms | Allocations: 4157)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 06:38:08 +0200
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 512)
+  Rendered shared/_navbar.html.erb (Duration: 2.2ms | Allocations: 364)
+  Rendered shared/_flash.html.erb (Duration: 1.9ms | Allocations: 229)
+  Rendered layout layouts/application.html.erb (Duration: 133.8ms | Allocations: 5296)
+Completed 200 OK in 174ms (Views: 148.6ms | ActiveRecord: 0.0ms | Allocations: 9377)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-03-31 06:38:12 +0200
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 30.1ms | Allocations: 4148)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 126)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 65)
+  Rendered layout layouts/application.html.erb (Duration: 66.3ms | Allocations: 5894)
+Completed 200 OK in 75ms (Views: 69.7ms | ActiveRecord: 0.0ms | Allocations: 7119)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2022-03-31 06:38:20 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"elarabyelaidy@gmail.com", "password"=>"[FILTERED]", "commit"=>"sign in"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elarabyelaidy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 231ms (ActiveRecord: 9.0ms | Allocations: 6028)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 06:38:20 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 225)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 108)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 65)
+  Rendered layout layouts/application.html.erb (Duration: 43.6ms | Allocations: 1871)
+Completed 200 OK in 48ms (Views: 44.3ms | ActiveRecord: 1.6ms | Allocations: 3076)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2022-03-31 06:38:34 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 336)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 06:38:34 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 39)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 120)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 57.0ms | Allocations: 1604)
+Completed 200 OK in 58ms (Views: 57.9ms | ActiveRecord: 0.0ms | Allocations: 2056)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-03-31 06:38:40 +0200
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 2122)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 106)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 39.2ms | Allocations: 3656)
+Completed 200 OK in 41ms (Views: 40.0ms | ActiveRecord: 0.0ms | Allocations: 4105)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2022-03-31 06:38:45 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"elarabyelaidy@gmail.com", "password"=>"[FILTERED]", "commit"=>"sign in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elarabyelaidy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 2065)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 106)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 32.2ms | Allocations: 3593)
+Completed 200 OK in 244ms (Views: 33.2ms | ActiveRecord: 0.9ms | Allocations: 4654)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 06:39:11 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 39)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 120)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 36.5ms | Allocations: 1604)
+Completed 200 OK in 38ms (Views: 37.3ms | ActiveRecord: 0.0ms | Allocations: 2056)
+
+
+Started GET "/about" for 127.0.0.1 at 2022-03-31 06:39:12 +0200
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 141)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 157)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 65)
+  Rendered layout layouts/application.html.erb (Duration: 42.8ms | Allocations: 1937)
+Completed 200 OK in 51ms (Views: 45.7ms | ActiveRecord: 0.0ms | Allocations: 3140)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 06:39:13 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 39)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 120)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 45.8ms | Allocations: 1599)
+Completed 200 OK in 47ms (Views: 46.7ms | ActiveRecord: 0.0ms | Allocations: 2095)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-31 06:39:13 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 39)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 120)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 45.9ms | Allocations: 1607)
+Completed 200 OK in 48ms (Views: 46.9ms | ActiveRecord: 0.0ms | Allocations: 2053)
+
+
+Started GET "/about" for 127.0.0.1 at 2022-03-31 06:39:15 +0200
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 39)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 120)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 34.1ms | Allocations: 1598)
+Completed 200 OK in 35ms (Views: 34.8ms | ActiveRecord: 0.0ms | Allocations: 2040)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-03-31 06:40:49 +0200
+Processing by RegesterationController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering regesteration/new.html.erb within layouts/application
+  Rendered regesteration/new.html.erb within layouts/application (Duration: 12.3ms | Allocations: 1657)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 120)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 65)
+  Rendered layout layouts/application.html.erb (Duration: 70.3ms | Allocations: 3382)
+Completed 200 OK in 87ms (Views: 75.0ms | ActiveRecord: 0.0ms | Allocations: 4638)
+
+

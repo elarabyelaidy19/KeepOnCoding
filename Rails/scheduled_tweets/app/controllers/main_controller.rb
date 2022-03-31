@@ -1,7 +1,8 @@
 class MainController < ApplicationController 
 
     def index  
-        flash[:notice] = "logged in suc"
-        flash[:alert] = "failed logging"
+        if session[:user_id] 
+            @user = User.find(session[:user_id])
+        end
     end 
 end 
