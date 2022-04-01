@@ -2,7 +2,3 @@
     
 </div>
 
-<% if @user %> 
-    user signed as: <%= @user.email %>
-    <%= button_to "log out", sign_out_path, method: :delete %>   
-<% end %>
