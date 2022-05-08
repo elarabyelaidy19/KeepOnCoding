@@ -262,7 +262,7 @@ DEPENDENCIES
   guard-livereload (~> 2.5, >= 2.5.2)
   jbuilder (~> 2.7)
   listen (~> 3.3)
-  omniauth-rails_csrf_protection (~> 1.0, >= 1.0.1)
+  omniauth-rails_csrf_protection (~> 1.0)
   omniauth-twitter
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
