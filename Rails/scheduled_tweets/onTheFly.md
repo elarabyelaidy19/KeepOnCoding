@@ -1,4 +1,2 @@
 - EDITOR="code --wait" rails credentials:edit --environment=development   
 - Rails.application.credentials.twitter  
-- api_key: Jd5OXHaHAHNmEag6nZda0GvQP 
-- api_secret: nMRvpc2hxfpSpwKgpNHMk6nfDKq0aaJU2ToVMhsDyI4VP90VFw
