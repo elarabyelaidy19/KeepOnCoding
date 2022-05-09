@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get "/auth/twitter/callback", to: "omniauth_callbacks#twitter"
 
   resources :twitter_accounts 
-
+  resources :tweets
   delete "sign_out", to: "sessions#destroy" 
   root to: "main#index"
 end

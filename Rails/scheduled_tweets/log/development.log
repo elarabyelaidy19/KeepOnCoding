@@ -7922,3 +7922,843 @@ Completed 200 OK in 49ms (Views: 43.4ms | ActiveRecord: 2.6ms | Allocations: 411
   [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mTwitterAccount Load (0.9ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ?[0m  [["user_id", 7]]
+Started GET "/" for 127.0.0.1 at 2022-05-09 16:06:00 +0200
+  [1m[35m (8.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 30.9ms | Allocations: 645)
+  Rendered shared/_navbar.html.erb (Duration: 32.0ms | Allocations: 781)
+  Rendered shared/_flash.html.erb (Duration: 6.9ms | Allocations: 255)
+  Rendered layout layouts/application.html.erb (Duration: 287.9ms | Allocations: 6271)
+Completed 200 OK in 339ms (Views: 313.7ms | ActiveRecord: 0.0ms | Allocations: 9615)
+
+
+Started GET "/twitter_accounts" for 127.0.0.1 at 2022-05-09 16:22:20 +0200
+Processing by TwitterAccountsController#index as HTML
+Redirected to http://127.0.0.1:3000/sign_up
+Filter chain halted as :require_user_logged_in! rendered or redirected
+Completed 302 Found in 2ms (Allocations: 362)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-05-09 16:22:20 +0200
+Processing by RegesterationController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/regesteration_controller.rb:3:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering regesteration/new.html.erb within layouts/application
+  Rendered regesteration/new.html.erb within layouts/application (Duration: 85.4ms | Allocations: 3409)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 202)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 73)
+  Rendered layout layouts/application.html.erb (Duration: 126.8ms | Allocations: 5239)
+Completed 200 OK in 190ms (Views: 131.5ms | ActiveRecord: 5.4ms | Allocations: 11951)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2022-05-09 16:22:25 +0200
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 14.3ms | Allocations: 2549)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 194)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 65)
+  Rendered layout layouts/application.html.erb (Duration: 60.8ms | Allocations: 4343)
+Completed 200 OK in 71ms (Views: 64.8ms | ActiveRecord: 0.0ms | Allocations: 5396)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2022-05-09 16:22:36 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"elarabyelaidy@gmail.com", "password"=>"[FILTERED]", "commit"=>"sign in"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elarabyelaidy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 2204)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 180)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 52)
+  Rendered layout layouts/application.html.erb (Duration: 54.5ms | Allocations: 3912)
+Completed 200 OK in 68ms (Views: 56.0ms | ActiveRecord: 1.9ms | Allocations: 5896)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-05-09 16:22:38 +0200
+Processing by RegesterationController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering regesteration/new.html.erb within layouts/application
+  Rendered regesteration/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 815)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 177)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 63)
+  Rendered layout layouts/application.html.erb (Duration: 42.4ms | Allocations: 2426)
+Completed 200 OK in 44ms (Views: 43.4ms | ActiveRecord: 0.0ms | Allocations: 2797)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2022-05-09 16:22:44 +0200
+Processing by RegesterationController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"beeb@blah.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/regesteration_controller.rb:8:in `create'
+  [1m[36mUser Create (5.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "beeb@blah.com"], ["password_digest", "$2a$12$vp6Ar0pgfCojnBdyAFaXleDLuuLZYeiq1OqLz.H3x/9n.tsX2/ePK"], ["created_at", "2022-05-09 14:22:44.711169"], ["updated_at", "2022-05-09 14:22:44.711169"]]
+  ↳ app/controllers/regesteration_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/regesteration_controller.rb:8:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 201ms (ActiveRecord: 12.8ms | Allocations: 3398)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-09 16:22:44 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 39)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 307)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 41.9ms | Allocations: 1791)
+Completed 200 OK in 47ms (Views: 42.9ms | ActiveRecord: 1.2ms | Allocations: 2835)
+
+
+Started GET "/twitter_accounts" for 127.0.0.1 at 2022-05-09 16:23:14 +0200
+Processing by TwitterAccountsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+Completed 500 Internal Server Error in 111ms (ActiveRecord: 0.9ms | Allocations: 5370)
+
+
+  
+ArgumentError (Unknown validator: 'UniqunessValidator'):
+  
+app/models/twitter_account.rb:4:in `<class:TwitterAccount>'
+app/models/twitter_account.rb:1:in `<main>'
+app/controllers/twitter_accounts_controller.rb:5:in `index'
+Started GET "/twitter_accounts" for 127.0.0.1 at 2022-05-09 16:24:08 +0200
+Processing by TwitterAccountsController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering twitter_accounts/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Load (1.0ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ?[0m  [["user_id", 8]]
+  ↳ app/views/twitter_accounts/index.html.erb:6
+  Rendered twitter_accounts/index.html.erb within layouts/application (Duration: 32.0ms | Allocations: 2661)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 341)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 65)
+  Rendered layout layouts/application.html.erb (Duration: 78.5ms | Allocations: 4629)
+Completed 200 OK in 155ms (Views: 78.6ms | ActiveRecord: 5.0ms | Allocations: 9072)
+
+
+Started POST "/auth/twitter" for 127.0.0.1 at 2022-05-09 16:24:12 +0200
+  
+OAuth::Unauthorized (403 Forbidden):
+  
+oauth (0.5.10) lib/oauth/consumer.rb:257:in `token_request'
+oauth (0.5.10) lib/oauth/consumer.rb:168:in `get_request_token'
+omniauth-oauth (1.2.0) lib/omniauth/strategies/oauth.rb:28:in `request_phase'
+omniauth-twitter (1.4.0) lib/omniauth/strategies/twitter.rb:61:in `request_phase'
+omniauth (2.1.0) lib/omniauth/strategy.rb:258:in `request_call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:193:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.5) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.5) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.5) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.5) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.1.5) lib/rails/engine.rb:539:in `call'
+puma (5.6.2) lib/puma/configuration.rb:252:in `call'
+puma (5.6.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.2) lib/puma/server.rb:441:in `process_client'
+puma (5.6.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for ::1 at 2022-05-09 16:24:18 +0200
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 39)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 189)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 41.0ms | Allocations: 1693)
+Completed 200 OK in 43ms (Views: 42.1ms | ActiveRecord: 0.0ms | Allocations: 2052)
+
+
+Started GET "/twitter_accounts" for ::1 at 2022-05-09 16:24:20 +0200
+Processing by TwitterAccountsController#index as HTML
+Redirected to http://localhost:3000/sign_up
+Filter chain halted as :require_user_logged_in! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 190)
+
+
+Started GET "/sign_up" for ::1 at 2022-05-09 16:24:20 +0200
+Processing by RegesterationController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering regesteration/new.html.erb within layouts/application
+  Rendered regesteration/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 853)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 175)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 35.1ms | Allocations: 2460)
+Completed 200 OK in 36ms (Views: 35.9ms | ActiveRecord: 0.0ms | Allocations: 2816)
+
+
+Started GET "/sign_in" for ::1 at 2022-05-09 16:24:27 +0200
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 2142)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 175)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 40.8ms | Allocations: 3744)
+Completed 200 OK in 43ms (Views: 42.2ms | ActiveRecord: 0.0ms | Allocations: 4082)
+
+
+Started GET "/sign_up" for ::1 at 2022-05-09 16:24:41 +0200
+Processing by RegesterationController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering regesteration/new.html.erb within layouts/application
+  Rendered regesteration/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 798)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 175)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 51.9ms | Allocations: 2400)
+Completed 200 OK in 54ms (Views: 53.3ms | ActiveRecord: 0.0ms | Allocations: 2752)
+
+
+Started POST "/sign_up" for ::1 at 2022-05-09 16:24:47 +0200
+Processing by RegesterationController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"beeb@blah.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/regesteration_controller.rb:8:in `create'
+  [1m[36mUser Create (3.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "beeb@blah.com"], ["password_digest", "$2a$12$fJpFOs2KWljKkdSIOJLFyus6.z/LwNK93TQQllEOutwNF5qgvWfEm"], ["created_at", "2022-05-09 14:24:47.599852"], ["updated_at", "2022-05-09 14:24:47.599852"]]
+  ↳ app/controllers/regesteration_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/regesteration_controller.rb:8:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 189ms (ActiveRecord: 8.4ms | Allocations: 2609)
+
+
+Started GET "/" for ::1 at 2022-05-09 16:24:47 +0200
+Processing by MainController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 39)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 285)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layout layouts/application.html.erb (Duration: 34.4ms | Allocations: 1768)
+Completed 200 OK in 38ms (Views: 35.2ms | ActiveRecord: 1.0ms | Allocations: 2671)
+
+
+Started GET "/twitter_accounts" for ::1 at 2022-05-09 16:24:49 +0200
+Processing by TwitterAccountsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering twitter_accounts/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Load (0.8ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ?[0m  [["user_id", 9]]
+  ↳ app/views/twitter_accounts/index.html.erb:6
+  Rendered twitter_accounts/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 876)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 283)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 37.4ms | Allocations: 2593)
+Completed 200 OK in 41ms (Views: 37.4ms | ActiveRecord: 1.6ms | Allocations: 3521)
+
+
+Started POST "/auth/twitter" for ::1 at 2022-05-09 16:24:51 +0200
+Started GET "/auth/twitter/callback?oauth_token=[FILTERED]&oauth_verifier=LprSRvsKieSvnkujIVFg3O799gPLAA5W" for ::1 at 2022-05-09 16:24:58 +0200
+Processing by OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"[FILTERED]", "oauth_verifier"=>"LprSRvsKieSvnkujIVFg3O799gPLAA5W"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+#<OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash secret="1D7ejD2TciNXqDq8mEG5JBWeLdwmg4EhzQKy3RNYOUOUv" token="3386160371-RSoOTHAFYBVHHhjxGfNE8O2PvlcZfmwG7droV5b"> extra=#<OmniAuth::AuthHash access_token=#<OAuth::AccessToken:0x00007f4de010abf0 @token="3386160371-RSoOTHAFYBVHHhjxGfNE8O2PvlcZfmwG7droV5b", @secret="1D7ejD2TciNXqDq8mEG5JBWeLdwmg4EhzQKy3RNYOUOUv", @consumer=#<OAuth::Consumer:0x00007f4de01338c0 @key="JsC4aPZlkWTawZHBSYuBHib0Z", @secret="L0Geg3TT2e4eLa6G9Z7bfhsAyivRRGXRz5rZdHO1ObxMmpIvfK", @options={:signature_method=>"HMAC-SHA1", :request_token_path=>"/oauth/request_token", :authenticate_path=>"/oauth/authenticate", :authorize_path=>"/oauth/authenticate", :access_token_path=>"/oauth/access_token", :proxy=>nil, :scheme=>:header, :http_method=>:post, :debug_output=>nil, :oauth_version=>"1.0", :site=>"https://api.twitter.com"}, @debug_output=nil, @http=#<Net::HTTP api.twitter.com:443 open=false>, @http_method=:post, @uri=#<URI::HTTPS https://api.twitter.com>>, @params={:oauth_token=>"3386160371-RSoOTHAFYBVHHhjxGfNE8O2PvlcZfmwG7droV5b", "oauth_token"=>"3386160371-RSoOTHAFYBVHHhjxGfNE8O2PvlcZfmwG7droV5b", :oauth_token_secret=>"1D7ejD2TciNXqDq8mEG5JBWeLdwmg4EhzQKy3RNYOUOUv", "oauth_token_secret"=>"1D7ejD2TciNXqDq8mEG5JBWeLdwmg4EhzQKy3RNYOUOUv", :user_id=>"3386160371", "user_id"=>"3386160371", :screen_name=>"Elarabyelaidy", "screen_name"=>"Elarabyelaidy"}, @response=#<Net::HTTPOK 200 OK readbody=true>> raw_info=#<OmniAuth::AuthHash contributors_enabled=false created_at="Tue Jul 21 18:14:50 +0000 2015" default_profile=true default_profile_image=false description="Computer @ALAzharUniv, Techie." entities=#<OmniAuth::AuthHash description=#<OmniAuth::AuthHash urls=#<Hashie::Array []>>> favourites_count=7563 follow_request_sent=false followers_count=178 following=false friends_count=683 geo_enabled=false has_extended_profile=true id=3386160371 id_str="3386160371" is_translation_enabled=false is_translator=false lang=nil listed_count=1 location="القاهرة, مصر" name="3araby" needs_phone_verification=false notifications=false profile_background_color="C0DEED" profile_background_image_url="http://abs.twimg.com/images/themes/theme1/bg.png" profile_background_image_url_https="https://abs.twimg.com/images/themes/theme1/bg.png" profile_background_tile=false profile_banner_url="https://pbs.twimg.com/profile_banners/3386160371/1535305580" profile_image_url="http://pbs.twimg.com/profile_images/1518392148806275074/vJ3O05oA_normal.jpg" profile_image_url_https="https://pbs.twimg.com/profile_images/1518392148806275074/vJ3O05oA_normal.jpg" profile_link_color="1DA1F2" profile_sidebar_border_color="C0DEED" profile_sidebar_fill_color="DDEEF6" profile_text_color="333333" profile_use_background_image=true protected=false screen_name="Elarabyelaidy" statuses_count=658 suspended=false time_zone=nil translator_type="none" url=nil utc_offset=nil verified=false withheld_in_countries=#<Hashie::Array []>>> info=#<OmniAuth::AuthHash::InfoHash description="Computer @ALAzharUniv, Techie." email=nil image="http://pbs.twimg.com/profile_images/1518392148806275074/vJ3O05oA_normal.jpg" location="القاهرة, مصر" name="3araby" nickname="Elarabyelaidy" urls=#<OmniAuth::AuthHash Twitter="https://twitter.com/Elarabyelaidy" Website=nil>> provider="twitter" uid="3386160371">
+  [1m[36mTwitterAccount Load (1.1ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ? AND "twitter_accounts"."username" = ? ORDER BY "twitter_accounts"."id" ASC LIMIT ?[0m  [["user_id", 9], ["username", "Elarabyelaidy"], ["LIMIT", 1]]
+  ↳ app/controllers/omniauth_callbacks_controller.rb:5:in `twitter'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/omniauth_callbacks_controller.rb:6:in `twitter'
+  [1m[36mTwitterAccount Create (3.5ms)[0m  [1m[32mINSERT INTO "twitter_accounts" ("user_id", "name", "username", "image", "token", "secret", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 9], ["name", "3araby"], ["username", "Elarabyelaidy"], ["image", "http://pbs.twimg.com/profile_images/1518392148806275074/vJ3O05oA_normal.jpg"], ["token", "3386160371-RSoOTHAFYBVHHhjxGfNE8O2PvlcZfmwG7droV5b"], ["secret", "1D7ejD2TciNXqDq8mEG5JBWeLdwmg4EhzQKy3RNYOUOUv"], ["created_at", "2022-05-09 14:25:00.762727"], ["updated_at", "2022-05-09 14:25:00.762727"]]
+  ↳ app/controllers/omniauth_callbacks_controller.rb:6:in `twitter'
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/omniauth_callbacks_controller.rb:6:in `twitter'
+Redirected to http://localhost:3000/twitter_accounts
+Completed 302 Found in 43ms (ActiveRecord: 14.3ms | Allocations: 9874)
+
+
+Started GET "/twitter_accounts" for ::1 at 2022-05-09 16:25:00 +0200
+Processing by TwitterAccountsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering twitter_accounts/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Load (0.9ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ?[0m  [["user_id", 9]]
+  ↳ app/views/twitter_accounts/index.html.erb:6
+  Rendered twitter_accounts/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1307)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 272)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 64)
+  Rendered layout layouts/application.html.erb (Duration: 41.9ms | Allocations: 3113)
+Completed 200 OK in 46ms (Views: 41.7ms | ActiveRecord: 2.0ms | Allocations: 4113)
+
+
+Started DELETE "/twitter_accounts/2" for ::1 at 2022-05-09 16:25:15 +0200
+Processing by TwitterAccountsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"2"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  [1m[36mTwitterAccount Load (1.2ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ? AND "twitter_accounts"."id" = ? LIMIT ?[0m  [["user_id", 9], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/twitter_accounts_controller.rb:10:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/twitter_accounts_controller.rb:11:in `destroy'
+  [1m[36mTwitterAccount Destroy (3.2ms)[0m  [1m[31mDELETE FROM "twitter_accounts" WHERE "twitter_accounts"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/twitter_accounts_controller.rb:11:in `destroy'
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/twitter_accounts_controller.rb:11:in `destroy'
+Redirected to http://localhost:3000/twitter_accounts
+Completed 302 Found in 18ms (ActiveRecord: 10.1ms | Allocations: 3562)
+
+
+Started GET "/twitter_accounts" for ::1 at 2022-05-09 16:25:15 +0200
+Processing by TwitterAccountsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering twitter_accounts/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Load (0.8ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ?[0m  [["user_id", 9]]
+  ↳ app/views/twitter_accounts/index.html.erb:6
+  Rendered twitter_accounts/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 873)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 283)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 43.3ms | Allocations: 2588)
+Completed 200 OK in 47ms (Views: 43.4ms | ActiveRecord: 1.7ms | Allocations: 3512)
+
+
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTweets (20220509145225)
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTweets (20220509145225)
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTweets (20220509145225)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "tweets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "twitter_account_id" integer NOT NULL, "bode" text, "publish_at" datetime, "tweet_id" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5e2f8da970"
+FOREIGN KEY ("twitter_account_id")
+  REFERENCES "twitter_accounts" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_tweets_on_user_id" ON "tweets" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_tweets_on_twitter_account_id" ON "tweets" ("twitter_account_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220509145225"]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/twitter_accounts" for ::1 at 2022-05-09 17:10:59 +0200
+Processing by TwitterAccountsController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering twitter_accounts/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Load (1.6ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ?[0m  [["user_id", 9]]
+  ↳ app/views/twitter_accounts/index.html.erb:6
+  Rendered twitter_accounts/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1494)
+  Rendered shared/_navbar.html.erb (Duration: 2.1ms | Allocations: 335)
+  Rendered shared/_flash.html.erb (Duration: 0.4ms | Allocations: 65)
+  Rendered layout layouts/application.html.erb (Duration: 55.1ms | Allocations: 3435)
+Completed 200 OK in 142ms (Views: 55.4ms | ActiveRecord: 4.9ms | Allocations: 11375)
+
+
+Started GET "/" for ::1 at 2022-05-09 17:13:33 +0200
+  [1m[35m (11.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (10.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 444)
+  Rendered shared/_navbar.html.erb (Duration: 5.6ms | Allocations: 775)
+  Rendered shared/_flash.html.erb (Duration: 2.6ms | Allocations: 229)
+  Rendered layout layouts/application.html.erb (Duration: 215.5ms | Allocations: 6166)
+Completed 200 OK in 354ms (Views: 235.7ms | ActiveRecord: 8.2ms | Allocations: 16461)
+
+
+Started GET "/twitter_accounts" for ::1 at 2022-05-09 17:13:36 +0200
+Processing by TwitterAccountsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering twitter_accounts/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Load (11.7ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ?[0m  [["user_id", 9]]
+  ↳ app/views/twitter_accounts/index.html.erb:6
+  Rendered twitter_accounts/index.html.erb within layouts/application (Duration: 25.7ms | Allocations: 2664)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 346)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 65)
+  Rendered layout layouts/application.html.erb (Duration: 90.1ms | Allocations: 4631)
+Completed 200 OK in 127ms (Views: 79.6ms | ActiveRecord: 14.9ms | Allocations: 9641)
+
+
+Started POST "/auth/twitter" for ::1 at 2022-05-09 17:13:39 +0200
+Started GET "/auth/twitter/callback?oauth_token=[FILTERED]&oauth_verifier=x4eV71PVfZKcBaF7TIf43LOyv3YIjSNR" for ::1 at 2022-05-09 17:13:44 +0200
+Processing by OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"[FILTERED]", "oauth_verifier"=>"x4eV71PVfZKcBaF7TIf43LOyv3YIjSNR"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+#<OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash secret="1D7ejD2TciNXqDq8mEG5JBWeLdwmg4EhzQKy3RNYOUOUv" token="3386160371-RSoOTHAFYBVHHhjxGfNE8O2PvlcZfmwG7droV5b"> extra=#<OmniAuth::AuthHash access_token=#<OAuth::AccessToken:0x00007fc750a722d0 @token="3386160371-RSoOTHAFYBVHHhjxGfNE8O2PvlcZfmwG7droV5b", @secret="1D7ejD2TciNXqDq8mEG5JBWeLdwmg4EhzQKy3RNYOUOUv", @consumer=#<OAuth::Consumer:0x00007fc7509f41c8 @key="JsC4aPZlkWTawZHBSYuBHib0Z", @secret="L0Geg3TT2e4eLa6G9Z7bfhsAyivRRGXRz5rZdHO1ObxMmpIvfK", @options={:signature_method=>"HMAC-SHA1", :request_token_path=>"/oauth/request_token", :authenticate_path=>"/oauth/authenticate", :authorize_path=>"/oauth/authenticate", :access_token_path=>"/oauth/access_token", :proxy=>nil, :scheme=>:header, :http_method=>:post, :debug_output=>nil, :oauth_version=>"1.0", :site=>"https://api.twitter.com"}, @debug_output=nil, @http=#<Net::HTTP api.twitter.com:443 open=false>, @http_method=:post, @uri=#<URI::HTTPS https://api.twitter.com>>, @params={:oauth_token=>"3386160371-RSoOTHAFYBVHHhjxGfNE8O2PvlcZfmwG7droV5b", "oauth_token"=>"3386160371-RSoOTHAFYBVHHhjxGfNE8O2PvlcZfmwG7droV5b", :oauth_token_secret=>"1D7ejD2TciNXqDq8mEG5JBWeLdwmg4EhzQKy3RNYOUOUv", "oauth_token_secret"=>"1D7ejD2TciNXqDq8mEG5JBWeLdwmg4EhzQKy3RNYOUOUv", :user_id=>"3386160371", "user_id"=>"3386160371", :screen_name=>"Elarabyelaidy", "screen_name"=>"Elarabyelaidy"}, @response=#<Net::HTTPOK 200 OK readbody=true>> raw_info=#<OmniAuth::AuthHash contributors_enabled=false created_at="Tue Jul 21 18:14:50 +0000 2015" default_profile=true default_profile_image=false description="Computer @ALAzharUniv, Techie." entities=#<OmniAuth::AuthHash description=#<OmniAuth::AuthHash urls=#<Hashie::Array []>>> favourites_count=7563 follow_request_sent=false followers_count=178 following=false friends_count=683 geo_enabled=false has_extended_profile=true id=3386160371 id_str="3386160371" is_translation_enabled=false is_translator=false lang=nil listed_count=1 location="القاهرة, مصر" name="3araby" needs_phone_verification=false notifications=false profile_background_color="C0DEED" profile_background_image_url="http://abs.twimg.com/images/themes/theme1/bg.png" profile_background_image_url_https="https://abs.twimg.com/images/themes/theme1/bg.png" profile_background_tile=false profile_banner_url="https://pbs.twimg.com/profile_banners/3386160371/1535305580" profile_image_url="http://pbs.twimg.com/profile_images/1518392148806275074/vJ3O05oA_normal.jpg" profile_image_url_https="https://pbs.twimg.com/profile_images/1518392148806275074/vJ3O05oA_normal.jpg" profile_link_color="1DA1F2" profile_sidebar_border_color="C0DEED" profile_sidebar_fill_color="DDEEF6" profile_text_color="333333" profile_use_background_image=true protected=false screen_name="Elarabyelaidy" statuses_count=658 suspended=false time_zone=nil translator_type="none" url=nil utc_offset=nil verified=false withheld_in_countries=#<Hashie::Array []>>> info=#<OmniAuth::AuthHash::InfoHash description="Computer @ALAzharUniv, Techie." email=nil image="http://pbs.twimg.com/profile_images/1518392148806275074/vJ3O05oA_normal.jpg" location="القاهرة, مصر" name="3araby" nickname="Elarabyelaidy" urls=#<OmniAuth::AuthHash Twitter="https://twitter.com/Elarabyelaidy" Website=nil>> provider="twitter" uid="3386160371">
+  [1m[36mTwitterAccount Load (1.9ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ? AND "twitter_accounts"."username" = ? ORDER BY "twitter_accounts"."id" ASC LIMIT ?[0m  [["user_id", 9], ["username", "Elarabyelaidy"], ["LIMIT", 1]]
+  ↳ app/controllers/omniauth_callbacks_controller.rb:5:in `twitter'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/omniauth_callbacks_controller.rb:6:in `twitter'
+  [1m[36mTwitterAccount Create (41.9ms)[0m  [1m[32mINSERT INTO "twitter_accounts" ("user_id", "name", "username", "image", "token", "secret", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 9], ["name", "3araby"], ["username", "Elarabyelaidy"], ["image", "http://pbs.twimg.com/profile_images/1518392148806275074/vJ3O05oA_normal.jpg"], ["token", "3386160371-RSoOTHAFYBVHHhjxGfNE8O2PvlcZfmwG7droV5b"], ["secret", "1D7ejD2TciNXqDq8mEG5JBWeLdwmg4EhzQKy3RNYOUOUv"], ["created_at", "2022-05-09 15:13:46.288717"], ["updated_at", "2022-05-09 15:13:46.288717"]]
+  ↳ app/controllers/omniauth_callbacks_controller.rb:6:in `twitter'
+  [1m[36mTRANSACTION (25.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/omniauth_callbacks_controller.rb:6:in `twitter'
+Redirected to http://localhost:3000/twitter_accounts
+Completed 302 Found in 107ms (ActiveRecord: 74.8ms | Allocations: 10432)
+
+
+Started GET "/twitter_accounts" for ::1 at 2022-05-09 17:13:46 +0200
+Processing by TwitterAccountsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering twitter_accounts/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Load (2.0ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ?[0m  [["user_id", 9]]
+  ↳ app/views/twitter_accounts/index.html.erb:6
+  Rendered twitter_accounts/index.html.erb within layouts/application (Duration: 8.2ms | Allocations: 1319)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 274)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 65)
+  Rendered layout layouts/application.html.erb (Duration: 82.4ms | Allocations: 3128)
+Completed 200 OK in 88ms (Views: 82.1ms | ActiveRecord: 3.2ms | Allocations: 4132)
+
+
+Started GET "/tweets" for ::1 at 2022-05-09 17:13:51 +0200
+Processing by TweetsController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ? LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:3
+  [1m[36mCACHE TwitterAccount Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ? LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:8
+  Rendered tweets/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 2080)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 312)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 65)
+  Rendered layout layouts/application.html.erb (Duration: 65.6ms | Allocations: 4018)
+Completed 200 OK in 105ms (Views: 67.9ms | ActiveRecord: 2.8ms | Allocations: 7010)
+
+
+Started GET "/tweets" for ::1 at 2022-05-09 17:14:11 +0200
+Processing by TweetsController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ? LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:3
+  [1m[36mCACHE TwitterAccount Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ? LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:8
+  Rendered tweets/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1562)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 273)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 52.0ms | Allocations: 3275)
+Completed 200 OK in 57ms (Views: 52.0ms | ActiveRecord: 2.5ms | Allocations: 4262)
+
+
+Started GET "/tweets" for ::1 at 2022-05-09 17:14:39 +0200
+Processing by TweetsController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ? LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:3
+  [1m[36mCACHE TwitterAccount Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ? LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:8
+  Rendered tweets/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1560)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 273)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 39.0ms | Allocations: 3272)
+Completed 200 OK in 44ms (Views: 39.0ms | ActiveRecord: 2.4ms | Allocations: 4196)
+
+
+Started GET "/tweets" for ::1 at 2022-05-09 17:15:04 +0200
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TweetsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ? LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:3
+  [1m[36mCACHE TwitterAccount Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ? LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:8
+  Rendered tweets/index.html.erb within layouts/application (Duration: 26.3ms | Allocations: 5329)
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | Allocations: 678)
+  Rendered shared/_flash.html.erb (Duration: 8.0ms | Allocations: 229)
+  Rendered layout layouts/application.html.erb (Duration: 162.9ms | Allocations: 11219)
+Completed 200 OK in 325ms (Views: 175.2ms | ActiveRecord: 9.6ms | Allocations: 24738)
+
+
+Started GET "/tweets" for ::1 at 2022-05-09 17:15:08 +0200
+Processing by TweetsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ? LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:3
+  [1m[36mCACHE TwitterAccount Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ? LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:8
+  Rendered tweets/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1672)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 286)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 63)
+  Rendered layout layouts/application.html.erb (Duration: 34.1ms | Allocations: 3514)
+Completed 200 OK in 37ms (Views: 33.9ms | ActiveRecord: 1.8ms | Allocations: 4623)
+
+
+Started GET "/twitter_accounts" for ::1 at 2022-05-09 17:15:09 +0200
+Processing by TwitterAccountsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering twitter_accounts/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Load (1.6ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ?[0m  [["user_id", 9]]
+  ↳ app/views/twitter_accounts/index.html.erb:6
+  Rendered twitter_accounts/index.html.erb within layouts/application (Duration: 17.1ms | Allocations: 6715)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 295)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 65)
+  Rendered layout layouts/application.html.erb (Duration: 51.8ms | Allocations: 8626)
+Completed 200 OK in 61ms (Views: 51.2ms | ActiveRecord: 4.5ms | Allocations: 10448)
+
+
+Started GET "/tweets" for ::1 at 2022-05-09 17:15:12 +0200
+Processing by TweetsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ? LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:3
+  [1m[36mCACHE TwitterAccount Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ? LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:8
+  Rendered tweets/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1649)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 273)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 43.0ms | Allocations: 3364)
+Completed 200 OK in 47ms (Views: 43.4ms | ActiveRecord: 2.0ms | Allocations: 4429)
+
+
+Started GET "/twitter_accounts" for ::1 at 2022-05-09 17:15:14 +0200
+Processing by TwitterAccountsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering twitter_accounts/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Load (1.0ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ?[0m  [["user_id", 9]]
+  ↳ app/views/twitter_accounts/index.html.erb:6
+  Rendered twitter_accounts/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1073)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 271)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 35.9ms | Allocations: 2772)
+Completed 200 OK in 40ms (Views: 35.7ms | ActiveRecord: 1.9ms | Allocations: 3722)
+
+
+Started DELETE "/twitter_accounts/3" for ::1 at 2022-05-09 17:15:15 +0200
+Processing by TwitterAccountsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"3"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  [1m[36mTwitterAccount Load (1.4ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ? AND "twitter_accounts"."id" = ? LIMIT ?[0m  [["user_id", 9], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/twitter_accounts_controller.rb:17:in `set_twitter_account'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/twitter_accounts_controller.rb:10:in `destroy'
+  [1m[36mTwitterAccount Destroy (3.7ms)[0m  [1m[31mDELETE FROM "twitter_accounts" WHERE "twitter_accounts"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/twitter_accounts_controller.rb:10:in `destroy'
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/twitter_accounts_controller.rb:10:in `destroy'
+Redirected to http://localhost:3000/twitter_accounts
+Completed 302 Found in 21ms (ActiveRecord: 11.1ms | Allocations: 3759)
+
+
+Started GET "/twitter_accounts" for ::1 at 2022-05-09 17:15:15 +0200
+Processing by TwitterAccountsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering twitter_accounts/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Load (1.4ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ?[0m  [["user_id", 9]]
+  ↳ app/views/twitter_accounts/index.html.erb:6
+  Rendered twitter_accounts/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 873)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 285)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 66)
+  Rendered layout layouts/application.html.erb (Duration: 44.5ms | Allocations: 2594)
+Completed 200 OK in 48ms (Views: 44.0ms | ActiveRecord: 2.3ms | Allocations: 3523)
+
+
+Started GET "/tweets" for ::1 at 2022-05-09 17:15:16 +0200
+Processing by TweetsController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ? LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:3
+  [1m[36mCACHE TwitterAccount Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ? LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:8
+  Rendered tweets/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1540)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 287)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 61.9ms | Allocations: 3267)
+Completed 200 OK in 67ms (Views: 61.9ms | ActiveRecord: 2.5ms | Allocations: 4211)
+
+
+Started GET "/auth/twitter" for ::1 at 2022-05-09 17:15:18 +0200
+Started GET "/auth/twitter/callback?oauth_token=[FILTERED]&oauth_verifier=e0fI5wfQ52lPjVWVCp7F4QbVj914SV2T" for ::1 at 2022-05-09 17:23:30 +0200
+Processing by OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"[FILTERED]", "oauth_verifier"=>"e0fI5wfQ52lPjVWVCp7F4QbVj914SV2T"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+#<OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash secret="1D7ejD2TciNXqDq8mEG5JBWeLdwmg4EhzQKy3RNYOUOUv" token="3386160371-RSoOTHAFYBVHHhjxGfNE8O2PvlcZfmwG7droV5b"> extra=#<OmniAuth::AuthHash access_token=#<OAuth::AccessToken:0x00007f7d4c2480d0 @token="3386160371-RSoOTHAFYBVHHhjxGfNE8O2PvlcZfmwG7droV5b", @secret="1D7ejD2TciNXqDq8mEG5JBWeLdwmg4EhzQKy3RNYOUOUv", @consumer=#<OAuth::Consumer:0x00007f7d4c158c88 @key="JsC4aPZlkWTawZHBSYuBHib0Z", @secret="L0Geg3TT2e4eLa6G9Z7bfhsAyivRRGXRz5rZdHO1ObxMmpIvfK", @options={:signature_method=>"HMAC-SHA1", :request_token_path=>"/oauth/request_token", :authenticate_path=>"/oauth/authenticate", :authorize_path=>"/oauth/authenticate", :access_token_path=>"/oauth/access_token", :proxy=>nil, :scheme=>:header, :http_method=>:post, :debug_output=>nil, :oauth_version=>"1.0", :site=>"https://api.twitter.com"}, @debug_output=nil, @http=#<Net::HTTP api.twitter.com:443 open=false>, @http_method=:post, @uri=#<URI::HTTPS https://api.twitter.com>>, @params={:oauth_token=>"3386160371-RSoOTHAFYBVHHhjxGfNE8O2PvlcZfmwG7droV5b", "oauth_token"=>"3386160371-RSoOTHAFYBVHHhjxGfNE8O2PvlcZfmwG7droV5b", :oauth_token_secret=>"1D7ejD2TciNXqDq8mEG5JBWeLdwmg4EhzQKy3RNYOUOUv", "oauth_token_secret"=>"1D7ejD2TciNXqDq8mEG5JBWeLdwmg4EhzQKy3RNYOUOUv", :user_id=>"3386160371", "user_id"=>"3386160371", :screen_name=>"Elarabyelaidy", "screen_name"=>"Elarabyelaidy"}, @response=#<Net::HTTPOK 200 OK readbody=true>> raw_info=#<OmniAuth::AuthHash contributors_enabled=false created_at="Tue Jul 21 18:14:50 +0000 2015" default_profile=true default_profile_image=false description="Computer @ALAzharUniv, Techie." entities=#<OmniAuth::AuthHash description=#<OmniAuth::AuthHash urls=#<Hashie::Array []>>> favourites_count=7563 follow_request_sent=false followers_count=178 following=false friends_count=683 geo_enabled=false has_extended_profile=true id=3386160371 id_str="3386160371" is_translation_enabled=false is_translator=false lang=nil listed_count=1 location="القاهرة, مصر" name="3araby" needs_phone_verification=false notifications=false profile_background_color="C0DEED" profile_background_image_url="http://abs.twimg.com/images/themes/theme1/bg.png" profile_background_image_url_https="https://abs.twimg.com/images/themes/theme1/bg.png" profile_background_tile=false profile_banner_url="https://pbs.twimg.com/profile_banners/3386160371/1535305580" profile_image_url="http://pbs.twimg.com/profile_images/1518392148806275074/vJ3O05oA_normal.jpg" profile_image_url_https="https://pbs.twimg.com/profile_images/1518392148806275074/vJ3O05oA_normal.jpg" profile_link_color="1DA1F2" profile_sidebar_border_color="C0DEED" profile_sidebar_fill_color="DDEEF6" profile_text_color="333333" profile_use_background_image=true protected=false screen_name="Elarabyelaidy" statuses_count=658 suspended=false time_zone=nil translator_type="none" url=nil utc_offset=nil verified=false withheld_in_countries=#<Hashie::Array []>>> info=#<OmniAuth::AuthHash::InfoHash description="Computer @ALAzharUniv, Techie." email=nil image="http://pbs.twimg.com/profile_images/1518392148806275074/vJ3O05oA_normal.jpg" location="القاهرة, مصر" name="3araby" nickname="Elarabyelaidy" urls=#<OmniAuth::AuthHash Twitter="https://twitter.com/Elarabyelaidy" Website=nil>> provider="twitter" uid="3386160371">
+  [1m[36mTwitterAccount Load (1.5ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ? AND "twitter_accounts"."username" = ? ORDER BY "twitter_accounts"."id" ASC LIMIT ?[0m  [["user_id", 9], ["username", "Elarabyelaidy"], ["LIMIT", 1]]
+  ↳ app/controllers/omniauth_callbacks_controller.rb:5:in `twitter'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/omniauth_callbacks_controller.rb:6:in `twitter'
+  [1m[36mTwitterAccount Create (4.4ms)[0m  [1m[32mINSERT INTO "twitter_accounts" ("user_id", "name", "username", "image", "token", "secret", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 9], ["name", "3araby"], ["username", "Elarabyelaidy"], ["image", "http://pbs.twimg.com/profile_images/1518392148806275074/vJ3O05oA_normal.jpg"], ["token", "3386160371-RSoOTHAFYBVHHhjxGfNE8O2PvlcZfmwG7droV5b"], ["secret", "1D7ejD2TciNXqDq8mEG5JBWeLdwmg4EhzQKy3RNYOUOUv"], ["created_at", "2022-05-09 15:23:31.753752"], ["updated_at", "2022-05-09 15:23:31.753752"]]
+  ↳ app/controllers/omniauth_callbacks_controller.rb:6:in `twitter'
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/omniauth_callbacks_controller.rb:6:in `twitter'
+Redirected to http://localhost:3000/twitter_accounts
+Completed 302 Found in 29ms (ActiveRecord: 13.8ms | Allocations: 6278)
+
+
+Started GET "/twitter_accounts" for ::1 at 2022-05-09 17:23:31 +0200
+Processing by TwitterAccountsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering twitter_accounts/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Load (1.0ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ?[0m  [["user_id", 9]]
+  ↳ app/views/twitter_accounts/index.html.erb:6
+  Rendered twitter_accounts/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1140)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 274)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 64)
+  Rendered layout layouts/application.html.erb (Duration: 39.0ms | Allocations: 2948)
+Completed 200 OK in 43ms (Views: 38.7ms | ActiveRecord: 2.0ms | Allocations: 3918)
+
+
+Started GET "/twitter_accounts" for ::1 at 2022-05-09 17:30:08 +0200
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TwitterAccountsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering twitter_accounts/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Load (1.3ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ?[0m  [["user_id", 9]]
+  ↳ app/views/twitter_accounts/index.html.erb:6
+  Rendered twitter_accounts/index.html.erb within layouts/application (Duration: 34.1ms | Allocations: 8201)
+  Rendered shared/_navbar.html.erb (Duration: 2.6ms | Allocations: 649)
+  Rendered shared/_flash.html.erb (Duration: 1.8ms | Allocations: 229)
+  Rendered layout layouts/application.html.erb (Duration: 182.8ms | Allocations: 14027)
+Completed 200 OK in 320ms (Views: 189.5ms | ActiveRecord: 10.9ms | Allocations: 27908)
+
+
+Started GET "/tweets" for ::1 at 2022-05-09 17:30:15 +0200
+Processing by TweetsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ? LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:3
+  [1m[36mCACHE TwitterAccount Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ? LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:8
+  Rendered tweets/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2161)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 312)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 65)
+  Rendered layout layouts/application.html.erb (Duration: 44.4ms | Allocations: 4099)
+Completed 200 OK in 60ms (Views: 46.6ms | ActiveRecord: 1.8ms | Allocations: 7077)
+
+
+Started GET "/tweets/new" for ::1 at 2022-05-09 17:30:18 +0200
+Processing by TweetsController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/new.html.erb within layouts/application
+  [1m[36mTwitterAccount Load (1.0ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ?[0m  [["user_id", 9]]
+  ↳ app/views/tweets/new.html.erb:6
+  Rendered tweets/new.html.erb within layouts/application (Duration: 94.8ms | Allocations: 6910)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 286)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 63)
+  Rendered layout layouts/application.html.erb (Duration: 149.5ms | Allocations: 8753)
+Completed 200 OK in 167ms (Views: 149.6ms | ActiveRecord: 5.6ms | Allocations: 13644)
+
+
+Started GET "/auth/twitter" for ::1 at 2022-05-09 18:26:37 +0200
+Started GET "/auth/twitter/callback?oauth_token=[FILTERED]&oauth_verifier=jcgPRSTJjbKAmosKsda9cw7Rc10Pun3g" for ::1 at 2022-05-09 18:26:45 +0200
+Processing by OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"[FILTERED]", "oauth_verifier"=>"jcgPRSTJjbKAmosKsda9cw7Rc10Pun3g"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+#<OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash secret="1D7ejD2TciNXqDq8mEG5JBWeLdwmg4EhzQKy3RNYOUOUv" token="3386160371-RSoOTHAFYBVHHhjxGfNE8O2PvlcZfmwG7droV5b"> extra=#<OmniAuth::AuthHash access_token=#<OAuth::AccessToken:0x00007f0054135af0 @token="3386160371-RSoOTHAFYBVHHhjxGfNE8O2PvlcZfmwG7droV5b", @secret="1D7ejD2TciNXqDq8mEG5JBWeLdwmg4EhzQKy3RNYOUOUv", @consumer=#<OAuth::Consumer:0x00007f005404e498 @key="JsC4aPZlkWTawZHBSYuBHib0Z", @secret="L0Geg3TT2e4eLa6G9Z7bfhsAyivRRGXRz5rZdHO1ObxMmpIvfK", @options={:signature_method=>"HMAC-SHA1", :request_token_path=>"/oauth/request_token", :authenticate_path=>"/oauth/authenticate", :authorize_path=>"/oauth/authenticate", :access_token_path=>"/oauth/access_token", :proxy=>nil, :scheme=>:header, :http_method=>:post, :debug_output=>nil, :oauth_version=>"1.0", :site=>"https://api.twitter.com"}, @debug_output=nil, @http=#<Net::HTTP api.twitter.com:443 open=false>, @http_method=:post, @uri=#<URI::HTTPS https://api.twitter.com>>, @params={:oauth_token=>"3386160371-RSoOTHAFYBVHHhjxGfNE8O2PvlcZfmwG7droV5b", "oauth_token"=>"3386160371-RSoOTHAFYBVHHhjxGfNE8O2PvlcZfmwG7droV5b", :oauth_token_secret=>"1D7ejD2TciNXqDq8mEG5JBWeLdwmg4EhzQKy3RNYOUOUv", "oauth_token_secret"=>"1D7ejD2TciNXqDq8mEG5JBWeLdwmg4EhzQKy3RNYOUOUv", :user_id=>"3386160371", "user_id"=>"3386160371", :screen_name=>"Elarabyelaidy", "screen_name"=>"Elarabyelaidy"}, @response=#<Net::HTTPOK 200 OK readbody=true>> raw_info=#<OmniAuth::AuthHash contributors_enabled=false created_at="Tue Jul 21 18:14:50 +0000 2015" default_profile=true default_profile_image=false description="Computer @ALAzharUniv, Techie." entities=#<OmniAuth::AuthHash description=#<OmniAuth::AuthHash urls=#<Hashie::Array []>>> favourites_count=7566 follow_request_sent=false followers_count=178 following=false friends_count=683 geo_enabled=false has_extended_profile=true id=3386160371 id_str="3386160371" is_translation_enabled=false is_translator=false lang=nil listed_count=1 location="القاهرة, مصر" name="3araby" needs_phone_verification=false notifications=false profile_background_color="C0DEED" profile_background_image_url="http://abs.twimg.com/images/themes/theme1/bg.png" profile_background_image_url_https="https://abs.twimg.com/images/themes/theme1/bg.png" profile_background_tile=false profile_banner_url="https://pbs.twimg.com/profile_banners/3386160371/1535305580" profile_image_url="http://pbs.twimg.com/profile_images/1518392148806275074/vJ3O05oA_normal.jpg" profile_image_url_https="https://pbs.twimg.com/profile_images/1518392148806275074/vJ3O05oA_normal.jpg" profile_link_color="1DA1F2" profile_sidebar_border_color="C0DEED" profile_sidebar_fill_color="DDEEF6" profile_text_color="333333" profile_use_background_image=true protected=false screen_name="Elarabyelaidy" statuses_count=659 suspended=false time_zone=nil translator_type="none" url=nil utc_offset=nil verified=false withheld_in_countries=#<Hashie::Array []>>> info=#<OmniAuth::AuthHash::InfoHash description="Computer @ALAzharUniv, Techie." email=nil image="http://pbs.twimg.com/profile_images/1518392148806275074/vJ3O05oA_normal.jpg" location="القاهرة, مصر" name="3araby" nickname="Elarabyelaidy" urls=#<OmniAuth::AuthHash Twitter="https://twitter.com/Elarabyelaidy" Website=nil>> provider="twitter" uid="3386160371">
+  [1m[36mTwitterAccount Load (1.5ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ? AND "twitter_accounts"."username" = ? ORDER BY "twitter_accounts"."id" ASC LIMIT ?[0m  [["user_id", 9], ["username", "Elarabyelaidy"], ["LIMIT", 1]]
+  ↳ app/controllers/omniauth_callbacks_controller.rb:5:in `twitter'
+Redirected to http://localhost:3000/twitter_accounts
+Completed 302 Found in 14ms (ActiveRecord: 3.4ms | Allocations: 4016)
+
+
+Started GET "/twitter_accounts" for ::1 at 2022-05-09 18:26:46 +0200
+Processing by TwitterAccountsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering twitter_accounts/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Load (1.2ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ?[0m  [["user_id", 9]]
+  ↳ app/views/twitter_accounts/index.html.erb:6
+  Rendered twitter_accounts/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1139)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 274)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 66)
+  Rendered layout layouts/application.html.erb (Duration: 51.3ms | Allocations: 2950)
+Completed 200 OK in 55ms (Views: 50.9ms | ActiveRecord: 2.4ms | Allocations: 3924)
+
+
+Started GET "/tweets" for ::1 at 2022-05-09 18:26:49 +0200
+Processing by TweetsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/index.html.erb within layouts/application
+  [1m[36mTwitterAccount Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ? LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:3
+  [1m[36mCACHE TwitterAccount Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ? LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ app/views/tweets/index.html.erb:8
+  Rendered tweets/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1572)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 273)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 33.4ms | Allocations: 3285)
+Completed 200 OK in 36ms (Views: 33.1ms | ActiveRecord: 1.8ms | Allocations: 4230)
+
+
+Started GET "/tweets/new" for ::1 at 2022-05-09 18:26:51 +0200
+Processing by TweetsController#new as HTML
+  [1m[36mUser Load (7.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tweets/new.html.erb within layouts/application
+  [1m[36mTwitterAccount Load (2.1ms)[0m  [1m[34mSELECT "twitter_accounts".* FROM "twitter_accounts" WHERE "twitter_accounts"."user_id" = ?[0m  [["user_id", 9]]
+  ↳ app/views/tweets/new.html.erb:6
+  Rendered tweets/new.html.erb within layouts/application (Duration: 7.9ms | Allocations: 3507)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 273)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 76.6ms | Allocations: 5207)
+Completed 200 OK in 88ms (Views: 75.5ms | ActiveRecord: 9.9ms | Allocations: 6123)
+
+
+Started POST "/tweets" for ::1 at 2022-05-09 18:26:54 +0200
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for TweetsController
+Did you mean?  set_current_user
+               require_user_logged_in!
+               new
+               index):
+  
+actionpack (6.1.5) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.5) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.5) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.5) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.5) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.5) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.5) lib/action_dispatch/routing/route_set.rb:842:in `call'
+omniauth (2.1.0) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.1.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.1.0) lib/omniauth/builder.rb:44:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.5) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.5) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.5) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.5) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.1.5) lib/rails/engine.rb:539:in `call'
+puma (5.6.2) lib/puma/configuration.rb:252:in `call'
+puma (5.6.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.2) lib/puma/server.rb:441:in `process_client'
+puma (5.6.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
