@@ -23,4 +23,5 @@
 - tweets controller 
 - tweets index and navbar 
 - tweets schedule button 
-- tweet new action
+- tweet new action 
+- tweets validations 

@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2022_05_09_145225) do
   create_table "tweets", force: :cascade do |t|
     t.integer "user_id"
     t.integer "twitter_account_id", null: false
-    t.text "bode"
+    t.text "body"
     t.datetime "publish_at"
     t.string "tweet_id"
     t.datetime "created_at", precision: 6, null: false

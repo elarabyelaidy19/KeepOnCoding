@@ -3,7 +3,7 @@ class CreateTweets < ActiveRecord::Migration[6.1]
     create_table :tweets do |t|
       t.belongs_to :user
       t.belongs_to :twitter_account, null: false, foreign_key: true
-      t.text :bode
+      t.text :body
       t.datetime :publish_at
       t.string :tweet_id
 

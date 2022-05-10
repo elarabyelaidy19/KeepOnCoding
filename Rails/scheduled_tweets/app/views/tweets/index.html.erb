@@ -7,4 +7,6 @@
 
 <% if Current.user.twitter_accounts.none? %> 
     <%= link_to "Connect to your twitter account", "/auth/twitter", class: "btn btn-primary" %> 
-<%end%>
+<%end%> 
+
+<%= render @tweets %> 
