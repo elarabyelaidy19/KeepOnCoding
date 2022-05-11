@@ -25,3 +25,15 @@
 - tweets schedule button 
 - tweet new action 
 - tweets validations 
+- twitter gem
+
+
+## Twitter accountc client
+- twitter gem 
+
+## active job 
+- create tweet job 
+- tweet job 
+- avoid duplicates
+- config publich tim in tweete controller 
+- callback for change in tweete queue
