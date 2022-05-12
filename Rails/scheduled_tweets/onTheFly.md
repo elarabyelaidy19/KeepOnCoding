@@ -36,4 +36,10 @@
 - tweet job 
 - avoid duplicates
 - config publich tim in tweete controller 
-- callback for change in tweete queue
+- callback for change in tweete queue 
+
+## sidekiq
+- background worker
+- redis used to store jobs 
+- config rails to send jobs to sidekiq => development
+- start redis server

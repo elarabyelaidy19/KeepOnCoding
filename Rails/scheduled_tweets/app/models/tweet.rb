@@ -9,7 +9,7 @@ class Tweet < ApplicationRecord
     self.publish_at ||= 24.hour.from_now
   end   
 
-  # callback if commit changed after commit to database  
+  # callback if commit changed after commit to database   
   after_save_commit do 
     if publish_at_previously_changed? 
       # queue tweet until publish time
