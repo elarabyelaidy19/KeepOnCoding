@@ -1,4 +1,16 @@
 class Rating < ApplicationRecord
   belongs_to :person 
-  validates :score, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 10 }
+  validates :score, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 10 } 
+
+  def promoter?  
+    score.between?(9,10)
+  end  
+
+  def passive? 
+    score >= 7 and score <= 8
+  end 
+
+  def detractor? 
+    score <= 6
+  end 
 end
