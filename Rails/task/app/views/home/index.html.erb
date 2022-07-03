@@ -1,0 +1,16 @@
+<div class="card">
+    <div class="card-header">
+        <h3>Welcome to my ticket system app <% if user_signed_in? %> <%= current_user.name %><% end %></h3>
+    </div>
+    <div class="card-body">
+        <p class="card-text">
+            This is a simple ticket system app that allows a user to create tickets.
+            <% if !user_signed_in? %>
+                <br/>
+                Please <%= link_to "create an account", new_user_registration_path %> or 
+                <%= link_to "log in", new_user_session_path %>
+                to get started!
+            <% end %>
+        </p>
+    </div>
+</div>
