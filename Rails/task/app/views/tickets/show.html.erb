@@ -1,0 +1,38 @@
+<% header = link_to(@ticket.project.name, project_path(@ticket.project)) + " &raquo; #{@ticket.name}".html_safe %>
+
+<%= render 'shared/content_title', title: header %>
+
+<div class="container-fluid">
+  <div class="row">
+    <p class="col-sm-10 h4">Ticket description</p>
+    <p class="col-sm-2">
+      <%= link_to 'Edit', edit_ticket_path(@ticket) %> 
+      <%= link_to 'Delete', ticket_path(@ticket), method: :delete, data: { confirm: "Delete this ticket?" } %>  
+    </p>
+  </div>
+  <br>
+  <div class="row">
+    <p class="h6 col-sm-12"><%= @ticket.body %></p>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class="row">
+    <table class="col-sm-6">
+      <thead>
+        <th class="col-sm-4">Status</th>
+        <th class="col-sm-4">Creator</th>
+        <th class="col-sm-4">Assignee</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-sm-4"><%= @ticket.status %></td>
+          <td class="col-sm-4"><%= @ticket.creator.name %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br>
+</div>
+<br>
+
