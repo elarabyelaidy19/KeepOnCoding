@@ -1,11 +1,8 @@
 class TicketsController < ApplicationController
   before_action :set_ticket, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!  
+  before_action :authenticate_user!
   before_action :correct_user, only: [ :show, :edit, :update, :destroy ]
-  before_action :verify_can_edit, only: [ :edit, :update ]  
-
-  before_action :set_project
-
+  before_action :verify_can_edit, only: [ :edit, :update ] 
   # GET /tickets or /tickets.json
   def index
     @tickets = Ticket.all
@@ -17,8 +14,7 @@ class TicketsController < ApplicationController
 
   # GET /tickets/new
   def new
-    @project = Project.find(params[:project_id])
-    @ticket = @project.tickets.new 
+    @ticket = Ticket.new  
   end
 
   # GET /tickets/1/edit
@@ -27,7 +23,9 @@ class TicketsController < ApplicationController
 
   # POST /tickets or /tickets.json
   def create
-    @ticket = @project.tickets.new(ticket_params.merge(creator: current_user))
+     @project = Project.find(params[:ticket][:project_id])
+    @ticket = @project.tickets.build(ticket_params) 
+    @ticket.creator = current_user
     respond_to do |format|
       if @ticket.save
         format.html { redirect_to ticket_url(@ticket), notice: "Ticket was successfully created." }
@@ -73,15 +71,11 @@ class TicketsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_ticket
-      @ticket = @project.tickets.find(params[:id])
+      @ticket = Ticket.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def ticket_params
-      params.require(:ticket).permit(:title, :description, :status, :project_id, :assignee, :creator_id)
-    end 
-
-    def set_project
-      @project = tickets.project.find(params[:project_id])
+      params.require(:ticket).permit(:title, :description, :status, :project_id, :user_id)
     end
 end
