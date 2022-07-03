@@ -1,14 +1,33 @@
-<%= render 'shared/content_title', title: 'Tickets' %>
+<h1>Tickets</h1>
 
-<div class="filter">
-  <%= render 'search' %>
-</div>
+<table class="table table-striped table-bordered table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Created By</th>
+      <th>Date Created</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tickets.each do |ticket| %>
+      <% if ticket.user == current_user %>
+        <tr>
+          <td><%= link_to truncate(ticket.title, length: 25), ticket %></td>
+          <td><%= truncate(ticket.description, length: 25) %></td>
+          <td><%= ticket.status %></td>
+          <td><%= ticket.user.name %></td>
+          <td><%= ticket.created_at %></td>
+          <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
 <br>
-<% if @tickets.length != 0 %>
-  <%= render 'table' %>
-  <%= link_to "Add a new ticket", new_ticket_path %>
-<% elsif @tickets.length == 0 && request.query_string.present? %>
-  <p>There are no tickets for these filters. Would you like to <%= link_to 'add one?', new_ticket_path %></p>
-<% else %>
-  <p>There are no tickets at the moment. Would you like to <%= link_to 'add one?', new_ticket_path %></p>
-<% end %>
+
+<%= link_to 'Create Ticket', new_ticket_path, class: "btn btn-success" %>
