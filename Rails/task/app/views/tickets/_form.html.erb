@@ -1,11 +1,10 @@
 <%= form_with(model: ticket) do |form| %> 
-  <% project_id = params[:project] ? params[:project] : @ticket.project_id %>
   <% if ticket.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
 
       <ul>
-        <% ticket.errors.each do |error| %>
+        <% @ticket.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -13,32 +12,24 @@
   <% end %>
   <div class="form-group">
     <div class="field">
-      <%= form.label :title %>
-      <%= form.text_field :title, autofocus: true, required: true, class: "form-control" %>
+      <%= form.label :name %>
+      <%= form.text_field :name, autofocus: true, required: true, class: "form-control" %>
     </div>
 
     <div class="field">
-      <%= form.label :description %>
-      <%= form.text_field :description, required: true, class: "form-control" %>
+      <%= form.label :body %>
+      <%= form.text_field :body, required: true, class: "form-control" %>
     </div>
 
     <div class="field">
-      <% if @ticket.persisted? %>
-        <%= form.label :status %><br />
-        <%= form.select :status, ['Open', 'Closed'] %>
-      <% else %>
-        <%= form.text_field :status, class: "form-control", value: "Open", type: :hidden %>
-      <% end %>
+      <%= form.label :project_id, "Project" %>
+      <%= form.select :project_id, options_from_collection_for_select(Project.all, :id, :name) %>
     </div>
 
     <div class="field">
-      <%= form.number_field :user_id, id: :ticket_user_id, class: "form-control", value: current_user.id, type: :hidden %>
-    </div> 
-    
-    <div class="field">
-      <%= form.number_field :project_id, id: :ticket_project_id, class: "form-control", value: ticket.project_id, type: :hidden %>
+      <%= form.label :status %>
+      <%= form.select :status, options_for_select(Ticket::STATUS, @ticket.status) %>
     </div>
-  
 
     <br/>
     <div class="actions">

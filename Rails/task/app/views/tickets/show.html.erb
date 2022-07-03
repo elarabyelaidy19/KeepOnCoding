@@ -1,11 +1,11 @@
 <div class="p-1 mb-4 bg-light rounded-3">
   <div class="container-fluid py-5">
-    <h1 class="display-5"><%= @ticket.title %></h1>
+    <h1 class="display-5"><%= @ticket.name %></h1>
     <p class="col-md-8 fs-5">
       <strong>Ticket ID:</strong> <%= @ticket.id %><br />
       <strong>Status:</strong> <%= @ticket.status %>
     </p>
-    <p class="lead"><%= @ticket.description %></p>
+    <p class="lead"><%= @ticket.body %></p>
     <%= link_to 'Destroy', @ticket, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
     <%= link_to 'Back', tickets_path, class: "btn btn-dark" %>
   </div>
