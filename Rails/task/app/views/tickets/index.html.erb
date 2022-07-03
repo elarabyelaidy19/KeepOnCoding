@@ -14,12 +14,12 @@
 
   <tbody>
     <% @tickets.each do |ticket| %>
-      <% if ticket.user == current_user %>
+      <%  if ticket.creator == current_user %>
         <tr>
-          <td><%= link_to truncate(ticket.title, length: 25), ticket %></td>
-          <td><%= truncate(ticket.description, length: 25) %></td>
+          <td><%= link_to truncate(ticket.name, length: 25), ticket %></td>
+          <td><%= truncate(ticket.body, length: 25) %></td>
           <td><%= ticket.status %></td>
-          <td><%= ticket.user.name %></td>
+           <td><%= ticket.creator.name %></td>
           <td><%= ticket.created_at %></td>
           <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
         </tr>
