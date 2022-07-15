@@ -1,9 +1,8 @@
 class TicketsController < ApplicationController
   before_action :set_ticket, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
+  before_action :correct_user, only: [ :show, :edit, :update, :destroy ]
   before_action :verify_can_edit, only: [ :edit, :update ] 
-  
-  # before_action :correct_user, only: [ :show, :edit, :update, :destroy ]
   # GET /tickets or /tickets.json
   def index
     @tickets = Ticket.all
@@ -77,6 +76,6 @@ class TicketsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def ticket_params
-      params.require(:ticket).permit(:name, :body, :status, :project_id)
+      params.require(:ticket).permit(:title, :description, :status, :project_id, :user_id)
     end
 end

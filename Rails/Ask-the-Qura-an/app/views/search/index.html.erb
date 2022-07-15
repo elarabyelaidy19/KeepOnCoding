@@ -1,0 +1,43 @@
+<%= render 'search/form' %>
+
+<% if params[:lexical_type] == "lexical" %>
+        <table class="table "  >
+            <thead> 
+            </thead>
+            <div class="space" > <%= @counter %> of Results</div>
+            <tbody  class="aya" >
+                <% @ayas.each do |aya| %>
+                    <tr>
+                        <% if aya != nil %>
+                            <div class="aya"><td > <%= aya.text + " (#{aya.surah_name} #{aya.aya_number}:#{aya.surah_number})" %></td></div>
+                        <% end %>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+
+        <div class="button">
+            <%== pagy_bootstrap_nav(@pagy) %>
+        </div> 
+
+<% else %>
+    <table class="table">
+    <thead>
+    </thead>
+    <div class="space" > <%= @counter %> of Results</div>
+    <tbody  class="aya" >
+        <% @ayas.each do |aya| %>
+            <tr>
+                <% if aya != nil %>
+                    <div class="aya"><td > <%=   aya %><a href="#" class='suraLink'>link</a></td></div>
+                <% end %>
+            </tr>
+        <% end %>
+          
+    </tbody>
+    
+</table>
+
+    <% end %>
+
+
