@@ -1,0 +1,5 @@
+ <%=search_form_for(@query , url: search_path , method: :get , class:'d-flex') do |f|  %>
+    <%= f.button "بحث باللفظ", name: "lexical_type", value: "lexical", class:"btn btn-space btn-outline-success" %> 
+    <%= f.button "بحث بالمعنى", name: "semantic_type", value: "semantic", class:"btn btn-space btn-outline-success " %> 
+    <%= f.search_field :content_or_text_cont , placeholder: "عن ماذا تريد أنت تبحث؟", type: "text", class:"form-control me-2" %>
+<% end %>
