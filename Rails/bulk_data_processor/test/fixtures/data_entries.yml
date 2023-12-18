@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: data_entries
+#
+#  id         :integer          not null, primary key
+#  address    :string
+#  age        :integer
+#  email      :string
+#  name       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+one:
+  name: MyString
+  age: 1
+
+two:
+  name: MyString
+  age: 1

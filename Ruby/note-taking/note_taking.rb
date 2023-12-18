@@ -1,4 +1,3 @@
-# note_taking.rb
 
 require 'tty-prompt'
 require 'tty-editor'
