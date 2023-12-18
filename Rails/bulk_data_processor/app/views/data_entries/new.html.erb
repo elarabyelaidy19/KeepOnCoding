@@ -1,0 +1,7 @@
+<h1> Uplaod CSV </h1> 
+
+<%= form_tag({action: :create}, multipart: true)  do %> 
+    <%= file_field_tag :file%> 
+    <%= submit_tag :import %> 
+<%end%>
+
