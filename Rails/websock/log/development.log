@@ -1,0 +1,1065 @@
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2023-12-30 14:33:01.474751', '2023-12-30 14:33:01.474755') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20231230142624)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231230142624') RETURNING "version"[0m
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-12-30 16:42:47 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HangoutsController#index as HTML
+Completed 401 Unauthorized in 108ms (ActiveRecord: 0.0ms | Allocations: 5345)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-12-30 16:42:48 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/elaraby/.rvm/gems/ruby-3.0.1/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/elaraby/.rvm/gems/ruby-3.0.1/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 984)
+  Rendered /home/elaraby/.rvm/gems/ruby-3.0.1/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 124.1ms | Allocations: 5138)
+  Rendered layouts/_navbar.html.erb (Duration: 5.6ms | Allocations: 376)
+  Rendered layouts/_alerts.html.erb (Duration: 5.0ms | Allocations: 162)
+  Rendered layout layouts/application.html.erb (Duration: 6335.8ms | Allocations: 192087)
+Completed 200 OK in 6785ms (Views: 6509.3ms | ActiveRecord: 42.5ms | Allocations: 313817)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-12-30 16:44:43 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"elaraby@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "elaraby@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 185ms (ActiveRecord: 2.3ms | Allocations: 7938)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"elaraby@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering /home/elaraby/.rvm/gems/ruby-3.0.1/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/elaraby/.rvm/gems/ruby-3.0.1/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 422)
+  Rendered /home/elaraby/.rvm/gems/ruby-3.0.1/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1514)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 53)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered layout layouts/application.html.erb (Duration: 77.8ms | Allocations: 6289)
+Completed 200 OK in 358ms (Views: 79.4ms | ActiveRecord: 0.0ms | Allocations: 8679)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-12-30 16:44:43 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/elaraby/.rvm/gems/ruby-3.0.1/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/elaraby/.rvm/gems/ruby-3.0.1/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 420)
+  Rendered /home/elaraby/.rvm/gems/ruby-3.0.1/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1388)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 80)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered layout layouts/application.html.erb (Duration: 77.1ms | Allocations: 6070)
+Completed 200 OK in 98ms (Views: 79.3ms | ActiveRecord: 0.0ms | Allocations: 6895)
+
+
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elaraby@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "elaraby@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-12-30 14:55:12.698187"], ["updated_at", "2023-12-30 14:55:12.698187"]]
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (3.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elaraby2@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "elaraby2@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-12-30 14:55:12.885847"], ["updated_at", "2023-12-30 14:55:12.885847"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (2.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elaraby3@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "elaraby3@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-12-30 14:55:13.067279"], ["updated_at", "2023-12-30 14:55:13.067279"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elaraby4@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "elaraby4@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-12-30 14:55:13.247782"], ["updated_at", "2023-12-30 14:55:13.247782"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-12-30 16:55:22 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/elaraby/.rvm/gems/ruby-3.0.1/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/elaraby/.rvm/gems/ruby-3.0.1/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 7.3ms | Allocations: 899)
+  Rendered /home/elaraby/.rvm/gems/ruby-3.0.1/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 29.1ms | Allocations: 2544)
+  Rendered layouts/_navbar.html.erb (Duration: 9.3ms | Allocations: 323)
+  Rendered layouts/_alerts.html.erb (Duration: 6.0ms | Allocations: 152)
+  Rendered layout layouts/application.html.erb (Duration: 919.7ms | Allocations: 20799)
+Completed 200 OK in 1041ms (Views: 958.0ms | ActiveRecord: 0.0ms | Allocations: 26440)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-12-30 16:55:38 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"elaraby@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (27.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "elaraby@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 256ms (ActiveRecord: 50.2ms | Allocations: 5474)
+
+
+Started GET "/" for 127.0.0.1 at 2023-12-30 16:55:39 +0200
+Processing by HangoutsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering hangouts/index.html.erb within layouts/application
+  Rendered hangouts/index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 133)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 111)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 81.0ms | Allocations: 5176)
+Completed 200 OK in 118ms (Views: 87.9ms | ActiveRecord: 0.5ms | Allocations: 7861)
+
+
+Started GET "/" for 127.0.0.1 at 2023-12-30 16:55:39 +0200
+Processing by HangoutsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering hangouts/index.html.erb within layouts/application
+  Rendered hangouts/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 69)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 68.8ms | Allocations: 4701)
+Completed 200 OK in 88ms (Views: 70.1ms | ActiveRecord: 0.9ms | Allocations: 6464)
+
+
+Started GET "/" for 127.0.0.1 at 2023-12-30 17:06:27 +0200
+Processing by HangoutsController#index as HTML
+  [1m[36mUser Load (52.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering hangouts/index.html.erb within layouts/application
+  Rendered hangouts/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 129)
+  Rendered layouts/_navbar.html.erb (Duration: 6.4ms | Allocations: 324)
+  Rendered layouts/_alerts.html.erb (Duration: 5.2ms | Allocations: 152)
+  Rendered layout layouts/application.html.erb (Duration: 1730.2ms | Allocations: 59755)
+Completed 200 OK in 1928ms (Views: 1749.7ms | ActiveRecord: 91.6ms | Allocations: 68969)
+
+
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:06:31 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:06:32 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/" for 127.0.0.1 at 2023-12-30 17:09:11 +0200
+Processing by HangoutsController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering hangouts/index.html.erb within layouts/application
+  Rendered hangouts/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 169)
+  Rendered layouts/_navbar.html.erb (Duration: 8.0ms | Allocations: 324)
+  Rendered layouts/_alerts.html.erb (Duration: 6.7ms | Allocations: 152)
+  Rendered layout layouts/application.html.erb (Duration: 415.5ms | Allocations: 24834)
+Completed 200 OK in 528ms (Views: 430.7ms | ActiveRecord: 45.0ms | Allocations: 34595)
+
+
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:09:12 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:09:13 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/" for 127.0.0.1 at 2023-12-30 17:11:25 +0200
+Processing by HangoutsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering hangouts/index.html.erb within layouts/application
+  Rendered hangouts/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 11)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 86)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 1626.1ms | Allocations: 43938)
+Completed 200 OK in 1754ms (Views: 1627.7ms | ActiveRecord: 0.6ms | Allocations: 45784)
+
+
+Finished "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:11:27 +0200
+MessageChannel stopped streaming from message
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:11:27 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:11:28 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/" for 127.0.0.1 at 2023-12-30 17:20:21 +0200
+Processing by HangoutsController#index as HTML
+  [1m[36mUser Load (59.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering hangouts/index.html.erb within layouts/application
+  Rendered hangouts/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 7)
+  Rendered layouts/_navbar.html.erb (Duration: 7.0ms | Allocations: 69)
+  Rendered layouts/_alerts.html.erb (Duration: 1.3ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 737.7ms | Allocations: 25325)
+Completed 200 OK in 1009ms (Views: 757.1ms | ActiveRecord: 100.8ms | Allocations: 27327)
+
+
+Finished "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:20:23 +0200
+MessageChannel stopped streaming from message
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:20:23 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:20:24 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Unable to process MessageChannel#receive({"message"=>{"body"=>"hello world"}})
+Unable to process MessageChannel#receive({"message"=>{"body"=>"hello world"}})
+Started GET "/" for 127.0.0.1 at 2023-12-30 17:26:20 +0200
+Processing by HangoutsController#index as HTML
+  [1m[36mUser Load (29.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering hangouts/index.html.erb within layouts/application
+  Rendered hangouts/index.html.erb within layouts/application (Duration: 12.5ms | Allocations: 172)
+  Rendered layouts/_navbar.html.erb (Duration: 7.2ms | Allocations: 326)
+  Rendered layouts/_alerts.html.erb (Duration: 7.3ms | Allocations: 152)
+  Rendered layout layouts/application.html.erb (Duration: 690.4ms | Allocations: 27014)
+Completed 200 OK in 810ms (Views: 708.0ms | ActiveRecord: 50.2ms | Allocations: 36401)
+
+
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:26:22 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:26:22 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Unable to process MessageChannel#receive({"message"=>{"body"=>"hello world"}})
+Started GET "/" for 127.0.0.1 at 2023-12-30 17:29:23 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (9.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HangoutsController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering hangouts/index.html.erb within layouts/application
+  Rendered hangouts/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 248)
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:29:26 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:29:26 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  Rendered layouts/_navbar.html.erb (Duration: 6.1ms | Allocations: 417)
+  Rendered layouts/_alerts.html.erb (Duration: 6.7ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 3423.4ms | Allocations: 104355)
+Completed 200 OK in 3816ms (Views: 3461.7ms | ActiveRecord: 43.3ms | Allocations: 233506)
+
+
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:29:28 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:29:28 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is streaming from message
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-12-30 17:29:30 +0200
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 76ms (ActiveRecord: 1.3ms | Allocations: 3713)
+
+
+Started GET "/" for 127.0.0.1 at 2023-12-30 17:29:31 +0200
+Processing by HangoutsController#index as TURBO_STREAM
+Completed 401 Unauthorized in 21ms (ActiveRecord: 0.0ms | Allocations: 498)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-12-30 17:29:31 +0200
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering /home/elaraby/.rvm/gems/ruby-3.0.1/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/elaraby/.rvm/gems/ruby-3.0.1/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 968)
+  Rendered /home/elaraby/.rvm/gems/ruby-3.0.1/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 51.2ms | Allocations: 4335)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 103)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered layout layouts/application.html.erb (Duration: 136.3ms | Allocations: 9299)
+Completed 200 OK in 178ms (Views: 147.2ms | ActiveRecord: 0.0ms | Allocations: 11579)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-12-30 17:29:31 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/elaraby/.rvm/gems/ruby-3.0.1/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/elaraby/.rvm/gems/ruby-3.0.1/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 420)
+  Rendered /home/elaraby/.rvm/gems/ruby-3.0.1/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1398)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 75)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 89.1ms | Allocations: 6128)
+Completed 200 OK in 114ms (Views: 92.2ms | ActiveRecord: 0.0ms | Allocations: 6981)
+
+
+Finished "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:29:31 +0200
+MessageChannel stopped streaming from message
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:29:32 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:29:32 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is streaming from message
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-12-30 17:29:50 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"elaraby@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "elaraby@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 255ms (ActiveRecord: 0.8ms | Allocations: 7035)
+
+
+Started GET "/" for 127.0.0.1 at 2023-12-30 17:29:50 +0200
+Processing by HangoutsController#index as TURBO_STREAM
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering hangouts/index.html.erb within layouts/application
+  Rendered hangouts/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 11)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 78)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 87.3ms | Allocations: 5050)
+Completed 200 OK in 118ms (Views: 89.3ms | ActiveRecord: 1.2ms | Allocations: 7111)
+
+
+Started GET "/" for 127.0.0.1 at 2023-12-30 17:29:50 +0200
+Processing by HangoutsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering hangouts/index.html.erb within layouts/application
+  Rendered hangouts/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 69)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 91.5ms | Allocations: 4757)
+Completed 200 OK in 126ms (Views: 92.8ms | ActiveRecord: 0.6ms | Allocations: 6330)
+
+
+Finished "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:29:51 +0200
+MessageChannel stopped streaming from message
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:29:51 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:29:51 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is streaming from message
+Unable to process MessageChannel#receive({"message"=>{"body"=>"hello world"}})
+Started GET "/" for 127.0.0.1 at 2023-12-30 17:30:47 +0200
+Processing by HangoutsController#index as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering hangouts/index.html.erb within layouts/application
+  Rendered hangouts/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 172)
+  Rendered layouts/_navbar.html.erb (Duration: 4.6ms | Allocations: 324)
+  Rendered layouts/_alerts.html.erb (Duration: 4.3ms | Allocations: 152)
+  Rendered layout layouts/application.html.erb (Duration: 418.8ms | Allocations: 25153)
+Completed 200 OK in 522ms (Views: 437.6ms | ActiveRecord: 52.2ms | Allocations: 34991)
+
+
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:30:48 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:30:48 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+MessageChannel#receive({"message"=>{"body"=>"hello world"}})
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"MessageChannel\"}", "data"=>"{\"message\":{\"body\":\"hello world\"}}"}) [NameError - undefined local variable or method `current_user' for #<MessageChannel:0x00007f3670bab050 @connection=#<ApplicationCable::Connection:0x000000000114b8>, @identifier="{\"channel\":\"MessageChannel\"}", @params={"channel"=>"MessageChannel"}, @defer_subscription_confirmation_counter=#<Concurrent::AtomicFixnum:0x00007f3670baafb0 value:1>, @reject_subscription=nil, @subscription_confirmation_sent=nil, @_streams={"message"=>#<Proc:0x00007f3670baa740 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/channel/streams.rb:151 (lambda)>}, @parameter_filter=#<ActiveSupport::ParameterFilter:0x00007f3670be0e80 @mask="[FILTERED]", @no_filters=false, @regexps=[/passw|secret|token|_key|crypt|salt|certificate|otp|ssn/i], @deep_regexps=nil, @blocks=nil>>]: /mnt/c/git/KeepOnCoding/Rails/websock/app/channels/message_channel.rb:10:in `receive' | /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/channel/base.rb:273:in `public_send' | /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/channel/base.rb:273:in `dispatch_action' | /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/channel/base.rb:173:in `block in perform_action' | /home/elaraby/.rvm/gems/ruby-3.0.1/gems/activesupport-7.1.2/lib/active_support/notifications.rb:206:in `block in instrument'
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:30:58 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:30:58 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is streaming from message
+Started GET "/" for 127.0.0.1 at 2023-12-30 17:32:57 +0200
+Processing by HangoutsController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering hangouts/index.html.erb within layouts/application
+  Rendered hangouts/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 168)
+  Rendered layouts/_navbar.html.erb (Duration: 4.8ms | Allocations: 324)
+  Rendered layouts/_alerts.html.erb (Duration: 4.5ms | Allocations: 152)
+  Rendered layout layouts/application.html.erb (Duration: 375.9ms | Allocations: 25038)
+Completed 200 OK in 470ms (Views: 387.8ms | ActiveRecord: 59.0ms | Allocations: 34788)
+
+
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:32:58 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:32:58 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vd2Vic29jay9Vc2VyLzE)
+MessageChannel#receive({"message"=>{"body"=>"hello world"}})
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"MessageChannel\"}", "data"=>"{\"message\":{\"body\":\"hello world\"}}"}) [NoMethodError - undefined method `brodcast' for #<ActionCable::Server::Base:0x0000561656f748c0 @config=#<ActionCable::Server::Configuration:0x000056165553ede8 @log_tags=[], @connection_class=#<Proc:0x0000561655315cb0 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/engine.rb:53 (lambda)>, @worker_pool_size=4, @disable_request_forgery_protection=false, @allow_same_origin_as_host=true, @filter_parameters=[:passw, :secret, :token, :_key, :crypt, :salt, :certificate, :otp, :ssn], @health_check_application=#<Proc:0x0000561655428c60 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/engine.rb:29 (lambda)>, @logger=#<ActiveSupport::BroadcastLogger:0x00007f36880d9420 @broadcasts=[#<ActiveSupport::Logger:0x00007f36880d9970 @level=0, @progname=nil, @default_formatter=#<Logger::Formatter:0x0000561655f85608 @datetime_format=nil>, @formatter=#<ActiveSupport::Logger::SimpleFormatter:0x00007f36880d9858 @datetime_format=nil, @thread_key="activesupport_tagged_logging_tags:17320">, @logdev=#<Logger::LogDevice:0x0000561655f854c8 @shift_period_suffix="%Y%m%d", @shift_size=104857600, @shift_age=1, @filename="/mnt/c/git/KeepOnCoding/Rails/websock/log/development.log", @dev=#<File:/mnt/c/git/KeepOnCoding/Rails/websock/log/development.log>, @binmode=false, @mon_data=#<Monitor:0x0000561655f85478>, @mon_data_owner_object_id=4880>, @local_level_key=:logger_thread_safe_level_16940>, #<ActiveSupport::Logger:0x0000561657fe0e70 @level=0, @progname=nil, @default_formatter=#<Logger::Formatter:0x0000561657fe0ce0 @datetime_format=nil>, @formatter=#<ActiveSupport::Logger::SimpleFormatter:0x00007f36880d9858 @datetime_format=nil, @thread_key="activesupport_tagged_logging_tags:17320">, @logdev=#<Logger::LogDevice:0x0000561657fe0bf0 @shift_period_suffix=nil, @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDOUT>>, @binmode=false, @mon_data=#<Monitor:0x0000561657fe0ba0>, @mon_data_owner_object_id=16920>, @local_level_key=:logger_thread_safe_level_17360>], @progname="Broadcast", @formatter=#<ActiveSupport::Logger::SimpleFormatter:0x00007f36880d9858 @datetime_format=nil, @thread_key="activesupport_tagged_logging_tags:17320">>, @cable={"adapter"=>"redis", "url"=>"redis://localhost:6379/1", "id"=>"ActionCable-PID-732"}, @mount_path="/cable", @precompile_assets=true, @allowed_request_origins=/https?:\/\/localhost:\d+/>, @mutex=#<Monitor:0x0000561656f745a0>, @pubsub=#<ActionCable::SubscriptionAdapter::Redis:0x00007f3618115c88 @server=#<ActionCable::Server::Base:0x0000561656f748c0 ...>, @logger=#<ActiveSupport::BroadcastLogger:0x00007f36880d9420 @broadcasts=[#<ActiveSupport::Logger:0x00007f36880d9970 @level=0, @progname=nil, @default_formatter=#<Logger::Formatter:0x0000561655f85608 @datetime_format=nil>, @formatter=#<ActiveSupport::Logger::SimpleFormatter:0x00007f36880d9858 @datetime_format=nil, @thread_key="activesupport_tagged_logging_tags:17320">, @logdev=#<Logger::LogDevice:0x0000561655f854c8 @shift_period_suffix="%Y%m%d", @shift_size=104857600, @shift_age=1, @filename="/mnt/c/git/KeepOnCoding/Rails/websock/log/development.log", @dev=#<File:/mnt/c/git/KeepOnCoding/Rails/websock/log/development.log>, @binmode=false, @mon_data=#<Monitor:0x0000561655f85478>, @mon_data_owner_object_id=4880>, @local_level_key=:logger_thread_safe_level_16940>, #<ActiveSupport::Logger:0x0000561657fe0e70 @level=0, @progname=nil, @default_formatter=#<Logger::Formatter:0x0000561657fe0ce0 @datetime_format=nil>, @formatter=#<ActiveSupport::Logger::SimpleFormatter:0x00007f36880d9858 @datetime_format=nil, @thread_key="activesupport_tagged_logging_tags:17320">, @logdev=#<Logger::LogDevice:0x0000561657fe0bf0 @shift_period_suffix=nil, @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDOUT>>, @binmode=false, @mon_data=#<Monitor:0x0000561657fe0ba0>, @mon_data_owner_object_id=16920>, @local_level_key=:logger_thread_safe_level_17360>], @progname="Broadcast", @formatter=#<ActiveSupport::Logger::SimpleFormatter:0x00007f36880d9858 @datetime_format=nil, @thread_key="activesupport_tagged_logging_tags:17320">>, @listener=#<ActionCable::SubscriptionAdapter::Redis::Listener:0x00007f36181159b8 @subscribers={"action_cable/Z2lkOi8vd2Vic29jay9Vc2VyLzE"=>[#<Proc:0x00007f3618116458 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/connection/internal_channel.rb:18 (lambda)>], "message"=>[#<Proc:0x00007f36240143f0 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/channel/streams.rb:151 (lambda)>]}, @sync=#<Thread::Mutex:0x00007f36181158c8>, @adapter=#<ActionCable::SubscriptionAdapter::Redis:0x00007f3618115c88 ...>, @event_loop=#<ActionCable::Connection::StreamEventLoop:0x00007f3688eda330 @thread=#<Thread:0x00007f3688f39178 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/connection/stream_event_loop.rb:74 sleep>, @executor=#<Concurrent::ThreadPoolExecutor:0x00007f3688f396a0 @__Lock__=#<Thread::Mutex:0x00007f3688f39628>, @__Condition__=#<Thread::ConditionVariable:0x00007f3688f395d8>, @auto_terminate=true, @min_length=1, @max_length=10, @idletime=60, @max_queue=0, @synchronous=false, @fallback_policy=:abort, @pool=[#<Concurrent::RubyThreadPoolExecutor::Worker:0x00007f36180256e8 @queue=#<Thread::Queue:0x00007f3618025698>, @pool=#<Concurrent::ThreadPoolExecutor:0x00007f3688f396a0 ...>, @thread=#<Thread:0x00007f3618025620@worker-1 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:332 sleep_forever>>], @ready=[[#<Concurrent::RubyThreadPoolExecutor::Worker:0x00007f36180256e8 @queue=#<Thread::Queue:0x00007f3618025698>, @pool=#<Concurrent::ThreadPoolExecutor:0x00007f3688f396a0 ...>, @thread=#<Thread:0x00007f3618025620@worker-1 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:332 sleep_forever>>, 4223.611389847]], @queue=[], @scheduled_task_count=80, @completed_task_count=80, @largest_length=1, @workers_counter=1, @ruby_pid=732, @gc_interval=30, @next_gc_time=4250.60994015, @StopEvent=#<Concurrent::Event:0x00007f3688f39308 @__Lock__=#<Thread::Mutex:0x00007f3688f392e0>, @__Condition__=#<Thread::ConditionVariable:0x00007f3688f392b8>, @set=false, @iteration=0>, @StoppedEvent=#<Concurrent::Event:0x00007f3688f39218 @__Lock__=#<Thread::Mutex:0x00007f3688f391f0>, @__Condition__=#<Thread::ConditionVariable:0x00007f3688f391c8>, @set=false, @iteration=0>>, @nio=#<NIO::Selector:0x00007f3688f397b8>, @map={#<TCPSocket:fd 18, AF_INET, 127.0.0.1, 3000>=>#<NIO::Monitor:0x00007f36780534e8>}, @stopping=false, @todo=#<Thread::Queue:0x00007f3688eda290>, @spawn_mutex=#<Thread::Mutex:0x00007f3688eda218>>, @subscribe_callbacks={"message"=>[#<Proc:0x00007f361812ba38 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/channel/streams.rb:90 (lambda)>]}, @subscription_lock=#<Thread::Mutex:0x00007f36181157d8>, @reconnect_attempt=2, @reconnect_attempts=[0], @subscribed_client=nil, @when_connected=[#<Proc:0x00007f361812b8d0 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/subscription_adapter/redis.rb:142>], @thread=#<Thread:0x00007f3618115698 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/subscription_adapter/redis.rb:158 dead>>, @redis_connection_for_broadcasts=nil, @config_options={:adapter=>"redis", :url=>"redis://localhost:6379/1", :id=>"ActionCable-PID-732"}>, @worker_pool=#<ActionCable::Server::Worker:0x00007f367803c5b8 @executor=#<Concurrent::ThreadPoolExecutor:0x00007f367803c518 @__Lock__=#<Thread::Mutex:0x00007f367803c4a0>, @__Condition__=#<Thread::ConditionVariable:0x00007f367803c450>, @auto_terminate=true, @name="ActionCable", @min_length=1, @max_length=4, @idletime=60, @max_queue=0, @synchronous=false, @fallback_policy=:abort, @pool=[#<Concurrent::RubyThreadPoolExecutor::Worker:0x00007f3678048c00 @queue=#<Thread::Queue:0x00007f3678048bb0>, @pool=#<Concurrent::ThreadPoolExecutor:0x00007f367803c518 ...>, @thread=#<Thread:0x00007f3678048b38@ActionCable-worker-1 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:332 run>>], @ready=[], @queue=[], @scheduled_task_count=10, @completed_task_count=9, @largest_length=1, @workers_counter=1, @ruby_pid=732, @gc_interval=30, @next_gc_time=4249.394595662, @StopEvent=#<Concurrent::Event:0x00007f367803c180 @__Lock__=#<Thread::Mutex:0x00007f367803c158>, @__Condition__=#<Thread::ConditionVariable:0x00007f367803c130>, @set=false, @iteration=0>, @StoppedEvent=#<Concurrent::Event:0x00007f367803c090 @__Lock__=#<Thread::Mutex:0x00007f367803c068>, @__Condition__=#<Thread::ConditionVariable:0x00007f367803c040>, @set=false, @iteration=0>>>, @event_loop=#<ActionCable::Connection::StreamEventLoop:0x00007f3688eda330 @thread=#<Thread:0x00007f3688f39178 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/connection/stream_event_loop.rb:74 sleep>, @executor=#<Concurrent::ThreadPoolExecutor:0x00007f3688f396a0 @__Lock__=#<Thread::Mutex:0x00007f3688f39628>, @__Condition__=#<Thread::ConditionVariable:0x00007f3688f395d8>, @auto_terminate=true, @min_length=1, @max_length=10, @idletime=60, @max_queue=0, @synchronous=false, @fallback_policy=:abort, @pool=[#<Concurrent::RubyThreadPoolExecutor::Worker:0x00007f36180256e8 @queue=#<Thread::Queue:0x00007f3618025698>, @pool=#<Concurrent::ThreadPoolExecutor:0x00007f3688f396a0 ...>, @thread=#<Thread:0x00007f3618025620@worker-1 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:332 sleep_forever>>], @ready=[[#<Concurrent::RubyThreadPoolExecutor::Worker:0x00007f36180256e8 @queue=#<Thread::Queue:0x00007f3618025698>, @pool=#<Concurrent::ThreadPoolExecutor:0x00007f3688f396a0 ...>, @thread=#<Thread:0x00007f3618025620@worker-1 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:332 sleep_forever>>, 4223.611389847]], @queue=[], @scheduled_task_count=80, @completed_task_count=80, @largest_length=1, @workers_counter=1, @ruby_pid=732, @gc_interval=30, @next_gc_time=4250.60994015, @StopEvent=#<Concurrent::Event:0x00007f3688f39308 @__Lock__=#<Thread::Mutex:0x00007f3688f392e0>, @__Condition__=#<Thread::ConditionVariable:0x00007f3688f392b8>, @set=false, @iteration=0>, @StoppedEvent=#<Concurrent::Event:0x00007f3688f39218 @__Lock__=#<Thread::Mutex:0x00007f3688f391f0>, @__Condition__=#<Thread::ConditionVariable:0x00007f3688f391c8>, @set=false, @iteration=0>>, @nio=#<NIO::Selector:0x00007f3688f397b8>, @map={#<TCPSocket:fd 18, AF_INET, 127.0.0.1, 3000>=>#<NIO::Monitor:0x00007f36780534e8>}, @stopping=false, @todo=#<Thread::Queue:0x00007f3688eda290>, @spawn_mutex=#<Thread::Mutex:0x00007f3688eda218>>, @remote_connections=nil, @heartbeat_timer=#<Concurrent::TimerTask:0x00007f3688eda100 @__Lock__=#<Thread::Mutex:0x00007f3688ed9fe8>, @__Condition__=#<Thread::ConditionVariable:0x00007f3688ed9f98>, @auto_terminate=true, @dup_on_deref=nil, @freeze_on_deref=nil, @copy_on_deref=nil, @do_nothing_on_deref=true, @execution_interval=3.0, @run_now=nil, @executor=#<Concurrent::SafeTaskExecutor:0x00007f3688ed9d90 @task=#<Proc:0x00007f3688ed9e08 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/server/connections.rb:28>, @exception_class=StandardError, @__Lock__=#<Thread::Mutex:0x00007f3688ed9d18>, @__Condition__=#<Thread::ConditionVariable:0x00007f3688ed9cf0>>, @running=#<Concurrent::AtomicBoolean:0x00007f3688ed9bd8 value:true>, @value=#<Concurrent::ThreadPoolExecutor:0x00007f3688f396a0 @__Lock__=#<Thread::Mutex:0x00007f3688f39628>, @__Condition__=#<Thread::ConditionVariable:0x00007f3688f395d8>, @auto_terminate=true, @min_length=1, @max_length=10, @idletime=60, @max_queue=0, @synchronous=false, @fallback_policy=:abort, @pool=[#<Concurrent::RubyThreadPoolExecutor::Worker:0x00007f36180256e8 @queue=#<Thread::Queue:0x00007f3618025698>, @pool=#<Concurrent::ThreadPoolExecutor:0x00007f3688f396a0 ...>, @thread=#<Thread:0x00007f3618025620@worker-1 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:332 sleep_forever>>], @ready=[[#<Concurrent::RubyThreadPoolExecutor::Worker:0x00007f36180256e8 @queue=#<Thread::Queue:0x00007f3618025698>, @pool=#<Concurrent::ThreadPoolExecutor:0x00007f3688f396a0 ...>, @thread=#<Thread:0x00007f3618025620@worker-1 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:332 sleep_forever>>, 4223.611389847]], @queue=[], @scheduled_task_count=80, @completed_task_count=80, @largest_length=1, @workers_counter=1, @ruby_pid=732, @gc_interval=30, @next_gc_time=4250.60994015, @StopEvent=#<Concurrent::Event:0x00007f3688f39308 @__Lock__=#<Thread::Mutex:0x00007f3688f392e0>, @__Condition__=#<Thread::ConditionVariable:0x00007f3688f392b8>, @set=false, @iteration=0>, @StoppedEvent=#<Concurrent::Event:0x00007f3688f39218 @__Lock__=#<Thread::Mutex:0x00007f3688f391f0>, @__Condition__=#<Thread::ConditionVariable:0x00007f3688f391c8>, @set=false, @iteration=0>>, @observers=#<Concurrent::Collection::CopyOnNotifyObserverSet:0x00007f3688ed9a98 @__Lock__=#<Thread::Mutex:0x00007f3688ed9a20>, @__Condition__=#<Thread::ConditionVariable:0x00007f3688ed99f8>, @observers={}>, @StopEvent=#<Concurrent::Event:0x00007f3688ed98b8 @__Lock__=#<Thread::Mutex:0x00007f3688ed9890>, @__Condition__=#<Thread::ConditionVariable:0x00007f3688ed9868>, @set=false, @iteration=0>, @StoppedEvent=#<Concurrent::Event:0x00007f3688ed97f0 @__Lock__=#<Thread::Mutex:0x00007f3688ed97c8>, @__Condition__=#<Thread::ConditionVariable:0x00007f3688ed97a0>, @set=false, @iteration=0>>, @connections=[#<ApplicationCable::Connection:0x00000000015658>, #<ApplicationCable::Connection:0x00000000015680>, #<ApplicationCable::Connection:0x000000000114b8>, #<ApplicationCable::Connection:0x000000000156a8>, #<ApplicationCable::Connection:0x000000000156d0>]>
+Did you mean?  broadcast]: /mnt/c/git/KeepOnCoding/Rails/websock/app/channels/message_channel.rb:11:in `receive' | /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/channel/base.rb:273:in `public_send' | /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/channel/base.rb:273:in `dispatch_action' | /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/channel/base.rb:173:in `block in perform_action' | /home/elaraby/.rvm/gems/ruby-3.0.1/gems/activesupport-7.1.2/lib/active_support/notifications.rb:206:in `block in instrument'
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:33:08 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:33:08 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vd2Vic29jay9Vc2VyLzE)
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is streaming from message
+Started GET "/" for 127.0.0.1 at 2023-12-30 17:34:08 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HangoutsController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering hangouts/index.html.erb within layouts/application
+  Rendered hangouts/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 248)
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:34:10 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:34:11 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vd2Vic29jay9Vc2VyLzE)
+  Rendered layouts/_navbar.html.erb (Duration: 5.1ms | Allocations: 417)
+  Rendered layouts/_alerts.html.erb (Duration: 4.7ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 2324.8ms | Allocations: 96884)
+Completed 200 OK in 2699ms (Views: 2355.4ms | ActiveRecord: 42.7ms | Allocations: 226031)
+
+
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:34:12 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:34:12 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vd2Vic29jay9Vc2VyLzE)
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is streaming from message
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:34:13 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:34:13 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vd2Vic29jay9Vc2VyLzE)
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is streaming from message
+MessageChannel#receive({"message"=>{"body"=>"hello world"}})
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"MessageChannel\"}", "data"=>"{\"message\":{\"body\":\"hello world\"}}"}) [NoMethodError - undefined method `brodcast' for #<ActionCable::Server::Base:0x000055c6b9917938 @config=#<ActionCable::Server::Configuration:0x000055c6b82de130 @log_tags=[], @connection_class=#<Proc:0x000055c6b8096378 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/engine.rb:53 (lambda)>, @worker_pool_size=4, @disable_request_forgery_protection=false, @allow_same_origin_as_host=true, @filter_parameters=[:passw, :secret, :token, :_key, :crypt, :salt, :certificate, :otp, :ssn], @health_check_application=#<Proc:0x000055c6b81a0160 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/engine.rb:29 (lambda)>, @logger=#<ActiveSupport::BroadcastLogger:0x000055c6ba0f07e0 @broadcasts=[#<ActiveSupport::Logger:0x000055c6ba0f0d30 @level=0, @progname=nil, @default_formatter=#<Logger::Formatter:0x000055c6b8d40970 @datetime_format=nil>, @formatter=#<ActiveSupport::Logger::SimpleFormatter:0x000055c6ba0f0c18 @datetime_format=nil, @thread_key="activesupport_tagged_logging_tags:17320">, @logdev=#<Logger::LogDevice:0x000055c6b8d40830 @shift_period_suffix="%Y%m%d", @shift_size=104857600, @shift_age=1, @filename="/mnt/c/git/KeepOnCoding/Rails/websock/log/development.log", @dev=#<File:/mnt/c/git/KeepOnCoding/Rails/websock/log/development.log>, @binmode=false, @mon_data=#<Monitor:0x000055c6b8d407e0>, @mon_data_owner_object_id=4880>, @local_level_key=:logger_thread_safe_level_16940>, #<ActiveSupport::Logger:0x000055c6bad39380 @level=0, @progname=nil, @default_formatter=#<Logger::Formatter:0x000055c6bad391f0 @datetime_format=nil>, @formatter=#<ActiveSupport::Logger::SimpleFormatter:0x000055c6ba0f0c18 @datetime_format=nil, @thread_key="activesupport_tagged_logging_tags:17320">, @logdev=#<Logger::LogDevice:0x000055c6bad39100 @shift_period_suffix=nil, @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDOUT>>, @binmode=false, @mon_data=#<Monitor:0x000055c6bad390b0>, @mon_data_owner_object_id=16920>, @local_level_key=:logger_thread_safe_level_17360>], @progname="Broadcast", @formatter=#<ActiveSupport::Logger::SimpleFormatter:0x000055c6ba0f0c18 @datetime_format=nil, @thread_key="activesupport_tagged_logging_tags:17320">>, @cable={"adapter"=>"redis", "url"=>"redis://localhost:6379/1", "id"=>"ActionCable-PID-783"}, @mount_path="/cable", @precompile_assets=true, @allowed_request_origins=/https?:\/\/localhost:\d+/>, @mutex=#<Monitor:0x000055c6b9917618>, @pubsub=#<ActionCable::SubscriptionAdapter::Redis:0x00007f91bcf46af0 @server=#<ActionCable::Server::Base:0x000055c6b9917938 ...>, @logger=#<ActiveSupport::BroadcastLogger:0x000055c6ba0f07e0 @broadcasts=[#<ActiveSupport::Logger:0x000055c6ba0f0d30 @level=0, @progname=nil, @default_formatter=#<Logger::Formatter:0x000055c6b8d40970 @datetime_format=nil>, @formatter=#<ActiveSupport::Logger::SimpleFormatter:0x000055c6ba0f0c18 @datetime_format=nil, @thread_key="activesupport_tagged_logging_tags:17320">, @logdev=#<Logger::LogDevice:0x000055c6b8d40830 @shift_period_suffix="%Y%m%d", @shift_size=104857600, @shift_age=1, @filename="/mnt/c/git/KeepOnCoding/Rails/websock/log/development.log", @dev=#<File:/mnt/c/git/KeepOnCoding/Rails/websock/log/development.log>, @binmode=false, @mon_data=#<Monitor:0x000055c6b8d407e0>, @mon_data_owner_object_id=4880>, @local_level_key=:logger_thread_safe_level_16940>, #<ActiveSupport::Logger:0x000055c6bad39380 @level=0, @progname=nil, @default_formatter=#<Logger::Formatter:0x000055c6bad391f0 @datetime_format=nil>, @formatter=#<ActiveSupport::Logger::SimpleFormatter:0x000055c6ba0f0c18 @datetime_format=nil, @thread_key="activesupport_tagged_logging_tags:17320">, @logdev=#<Logger::LogDevice:0x000055c6bad39100 @shift_period_suffix=nil, @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#<IO:<STDOUT>>, @binmode=false, @mon_data=#<Monitor:0x000055c6bad390b0>, @mon_data_owner_object_id=16920>, @local_level_key=:logger_thread_safe_level_17360>], @progname="Broadcast", @formatter=#<ActiveSupport::Logger::SimpleFormatter:0x000055c6ba0f0c18 @datetime_format=nil, @thread_key="activesupport_tagged_logging_tags:17320">>, @listener=#<ActionCable::SubscriptionAdapter::Redis::Listener:0x00007f91bcf46488 @subscribers={"action_cable/Z2lkOi8vd2Vic29jay9Vc2VyLzE"=>[#<Proc:0x00007f91540416a8 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/connection/internal_channel.rb:18 (lambda)>, #<Proc:0x00007f91540895c0 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/connection/internal_channel.rb:18 (lambda)>, #<Proc:0x00007f91540995d8 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/connection/internal_channel.rb:18 (lambda)>], "message"=>[#<Proc:0x00007f91900949e8 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/channel/streams.rb:151 (lambda)>, #<Proc:0x00007f9150005378 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/channel/streams.rb:151 (lambda)>, #<Proc:0x00007f91540a3128 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/channel/streams.rb:151 (lambda)>]}, @sync=#<Thread::Mutex:0x00007f91bcf46348>, @adapter=#<ActionCable::SubscriptionAdapter::Redis:0x00007f91bcf46af0 ...>, @event_loop=#<ActionCable::Connection::StreamEventLoop:0x00007f91a8028960 @thread=#<Thread:0x00007f9190060be8 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/connection/stream_event_loop.rb:74 sleep>, @executor=#<Concurrent::ThreadPoolExecutor:0x00007f9190061110 @__Lock__=#<Thread::Mutex:0x00007f9190061098>, @__Condition__=#<Thread::ConditionVariable:0x00007f9190061048>, @auto_terminate=true, @min_length=1, @max_length=10, @idletime=60, @max_queue=0, @synchronous=false, @fallback_policy=:abort, @pool=[#<Concurrent::RubyThreadPoolExecutor::Worker:0x00007f91540413d8 @queue=#<Thread::Queue:0x00007f9154041388>, @pool=#<Concurrent::ThreadPoolExecutor:0x00007f9190061110 ...>, @thread=#<Thread:0x00007f9154041310@worker-1 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:332 sleep_forever>>, #<Concurrent::RubyThreadPoolExecutor::Worker:0x00007f91900947e0 @queue=#<Thread::Queue:0x00007f9190094790>, @pool=#<Concurrent::ThreadPoolExecutor:0x00007f9190061110 ...>, @thread=#<Thread:0x00007f9190094718@worker-2 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:332 sleep_forever>>], @ready=[[#<Concurrent::RubyThreadPoolExecutor::Worker:0x00007f91540413d8 @queue=#<Thread::Queue:0x00007f9154041388>, @pool=#<Concurrent::ThreadPoolExecutor:0x00007f9190061110 ...>, @thread=#<Thread:0x00007f9154041310@worker-1 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:332 sleep_forever>>, 4292.075207735], [#<Concurrent::RubyThreadPoolExecutor::Worker:0x00007f91900947e0 @queue=#<Thread::Queue:0x00007f9190094790>, @pool=#<Concurrent::ThreadPoolExecutor:0x00007f9190061110 ...>, @thread=#<Thread:0x00007f9190094718@worker-2 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:332 sleep_forever>>, 4294.848519047]], @queue=[], @scheduled_task_count=7, @completed_task_count=7, @largest_length=2, @workers_counter=2, @ruby_pid=783, @gc_interval=30, @next_gc_time=4321.960615907, @StopEvent=#<Concurrent::Event:0x00007f9190060d78 @__Lock__=#<Thread::Mutex:0x00007f9190060d50>, @__Condition__=#<Thread::ConditionVariable:0x00007f9190060d28>, @set=false, @iteration=0>, @StoppedEvent=#<Concurrent::Event:0x00007f9190060c88 @__Lock__=#<Thread::Mutex:0x00007f9190060c60>, @__Condition__=#<Thread::ConditionVariable:0x00007f9190060c38>, @set=false, @iteration=0>>, @nio=#<NIO::Selector:0x00007f9190061228>, @map={#<TCPSocket:fd 19, AF_INET, 127.0.0.1, 3000>=>#<NIO::Monitor:0x00007f91a81041b8>, #<TCPSocket:fd 25, AF_INET, 127.0.0.1, 3000>=>#<NIO::Monitor:0x00007f919c020ed8>, #<TCPSocket:fd 26, AF_INET, 127.0.0.1, 3000>=>#<NIO::Monitor:0x00007f91b001eb38>}, @stopping=false, @todo=#<Thread::Queue:0x00007f91a80288c0>, @spawn_mutex=#<Thread::Mutex:0x00007f91a8028848>>, @subscribe_callbacks={}, @subscription_lock=#<Thread::Mutex:0x00007f91bcf46258>, @reconnect_attempt=2, @reconnect_attempts=[0], @subscribed_client=nil, @when_connected=[], @thread=#<Thread:0x00007f91bcf46078 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/subscription_adapter/redis.rb:158 dead>>, @redis_connection_for_broadcasts=nil, @config_options={:adapter=>"redis", :url=>"redis://localhost:6379/1", :id=>"ActionCable-PID-783"}>, @worker_pool=#<ActionCable::Server::Worker:0x00007f91bcefda58 @executor=#<Concurrent::ThreadPoolExecutor:0x00007f91bcefd968 @__Lock__=#<Thread::Mutex:0x00007f91bcefd8c8>, @__Condition__=#<Thread::ConditionVariable:0x00007f91bcefd878>, @auto_terminate=true, @name="ActionCable", @min_length=1, @max_length=4, @idletime=60, @max_queue=0, @synchronous=false, @fallback_policy=:abort, @pool=[#<Concurrent::RubyThreadPoolExecutor::Worker:0x00007f91bcf2d140 @queue=#<Thread::Queue:0x00007f91bcf2d0f0>, @pool=#<Concurrent::ThreadPoolExecutor:0x00007f91bcefd968 ...>, @thread=#<Thread:0x00007f91bcf2d050@ActionCable-worker-1 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:332 run>>], @ready=[], @queue=[], @scheduled_task_count=11, @completed_task_count=10, @largest_length=1, @workers_counter=1, @ruby_pid=783, @gc_interval=30, @next_gc_time=4321.899334195, @StopEvent=#<Concurrent::Event:0x00007f91bcefd508 @__Lock__=#<Thread::Mutex:0x00007f91bcefd4e0>, @__Condition__=#<Thread::ConditionVariable:0x00007f91bcefd4b8>, @set=false, @iteration=0>, @StoppedEvent=#<Concurrent::Event:0x00007f91bcefd418 @__Lock__=#<Thread::Mutex:0x00007f91bcefd3f0>, @__Condition__=#<Thread::ConditionVariable:0x00007f91bcefd3c8>, @set=false, @iteration=0>>>, @event_loop=#<ActionCable::Connection::StreamEventLoop:0x00007f91a8028960 @thread=#<Thread:0x00007f9190060be8 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/connection/stream_event_loop.rb:74 sleep>, @executor=#<Concurrent::ThreadPoolExecutor:0x00007f9190061110 @__Lock__=#<Thread::Mutex:0x00007f9190061098>, @__Condition__=#<Thread::ConditionVariable:0x00007f9190061048>, @auto_terminate=true, @min_length=1, @max_length=10, @idletime=60, @max_queue=0, @synchronous=false, @fallback_policy=:abort, @pool=[#<Concurrent::RubyThreadPoolExecutor::Worker:0x00007f91540413d8 @queue=#<Thread::Queue:0x00007f9154041388>, @pool=#<Concurrent::ThreadPoolExecutor:0x00007f9190061110 ...>, @thread=#<Thread:0x00007f9154041310@worker-1 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:332 sleep_forever>>, #<Concurrent::RubyThreadPoolExecutor::Worker:0x00007f91900947e0 @queue=#<Thread::Queue:0x00007f9190094790>, @pool=#<Concurrent::ThreadPoolExecutor:0x00007f9190061110 ...>, @thread=#<Thread:0x00007f9190094718@worker-2 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:332 sleep_forever>>], @ready=[[#<Concurrent::RubyThreadPoolExecutor::Worker:0x00007f91540413d8 @queue=#<Thread::Queue:0x00007f9154041388>, @pool=#<Concurrent::ThreadPoolExecutor:0x00007f9190061110 ...>, @thread=#<Thread:0x00007f9154041310@worker-1 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:332 sleep_forever>>, 4292.075207735], [#<Concurrent::RubyThreadPoolExecutor::Worker:0x00007f91900947e0 @queue=#<Thread::Queue:0x00007f9190094790>, @pool=#<Concurrent::ThreadPoolExecutor:0x00007f9190061110 ...>, @thread=#<Thread:0x00007f9190094718@worker-2 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:332 sleep_forever>>, 4294.848519047]], @queue=[], @scheduled_task_count=7, @completed_task_count=7, @largest_length=2, @workers_counter=2, @ruby_pid=783, @gc_interval=30, @next_gc_time=4321.960615907, @StopEvent=#<Concurrent::Event:0x00007f9190060d78 @__Lock__=#<Thread::Mutex:0x00007f9190060d50>, @__Condition__=#<Thread::ConditionVariable:0x00007f9190060d28>, @set=false, @iteration=0>, @StoppedEvent=#<Concurrent::Event:0x00007f9190060c88 @__Lock__=#<Thread::Mutex:0x00007f9190060c60>, @__Condition__=#<Thread::ConditionVariable:0x00007f9190060c38>, @set=false, @iteration=0>>, @nio=#<NIO::Selector:0x00007f9190061228>, @map={#<TCPSocket:fd 19, AF_INET, 127.0.0.1, 3000>=>#<NIO::Monitor:0x00007f91a81041b8>, #<TCPSocket:fd 25, AF_INET, 127.0.0.1, 3000>=>#<NIO::Monitor:0x00007f919c020ed8>, #<TCPSocket:fd 26, AF_INET, 127.0.0.1, 3000>=>#<NIO::Monitor:0x00007f91b001eb38>}, @stopping=false, @todo=#<Thread::Queue:0x00007f91a80288c0>, @spawn_mutex=#<Thread::Mutex:0x00007f91a8028848>>, @remote_connections=nil, @heartbeat_timer=#<Concurrent::TimerTask:0x00007f91a8028730 @__Lock__=#<Thread::Mutex:0x00007f91a8028618>, @__Condition__=#<Thread::ConditionVariable:0x00007f91a80285c8>, @auto_terminate=true, @dup_on_deref=nil, @freeze_on_deref=nil, @copy_on_deref=nil, @do_nothing_on_deref=true, @execution_interval=3.0, @run_now=nil, @executor=#<Concurrent::SafeTaskExecutor:0x00007f91a80283c0 @task=#<Proc:0x00007f91a8028438 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/server/connections.rb:28>, @exception_class=StandardError, @__Lock__=#<Thread::Mutex:0x00007f91a8028348>, @__Condition__=#<Thread::ConditionVariable:0x00007f91a8028320>>, @running=#<Concurrent::AtomicBoolean:0x00007f91a8028208 value:true>, @value=#<Concurrent::ThreadPoolExecutor:0x00007f9190061110 @__Lock__=#<Thread::Mutex:0x00007f9190061098>, @__Condition__=#<Thread::ConditionVariable:0x00007f9190061048>, @auto_terminate=true, @min_length=1, @max_length=10, @idletime=60, @max_queue=0, @synchronous=false, @fallback_policy=:abort, @pool=[#<Concurrent::RubyThreadPoolExecutor::Worker:0x00007f91540413d8 @queue=#<Thread::Queue:0x00007f9154041388>, @pool=#<Concurrent::ThreadPoolExecutor:0x00007f9190061110 ...>, @thread=#<Thread:0x00007f9154041310@worker-1 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:332 sleep_forever>>, #<Concurrent::RubyThreadPoolExecutor::Worker:0x00007f91900947e0 @queue=#<Thread::Queue:0x00007f9190094790>, @pool=#<Concurrent::ThreadPoolExecutor:0x00007f9190061110 ...>, @thread=#<Thread:0x00007f9190094718@worker-2 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:332 sleep_forever>>], @ready=[[#<Concurrent::RubyThreadPoolExecutor::Worker:0x00007f91540413d8 @queue=#<Thread::Queue:0x00007f9154041388>, @pool=#<Concurrent::ThreadPoolExecutor:0x00007f9190061110 ...>, @thread=#<Thread:0x00007f9154041310@worker-1 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:332 sleep_forever>>, 4292.075207735], [#<Concurrent::RubyThreadPoolExecutor::Worker:0x00007f91900947e0 @queue=#<Thread::Queue:0x00007f9190094790>, @pool=#<Concurrent::ThreadPoolExecutor:0x00007f9190061110 ...>, @thread=#<Thread:0x00007f9190094718@worker-2 /home/elaraby/.rvm/gems/ruby-3.0.1/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:332 sleep_forever>>, 4294.848519047]], @queue=[], @scheduled_task_count=7, @completed_task_count=7, @largest_length=2, @workers_counter=2, @ruby_pid=783, @gc_interval=30, @next_gc_time=4321.960615907, @StopEvent=#<Concurrent::Event:0x00007f9190060d78 @__Lock__=#<Thread::Mutex:0x00007f9190060d50>, @__Condition__=#<Thread::ConditionVariable:0x00007f9190060d28>, @set=false, @iteration=0>, @StoppedEvent=#<Concurrent::Event:0x00007f9190060c88 @__Lock__=#<Thread::Mutex:0x00007f9190060c60>, @__Condition__=#<Thread::ConditionVariable:0x00007f9190060c38>, @set=false, @iteration=0>>, @observers=#<Concurrent::Collection::CopyOnNotifyObserverSet:0x00007f91a80280c8 @__Lock__=#<Thread::Mutex:0x00007f91a8028050>, @__Condition__=#<Thread::ConditionVariable:0x00007f91a8028028>, @observers={}>, @StopEvent=#<Concurrent::Event:0x00007f91a8037eb0 @__Lock__=#<Thread::Mutex:0x00007f91a8037e88>, @__Condition__=#<Thread::ConditionVariable:0x00007f91a8037e60>, @set=false, @iteration=0>, @StoppedEvent=#<Concurrent::Event:0x00007f91a8037de8 @__Lock__=#<Thread::Mutex:0x00007f91a8037dc0>, @__Condition__=#<Thread::ConditionVariable:0x00007f91a8037d98>, @set=false, @iteration=0>>, @connections=[#<ApplicationCable::Connection:0x0000000000d110>, #<ApplicationCable::Connection:0x0000000000d138>, #<ApplicationCable::Connection:0x0000000000d160>]>
+Did you mean?  broadcast]: /mnt/c/git/KeepOnCoding/Rails/websock/app/channels/message_channel.rb:11:in `receive' | /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/channel/base.rb:273:in `public_send' | /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/channel/base.rb:273:in `dispatch_action' | /home/elaraby/.rvm/gems/ruby-3.0.1/gems/actioncable-7.1.2/lib/action_cable/channel/base.rb:173:in `block in perform_action' | /home/elaraby/.rvm/gems/ruby-3.0.1/gems/activesupport-7.1.2/lib/active_support/notifications.rb:206:in `block in instrument'
+Started GET "/" for 127.0.0.1 at 2023-12-30 17:35:04 +0200
+Processing by HangoutsController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering hangouts/index.html.erb within layouts/application
+  Rendered hangouts/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 168)
+  Rendered layouts/_navbar.html.erb (Duration: 4.4ms | Allocations: 324)
+  Rendered layouts/_alerts.html.erb (Duration: 3.9ms | Allocations: 152)
+  Rendered layout layouts/application.html.erb (Duration: 506.2ms | Allocations: 25066)
+Completed 200 OK in 598ms (Views: 519.7ms | ActiveRecord: 49.0ms | Allocations: 34872)
+
+
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:35:05 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:35:05 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vd2Vic29jay9Vc2VyLzE)
+MessageChannel#receive({"message"=>{"body"=>"hello world"}})
+[ActionCable] Broadcasting to message: {"message"=>{"body"=>"hello world"}, "user"=>#<User id: 1, email: "elaraby@gmail.com", created_at: "2023-12-30 14:55:12.698187000 +0000", updated_at: "2023-12-30 14:55:12.698187000 +0000">}
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"MessageChannel\"}", "data"=>"{\"message\":{\"body\":\"hello world\"}}"}) [Redis::CannotConnectError - Connection refused - connect(2) for 127.0.0.1:6379]: /home/elaraby/.rvm/rubies/ruby-3.0.1/lib/ruby/3.0.0/socket.rb:1214:in `__connect_nonblock' | /home/elaraby/.rvm/rubies/ruby-3.0.1/lib/ruby/3.0.0/socket.rb:1214:in `connect_nonblock' | /home/elaraby/.rvm/rubies/ruby-3.0.1/lib/ruby/3.0.0/socket.rb:56:in `connect_internal' | /home/elaraby/.rvm/rubies/ruby-3.0.1/lib/ruby/3.0.0/socket.rb:137:in `connect' | /home/elaraby/.rvm/rubies/ruby-3.0.1/lib/ruby/3.0.0/socket.rb:642:in `block in tcp'
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:35:10 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:35:10 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vd2Vic29jay9Vc2VyLzE)
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is streaming from message
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:35:12 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:35:12 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vd2Vic29jay9Vc2VyLzE)
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is streaming from message
+Started GET "/" for 127.0.0.1 at 2023-12-30 17:36:14 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HangoutsController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering hangouts/index.html.erb within layouts/application
+  Rendered hangouts/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 248)
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:36:16 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:36:16 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (8.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vd2Vic29jay9Vc2VyLzE)
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is streaming from message
+  Rendered layouts/_navbar.html.erb (Duration: 5.1ms | Allocations: 417)
+  Rendered layouts/_alerts.html.erb (Duration: 9.1ms | Allocations: 169)
+  Rendered layout layouts/application.html.erb (Duration: 2296.6ms | Allocations: 96580)
+Completed 200 OK in 2641ms (Views: 2321.3ms | ActiveRecord: 36.2ms | Allocations: 225717)
+
+
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:36:17 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:36:18 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vd2Vic29jay9Vc2VyLzE)
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is streaming from message
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:36:19 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:36:19 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vd2Vic29jay9Vc2VyLzE)
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is streaming from message
+MessageChannel#receive({"message"=>{"body"=>"hello world"}})
+[ActionCable] Broadcasting to message: {"message"=>{"body"=>"hello world"}, "user"=>#<User id: 1, email: "elaraby@gmail.com", created_at: "2023-12-30 14:55:12.698187000 +0000", updated_at: "2023-12-30 14:55:12.698187000 +0000">}
+MessageChannel transmitting {"message"=>{"body"=>"hello world"}, "user"=>{"id"=>1, "email"=>"elaraby@gmail.com", "created_at"=>"2023-12-30T14:55:12.698Z", "updated_at"=>"2023-12-30T14:55:12.698Z"}} (via streamed from message)
+MessageChannel transmitting {"message"=>{"body"=>"hello world"}, "user"=>{"id"=>1, "email"=>"elaraby@gmail.com", "created_at"=>"2023-12-30T14:55:12.698Z", "updated_at"=>"2023-12-30T14:55:12.698Z"}} (via streamed from message)
+MessageChannel transmitting {"message"=>{"body"=>"hello world"}, "user"=>{"id"=>1, "email"=>"elaraby@gmail.com", "created_at"=>"2023-12-30T14:55:12.698Z", "updated_at"=>"2023-12-30T14:55:12.698Z"}} (via streamed from message)
+Started GET "/" for 127.0.0.1 at 2023-12-30 17:36:39 +0200
+Processing by HangoutsController#index as HTML
+Completed 401 Unauthorized in 26ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-12-30 17:36:39 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/elaraby/.rvm/gems/ruby-3.0.1/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/elaraby/.rvm/gems/ruby-3.0.1/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 968)
+  Rendered /home/elaraby/.rvm/gems/ruby-3.0.1/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 38.7ms | Allocations: 4341)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 103)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 40)
+  Rendered layout layouts/application.html.erb (Duration: 135.2ms | Allocations: 9311)
+Completed 200 OK in 176ms (Views: 143.2ms | ActiveRecord: 0.0ms | Allocations: 11713)
+
+
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:36:41 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:36:41 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+An unauthorized connection attempt was rejected
+Finished "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:36:41 +0200
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-12-30 17:36:53 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"elaraby2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "elaraby2@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 280ms (ActiveRecord: 1.2ms | Allocations: 5568)
+
+
+Started GET "/" for 127.0.0.1 at 2023-12-30 17:36:54 +0200
+Processing by HangoutsController#index as TURBO_STREAM
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering hangouts/index.html.erb within layouts/application
+  Rendered hangouts/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 11)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 78)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 72.0ms | Allocations: 5052)
+Completed 200 OK in 107ms (Views: 73.9ms | ActiveRecord: 1.4ms | Allocations: 6903)
+
+
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:36:54 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:36:54 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vd2Vic29jay9Vc2VyLzE)
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is streaming from message
+Started GET "/" for 127.0.0.1 at 2023-12-30 17:37:17 +0200
+Processing by HangoutsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering hangouts/index.html.erb within layouts/application
+  Rendered hangouts/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 69)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 81.6ms | Allocations: 4758)
+Completed 200 OK in 111ms (Views: 82.8ms | ActiveRecord: 0.9ms | Allocations: 6304)
+
+
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:37:17 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:37:17 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vd2Vic29jay9Vc2VyLzI)
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is streaming from message
+MessageChannel#receive({"message"=>{"body"=>"hello world"}})
+[ActionCable] Broadcasting to message: {"message"=>{"body"=>"hello world"}, "user"=>#<User id: 2, email: "elaraby2@gmail.com", created_at: "2023-12-30 14:55:12.885847000 +0000", updated_at: "2023-12-30 14:55:12.885847000 +0000">}
+MessageChannel transmitting {"message"=>{"body"=>"hello world"}, "user"=>{"id"=>2, "email"=>"elaraby2@gmail.com", "created_at"=>"2023-12-30T14:55:12.885Z", "updated_at"=>"2023-12-30T14:55:12.885Z"}} (via streamed from message)
+MessageChannel transmitting {"message"=>{"body"=>"hello world"}, "user"=>{"id"=>2, "email"=>"elaraby2@gmail.com", "created_at"=>"2023-12-30T14:55:12.885Z", "updated_at"=>"2023-12-30T14:55:12.885Z"}} (via streamed from message)
+MessageChannel transmitting {"message"=>{"body"=>"hello world"}, "user"=>{"id"=>2, "email"=>"elaraby2@gmail.com", "created_at"=>"2023-12-30T14:55:12.885Z", "updated_at"=>"2023-12-30T14:55:12.885Z"}} (via streamed from message)
+MessageChannel transmitting {"message"=>{"body"=>"hello world"}, "user"=>{"id"=>2, "email"=>"elaraby2@gmail.com", "created_at"=>"2023-12-30T14:55:12.885Z", "updated_at"=>"2023-12-30T14:55:12.885Z"}} (via streamed from message)
+MessageChannel transmitting {"message"=>{"body"=>"hello world"}, "user"=>{"id"=>2, "email"=>"elaraby2@gmail.com", "created_at"=>"2023-12-30T14:55:12.885Z", "updated_at"=>"2023-12-30T14:55:12.885Z"}} (via streamed from message)
+Started GET "/" for 127.0.0.1 at 2023-12-30 17:38:00 +0200
+Processing by HangoutsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering hangouts/index.html.erb within layouts/application
+  Rendered hangouts/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 69)
+  Rendered layouts/_alerts.html.erb (Duration: 0.4ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 90.0ms | Allocations: 4757)
+Completed 200 OK in 124ms (Views: 93.0ms | ActiveRecord: 0.6ms | Allocations: 6283)
+
+
+Finished "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:38:00 +0200
+MessageChannel stopped streaming from message
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:38:00 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:38:00 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vd2Vic29jay9Vc2VyLzI)
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is streaming from message
+Started GET "/" for 127.0.0.1 at 2023-12-30 17:38:09 +0200
+Processing by HangoutsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering hangouts/index.html.erb within layouts/application
+  Rendered hangouts/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 69)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 75.0ms | Allocations: 4766)
+Completed 200 OK in 112ms (Views: 76.4ms | ActiveRecord: 0.4ms | Allocations: 6340)
+
+
+Finished "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:38:10 +0200
+MessageChannel stopped streaming from message
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:38:10 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:38:10 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vd2Vic29jay9Vc2VyLzE)
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is streaming from message
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMessages (20231230153946)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "messages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "body" varchar, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_273a25a7a6"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_messages_on_user_id" ON "messages" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231230153946') RETURNING "version"[0m
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Finished "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:41:15 +0200
+MessageChannel stopped streaming from message
+Finished "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:45:15 +0200
+MessageChannel stopped streaming from message
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:45:58 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:45:59 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (31.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vd2Vic29jay9Vc2VyLzE)
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is streaming from message
+Started GET "/" for 127.0.0.1 at 2023-12-30 17:46:01 +0200
+Processing by HangoutsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering hangouts/index.html.erb within layouts/application
+  Rendered hangouts/index.html.erb within layouts/application (Duration: 14.4ms | Allocations: 1257)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 1349)
+Completed 500 Internal Server Error in 237ms (ActiveRecord: 7.8ms | Allocations: 36188)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<%= form_with model: @messagem local: false do |f| %> 
+    <div class="field has-addons">
+    <div class="control">
+      <%= f.text_field :body, id: 'message-input', class: 'input' %>
+    </div>
+    <div class="control">
+      <%= f.submit 'Send Message', class: 'button is-primary' %>
+    </div>
+  </div>
+<%end%>
+):
+1:    
+2:    <%= form_with model: @messagem local: false do |f| %> 
+3:        <div class="field has-addons">
+4:        <div class="control">
+5:          <%= f.text_field :body, id: 'message-input', class: 'input' %>
+6:        </div>
+7:        <div class="control">
+8:          <%= f.submit 'Send Message', class: 'button is-primary' %>
+9:        </div>
+10:      </div>
+11:    <%end%>
+  
+app/views/hangouts/index.html.erb:2: syntax error, unexpected local variable or method, expecting `end'
+app/views/hangouts/index.html.erb:13: syntax error, unexpected `end', expecting end-of-input
+Finished "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:46:02 +0200
+MessageChannel stopped streaming from message
+Started GET "/" for 127.0.0.1 at 2023-12-30 17:46:12 +0200
+Processing by HangoutsController#index as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering hangouts/index.html.erb within layouts/application
+  Rendered hangouts/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1230)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 1322)
+Completed 500 Internal Server Error in 136ms (ActiveRecord: 51.2ms | Allocations: 15491)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<%= form_with model: @message local: false do |f| %> 
+    <div class="field has-addons">
+    <div class="control">
+      <%= f.text_field :body, id: 'message-input', class: 'input' %>
+    </div>
+    <div class="control">
+      <%= f.submit 'Send Message', class: 'button is-primary' %>
+    </div>
+  </div>
+<%end%>
+):
+1:    
+2:    <%= form_with model: @message local: false do |f| %> 
+3:        <div class="field has-addons">
+4:        <div class="control">
+5:          <%= f.text_field :body, id: 'message-input', class: 'input' %>
+6:        </div>
+7:        <div class="control">
+8:          <%= f.submit 'Send Message', class: 'button is-primary' %>
+9:        </div>
+10:      </div>
+11:    <%end%>
+  
+app/views/hangouts/index.html.erb:2: syntax error, unexpected local variable or method, expecting `end'
+app/views/hangouts/index.html.erb:13: syntax error, unexpected `end', expecting end-of-input
+Started GET "/" for 127.0.0.1 at 2023-12-30 17:46:26 +0200
+Processing by HangoutsController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering hangouts/index.html.erb within layouts/application
+  Rendered hangouts/index.html.erb within layouts/application (Duration: 9.7ms | Allocations: 650)
+  Rendered layouts/_navbar.html.erb (Duration: 5.4ms | Allocations: 278)
+  Rendered layouts/_alerts.html.erb (Duration: 5.2ms | Allocations: 152)
+  Rendered layout layouts/application.html.erb (Duration: 402.5ms | Allocations: 25548)
+Completed 200 OK in 518ms (Views: 414.6ms | ActiveRecord: 50.6ms | Allocations: 39703)
+
+
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:46:27 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:46:27 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vd2Vic29jay9Vc2VyLzE)
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is streaming from message
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:46:54 +0200
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:46:54 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:46:54 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vd2Vic29jay9Vc2VyLzI)
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is streaming from message
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:46:54 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vd2Vic29jay9Vc2VyLzE)
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is streaming from message
+Started GET "/" for 127.0.0.1 at 2023-12-30 17:59:46 +0200
+Processing by HangoutsController#index as HTML
+  [1m[36mUser Load (39.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 170ms (ActiveRecord: 66.0ms | Allocations: 15382)
+
+
+  
+NoMethodError (undefined method `Includes' for Message:Class
+Did you mean?  includes
+               include
+               include?):
+  
+app/controllers/hangouts_controller.rb:7:in `index'
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:59:54 +0200
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 17:59:54 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:59:54 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 17:59:54 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+  [1m[36mUser Load (7.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vd2Vic29jay9Vc2VyLzE)
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vd2Vic29jay9Vc2VyLzI)
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is streaming from message
+MessageChannel is streaming from message
+Started GET "/" for 127.0.0.1 at 2023-12-30 18:00:06 +0200
+Processing by HangoutsController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering hangouts/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/hangouts/index.html.erb:3
+  Rendered hangouts/index.html.erb within layouts/application (Duration: 79.6ms | Allocations: 3057)
+  Rendered layouts/_navbar.html.erb (Duration: 4.4ms | Allocations: 280)
+  Rendered layouts/_alerts.html.erb (Duration: 7.2ms | Allocations: 152)
+  Rendered layout layouts/application.html.erb (Duration: 1488.4ms | Allocations: 31749)
+Completed 200 OK in 1614ms (Views: 1502.0ms | ActiveRecord: 47.8ms | Allocations: 45999)
+
+
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 18:00:08 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 18:00:08 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vd2Vic29jay9Vc2VyLzE)
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is streaming from message
+Started POST "/messages" for 127.0.0.1 at 2023-12-30 18:00:16 +0200
+Processing by MessagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>{"body"=>"hello"}, "commit"=>"Send Message"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+  [1m[36mMessage Create (7.4ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["body", "hello"], ["user_id", 1], ["created_at", "2023-12-30 16:00:17.262261"], ["updated_at", "2023-12-30 16:00:17.262261"]]
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+[ActionCable] Broadcasting to message: {"id"=>1, "body"=>"hello", "user_id"=>1, "created_at"=>"2023-12-30T16:00:17.262Z", "updated_at"=>"2023-12-30T16:00:17.262Z", "user"=>{"id"=>1, "email"=>"elaraby@gmail.com", "created_at"=>"2023-12-30T14:55:12.698Z", "updated_at"=>"2023-12-30T14:55:12.698Z"}}
+MessageChannel transmitting {"id"=>1, "body"=>"hello", "user_id"=>1, "created_at"=>"2023-12-30T16:00:17.262Z", "updated_at"=>"2023-12-30T16:00:17.262Z", "user"=>{"id"=>1, "email"=>"elaraby@gmail.com", "created_at"=>"2023-12-30T14:55:12.698Z", "updated_at"=>"2023-12-30T14:55:12.698Z"}} (via streamed from message)
+  Rendering layout layouts/application.html.erb
+  Rendering messages/create.html.erb within layouts/application
+  Rendered messages/create.html.erb within layouts/application (Duration: 6.0ms | Allocations: 138)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 64)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 58.0ms | Allocations: 5072)
+Completed 200 OK in 307ms (Views: 62.1ms | ActiveRecord: 15.4ms | Allocations: 18879)
+
+
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 18:00:20 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 18:00:20 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vd2Vic29jay9Vc2VyLzI)
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is streaming from message
+Started GET "/" for 127.0.0.1 at 2023-12-30 18:00:23 +0200
+Processing by HangoutsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering hangouts/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/hangouts/index.html.erb:3
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/hangouts/index.html.erb:3
+  Rendered hangouts/index.html.erb within layouts/application (Duration: 63.5ms | Allocations: 6318)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 56)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 132.1ms | Allocations: 11183)
+Completed 200 OK in 164ms (Views: 133.0ms | ActiveRecord: 1.7ms | Allocations: 12762)
+
+
+Finished "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 18:00:23 +0200
+MessageChannel stopped streaming from message
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 18:00:23 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 18:00:23 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vd2Vic29jay9Vc2VyLzI)
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is streaming from message
+Started POST "/messages" for 127.0.0.1 at 2023-12-30 18:00:36 +0200
+Processing by MessagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>{"body"=>"how are you"}, "commit"=>"Send Message"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+  [1m[36mMessage Create (2.2ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["body", "how are you"], ["user_id", 2], ["created_at", "2023-12-30 16:00:36.156876"], ["updated_at", "2023-12-30 16:00:36.156876"]]
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+[ActionCable] Broadcasting to message: {"id"=>2, "body"=>"how are you", "user_id"=>2, "created_at"=>"2023-12-30T16:00:36.156Z", "updated_at"=>"2023-12-30T16:00:36.156Z", "user"=>{"id"=>2, "email"=>"elaraby2@gmail.com", "created_at"=>"2023-12-30T14:55:12.885Z", "updated_at"=>"2023-12-30T14:55:12.885Z"}}
+  Rendering layout layouts/application.html.erb
+MessageChannel transmitting {"id"=>2, "body"=>"how are you", "user_id"=>2, "created_at"=>"2023-12-30T16:00:36.156Z", "updated_at"=>"2023-12-30T16:00:36.156Z", "user"=>{"id"=>2, "email"=>"elaraby2@gmail.com", "created_at"=>"2023-12-30T14:55:12.885Z", "updated_at"=>"2023-12-30T14:55:12.885Z"}} (via streamed from message)
+  Rendering messages/create.html.erb within layouts/application
+MessageChannel transmitting {"id"=>2, "body"=>"how are you", "user_id"=>2, "created_at"=>"2023-12-30T16:00:36.156Z", "updated_at"=>"2023-12-30T16:00:36.156Z", "user"=>{"id"=>2, "email"=>"elaraby2@gmail.com", "created_at"=>"2023-12-30T14:55:12.885Z", "updated_at"=>"2023-12-30T14:55:12.885Z"}} (via streamed from message)
+  Rendered messages/create.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 52)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 76.4ms | Allocations: 5055)
+Completed 200 OK in 124ms (Views: 92.2ms | ActiveRecord: 3.7ms | Allocations: 8925)
+
+
+Started GET "/" for 127.0.0.1 at 2023-12-30 18:00:41 +0200
+Processing by HangoutsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering hangouts/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/hangouts/index.html.erb:3
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/views/hangouts/index.html.erb:3
+  Rendered hangouts/index.html.erb within layouts/application (Duration: 13.3ms | Allocations: 1735)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 51)
+  Rendered layouts/_alerts.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 93.5ms | Allocations: 6654)
+Completed 200 OK in 128ms (Views: 92.3ms | ActiveRecord: 4.4ms | Allocations: 8256)
+
+
+Finished "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 18:00:41 +0200
+MessageChannel stopped streaming from message
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 18:00:42 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 18:00:42 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vd2Vic29jay9Vc2VyLzE)
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is streaming from message
+Started POST "/messages" for 127.0.0.1 at 2023-12-30 18:00:52 +0200
+Processing by MessagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>{"body"=>"fine"}, "commit"=>"Send Message"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+  [1m[36mMessage Create (4.3ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["body", "fine"], ["user_id", 1], ["created_at", "2023-12-30 16:00:52.190306"], ["updated_at", "2023-12-30 16:00:52.190306"]]
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+[ActionCable] Broadcasting to message: {"id"=>3, "body"=>"fine", "user_id"=>1, "created_at"=>"2023-12-30T16:00:52.190Z", "updated_at"=>"2023-12-30T16:00:52.190Z", "user"=>{"id"=>1, "email"=>"elaraby@gmail.com", "created_at"=>"2023-12-30T14:55:12.698Z", "updated_at"=>"2023-12-30T14:55:12.698Z"}}
+  Rendering layout layouts/application.html.erb
+MessageChannel transmitting {"id"=>3, "body"=>"fine", "user_id"=>1, "created_at"=>"2023-12-30T16:00:52.190Z", "updated_at"=>"2023-12-30T16:00:52.190Z", "user"=>{"id"=>1, "email"=>"elaraby@gmail.com", "created_at"=>"2023-12-30T14:55:12.698Z", "updated_at"=>"2023-12-30T14:55:12.698Z"}} (via streamed from message)
+MessageChannel transmitting {"id"=>3, "body"=>"fine", "user_id"=>1, "created_at"=>"2023-12-30T16:00:52.190Z", "updated_at"=>"2023-12-30T16:00:52.190Z", "user"=>{"id"=>1, "email"=>"elaraby@gmail.com", "created_at"=>"2023-12-30T14:55:12.698Z", "updated_at"=>"2023-12-30T14:55:12.698Z"}} (via streamed from message)
+  Rendering messages/create.html.erb within layouts/application
+  Rendered messages/create.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 52)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 54.1ms | Allocations: 4896)
+Completed 200 OK in 90ms (Views: 56.4ms | ActiveRecord: 5.6ms | Allocations: 8727)
+
+
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 18:00:54 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 18:00:54 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vd2Vic29jay9Vc2VyLzE)
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is streaming from message
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 18:00:58 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 18:00:58 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vd2Vic29jay9Vc2VyLzE)
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is streaming from message
+Finished "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 18:00:59 +0200
+MessageChannel stopped streaming from message
+Started GET "/cable" for 127.0.0.1 at 2023-12-30 18:00:59 +0200
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 18:01:00 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12:in `find_verified_user'
+Registered connection (Z2lkOi8vd2Vic29jay9Vc2VyLzE)
+MessageChannel is transmitting the subscription confirmation
+MessageChannel is streaming from message
+Finished "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 18:01:00 +0200
+MessageChannel stopped streaming from message
+Finished "/cable" [WebSocket] for 127.0.0.1 at 2023-12-30 18:01:02 +0200
+MessageChannel stopped streaming from message
+Started POST "/messages" for 127.0.0.1 at 2023-12-30 22:10:26 +0200
+Processing by MessagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>{"body"=>"لاثلاثث"}, "commit"=>"Send Message"}
+  [1m[36mUser Load (73.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+  [1m[36mMessage Create (7.0ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["body", "لاثلاثث"], ["user_id", 1], ["created_at", "2023-12-30 20:10:26.799525"], ["updated_at", "2023-12-30 20:10:26.799525"]]
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+[ActionCable] Broadcasting to message: {"id"=>4, "body"=>"لاثلاثث", "user_id"=>1, "created_at"=>"2023-12-30T20:10:26.799Z", "updated_at"=>"2023-12-30T20:10:26.799Z", "user"=>{"id"=>1, "email"=>"elaraby@gmail.com", "created_at"=>"2023-12-30T14:55:12.698Z", "updated_at"=>"2023-12-30T14:55:12.698Z"}}
+  Rendering layout layouts/application.html.erb
+  Rendering messages/create.html.erb within layouts/application
+MessageChannel transmitting {"id"=>4, "body"=>"لاثلاثث", "user_id"=>1, "created_at"=>"2023-12-30T20:10:26.799Z", "updated_at"=>"2023-12-30T20:10:26.799Z", "user"=>{"id"=>1, "email"=>"elaraby@gmail.com", "created_at"=>"2023-12-30T14:55:12.698Z", "updated_at"=>"2023-12-30T14:55:12.698Z"}} (via streamed from message)
+  Rendered messages/create.html.erb within layouts/application (Duration: 1.1ms | Allocations: 7)
+MessageChannel transmitting {"id"=>4, "body"=>"لاثلاثث", "user_id"=>1, "created_at"=>"2023-12-30T20:10:26.799Z", "updated_at"=>"2023-12-30T20:10:26.799Z", "user"=>{"id"=>1, "email"=>"elaraby@gmail.com", "created_at"=>"2023-12-30T14:55:12.698Z", "updated_at"=>"2023-12-30T14:55:12.698Z"}} (via streamed from message)
+  Rendered layouts/_navbar.html.erb (Duration: 3.0ms | Allocations: 52)
+  Rendered layouts/_alerts.html.erb (Duration: 1.7ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 821.2ms | Allocations: 27444)
+Completed 200 OK in 1168ms (Views: 860.6ms | ActiveRecord: 138.5ms | Allocations: 31358)
+
+
+Started POST "/messages" for 127.0.0.1 at 2023-12-30 22:23:24 +0200
+Processing by MessagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>{"body"=>"hey"}, "commit"=>"Send Message"}
+  [1m[36mUser Load (52.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+  [1m[36mMessage Create (9.0ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["body", "hey"], ["user_id", 1], ["created_at", "2023-12-30 20:23:25.292752"], ["updated_at", "2023-12-30 20:23:25.292752"]]
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+[ActionCable] Broadcasting to message: {"id"=>5, "body"=>"hey", "user_id"=>1, "created_at"=>"2023-12-30T20:23:25.292Z", "updated_at"=>"2023-12-30T20:23:25.292Z", "user"=>{"id"=>1, "email"=>"elaraby@gmail.com", "created_at"=>"2023-12-30T14:55:12.698Z", "updated_at"=>"2023-12-30T14:55:12.698Z"}}
+  Rendering layout layouts/application.html.erb
+  Rendering messages/create.html.erb within layouts/application
+MessageChannel transmitting {"id"=>5, "body"=>"hey", "user_id"=>1, "created_at"=>"2023-12-30T20:23:25.292Z", "updated_at"=>"2023-12-30T20:23:25.292Z", "user"=>{"id"=>1, "email"=>"elaraby@gmail.com", "created_at"=>"2023-12-30T14:55:12.698Z", "updated_at"=>"2023-12-30T14:55:12.698Z"}} (via streamed from message)
+  Rendered messages/create.html.erb within layouts/application (Duration: 0.7ms | Allocations: 7)
+MessageChannel transmitting {"id"=>5, "body"=>"hey", "user_id"=>1, "created_at"=>"2023-12-30T20:23:25.292Z", "updated_at"=>"2023-12-30T20:23:25.292Z", "user"=>{"id"=>1, "email"=>"elaraby@gmail.com", "created_at"=>"2023-12-30T14:55:12.698Z", "updated_at"=>"2023-12-30T14:55:12.698Z"}} (via streamed from message)
+  Rendered layouts/_navbar.html.erb (Duration: 2.1ms | Allocations: 52)
+  Rendered layouts/_alerts.html.erb (Duration: 0.6ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 321.1ms | Allocations: 5405)
+Completed 200 OK in 665ms (Views: 346.9ms | ActiveRecord: 105.7ms | Allocations: 9257)
+
+
+Started POST "/messages" for 127.0.0.1 at 2023-12-30 22:39:17 +0200
+Processing by MessagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>{"body"=>"two"}, "commit"=>"Send Message"}
+  [1m[36mUser Load (139.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+  [1m[36mMessage Create (12.9ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["body", "two"], ["user_id", 1], ["created_at", "2023-12-30 20:39:18.732651"], ["updated_at", "2023-12-30 20:39:18.732651"]]
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+[ActionCable] Broadcasting to message: {"id"=>6, "body"=>"two", "user_id"=>1, "created_at"=>"2023-12-30T20:39:18.732Z", "updated_at"=>"2023-12-30T20:39:18.732Z", "user"=>{"id"=>1, "email"=>"elaraby@gmail.com", "created_at"=>"2023-12-30T14:55:12.698Z", "updated_at"=>"2023-12-30T14:55:12.698Z"}}
+  Rendering layout layouts/application.html.erb
+  Rendering messages/create.html.erb within layouts/application
+MessageChannel transmitting {"id"=>6, "body"=>"two", "user_id"=>1, "created_at"=>"2023-12-30T20:39:18.732Z", "updated_at"=>"2023-12-30T20:39:18.732Z", "user"=>{"id"=>1, "email"=>"elaraby@gmail.com", "created_at"=>"2023-12-30T14:55:12.698Z", "updated_at"=>"2023-12-30T14:55:12.698Z"}} (via streamed from message)
+  Rendered messages/create.html.erb within layouts/application (Duration: 2.4ms | Allocations: 7)
+MessageChannel transmitting {"id"=>6, "body"=>"two", "user_id"=>1, "created_at"=>"2023-12-30T20:39:18.732Z", "updated_at"=>"2023-12-30T20:39:18.732Z", "user"=>{"id"=>1, "email"=>"elaraby@gmail.com", "created_at"=>"2023-12-30T14:55:12.698Z", "updated_at"=>"2023-12-30T14:55:12.698Z"}} (via streamed from message)
+  Rendered layouts/_navbar.html.erb (Duration: 2.2ms | Allocations: 52)
+  Rendered layouts/_alerts.html.erb (Duration: 0.7ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 262.4ms | Allocations: 5292)
+Completed 200 OK in 823ms (Views: 309.5ms | ActiveRecord: 269.8ms | Allocations: 9178)
+
+
+Started POST "/messages" for 127.0.0.1 at 2023-12-30 22:39:31 +0200
+Processing by MessagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>{"body"=>"three"}, "commit"=>"Send Message"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+  [1m[36mMessage Create (16.9ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["body", "three"], ["user_id", 2], ["created_at", "2023-12-30 20:39:31.630382"], ["updated_at", "2023-12-30 20:39:31.630382"]]
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+[ActionCable] Broadcasting to message: {"id"=>7, "body"=>"three", "user_id"=>2, "created_at"=>"2023-12-30T20:39:31.630Z", "updated_at"=>"2023-12-30T20:39:31.630Z", "user"=>{"id"=>2, "email"=>"elaraby2@gmail.com", "created_at"=>"2023-12-30T14:55:12.885Z", "updated_at"=>"2023-12-30T14:55:12.885Z"}}
+  Rendering layout layouts/application.html.erb
+MessageChannel transmitting {"id"=>7, "body"=>"three", "user_id"=>2, "created_at"=>"2023-12-30T20:39:31.630Z", "updated_at"=>"2023-12-30T20:39:31.630Z", "user"=>{"id"=>2, "email"=>"elaraby2@gmail.com", "created_at"=>"2023-12-30T14:55:12.885Z", "updated_at"=>"2023-12-30T14:55:12.885Z"}} (via streamed from message)
+  Rendering messages/create.html.erb within layouts/application
+MessageChannel transmitting {"id"=>7, "body"=>"three", "user_id"=>2, "created_at"=>"2023-12-30T20:39:31.630Z", "updated_at"=>"2023-12-30T20:39:31.630Z", "user"=>{"id"=>2, "email"=>"elaraby2@gmail.com", "created_at"=>"2023-12-30T14:55:12.885Z", "updated_at"=>"2023-12-30T14:55:12.885Z"}} (via streamed from message)
+  Rendered messages/create.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 52)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 93.5ms | Allocations: 5035)
+Completed 200 OK in 194ms (Views: 106.5ms | ActiveRecord: 20.3ms | Allocations: 8690)
+
+
+Started POST "/messages" for 127.0.0.1 at 2023-12-30 22:43:29 +0200
+Processing by MessagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>{"body"=>"four"}, "commit"=>"Send Message"}
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+  [1m[36mMessage Create (17.6ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["body", "four"], ["user_id", 1], ["created_at", "2023-12-30 20:43:29.526039"], ["updated_at", "2023-12-30 20:43:29.526039"]]
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:4:in `create'
+[ActionCable] Broadcasting to message: {"id"=>8, "body"=>"four", "user_id"=>1, "created_at"=>"2023-12-30T20:43:29.526Z", "updated_at"=>"2023-12-30T20:43:29.526Z", "user"=>{"id"=>1, "email"=>"elaraby@gmail.com", "created_at"=>"2023-12-30T14:55:12.698Z", "updated_at"=>"2023-12-30T14:55:12.698Z"}}
+  Rendering layout layouts/application.html.erb
+  Rendering messages/create.html.erb within layouts/application
+MessageChannel transmitting {"id"=>8, "body"=>"four", "user_id"=>1, "created_at"=>"2023-12-30T20:43:29.526Z", "updated_at"=>"2023-12-30T20:43:29.526Z", "user"=>{"id"=>1, "email"=>"elaraby@gmail.com", "created_at"=>"2023-12-30T14:55:12.698Z", "updated_at"=>"2023-12-30T14:55:12.698Z"}} (via streamed from message)
+  Rendered messages/create.html.erb within layouts/application (Duration: 0.5ms | Allocations: 7)
+MessageChannel transmitting {"id"=>8, "body"=>"four", "user_id"=>1, "created_at"=>"2023-12-30T20:43:29.526Z", "updated_at"=>"2023-12-30T20:43:29.526Z", "user"=>{"id"=>1, "email"=>"elaraby@gmail.com", "created_at"=>"2023-12-30T14:55:12.698Z", "updated_at"=>"2023-12-30T14:55:12.698Z"}} (via streamed from message)
+  Rendered layouts/_navbar.html.erb (Duration: 1.2ms | Allocations: 52)
+  Rendered layouts/_alerts.html.erb (Duration: 0.6ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 178.8ms | Allocations: 5279)
+Completed 200 OK in 350ms (Views: 200.0ms | ActiveRecord: 25.4ms | Allocations: 8878)
+
+
+Finished "/cable" [WebSocket] for 127.0.0.1 at 2023-12-31 00:20:20 +0200
+MessageChannel stopped streaming from message
+Finished "/cable" [WebSocket] for 127.0.0.1 at 2023-12-31 00:36:11 +0200
+MessageChannel stopped streaming from message
