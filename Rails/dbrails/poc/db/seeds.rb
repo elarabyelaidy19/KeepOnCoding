@@ -21,22 +21,22 @@
 # puts 'Migrated the database' 
 
 
-roles = ['developer', 'designer', 'markering']
+# db/seeds.rb
+require 'factory_bot'
 
-10.times do 
-    Region.create!(name: Faker::Address.country)
-end
-10.times do 
-    Role.create!(name: roles.sample, billable: [true, false].sample)
-end 
+# FactoryBot.find_definitions
 
-10.times do 
-    Location.create!(name: Faker::Address.city, region: Region.all.sample)
-end
+before = Time.now 
+# # Create regions
+ regions = Region.all 
 
-10.times do 
-    person = Person.create!(name: Faker::Name.name,manager: Person.new, role: Role.all.sample, salary: rand(1000..10000), location: Location.all.sample)
-    person.save(validate: false)
-end  
+# # Create locations associated with regions
+locations = Location.all # # Create roles
+roles = Role.all
+# Create people associated with roles, locations, and managers 
+# people = FactoryBot.create_list(:person, 100, role: roles.sample, location: locations.sample)
+people2 = FactoryBot.create_list(:person, 20000000, :with_manager, role: roles.sample, location: locations.sample)
 
-
+puts 'Seed data has been created!'
+after = Time.now
+puts "It took #{after - before} seconds"
