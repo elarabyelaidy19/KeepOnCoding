@@ -1,0 +1,5 @@
+  oid  | extname | extowner | extnamespace | extrelocatable | extversion | extconfig | extcondition 
+-------+---------+----------+--------------+----------------+------------+-----------+--------------
+ 13783 | plpgsql |       10 |           11 | f              | 1.0        |           | 
+(1 row)
+
